@@ -12,29 +12,30 @@
 ### Livraison 1  
 Date prevu : *26/10/18*
 
-*  Creation de la classe dé.
-*  Creation de la classe cartes.
-*  Creation d'un joueur qu'il lance deux dés.
-*  Creation d'un compteur des points de gloire.
+*  Création de la classe dé.
+*  Création de la classe cartes.
+*  Création d'un joueur qu'il lance deux dés.
+*  Création de l'incentaire des Héros du joueur.
+*  Création d'un compteur des points de gloire.
 *  Test avec Junit sur les tâches realisées.
 
 ### Livraison 2
 Date prevu : *9/11/18*
 
-* Creation d'une liste avec les choix possibles pour changer une face
-* Test sur un dé qui peut changer des faces.
-* Insertion 
-*
-*
+* Creation du temple avec des listes "Sanctuaire" et des listes "Jardins".
+* Mise en place des changements de faces (du dé).
+* Test avec Junit sur les tâches realisées.
+
 
 ### Livraison 3
 
 Date prevu : *16/11/18*
 
+* Ajout d'un autre joueur
 *
 *
 *
-*
+*  Test avec Junit sur les tâches realisées.
 
 ### Livraison 4
 
@@ -44,6 +45,7 @@ Date prevu : *23/11/18*
 *
 *
 *
+*  Test avec Junit sur les tâches realisées.
 
 ### Livraison 5
 
@@ -53,6 +55,7 @@ Date prevu : *30/11/18*
 *
 *
 *
+*  Test avec Junit sur les tâches realisées.
 
 ### Livraison 6
 
@@ -62,6 +65,7 @@ Date prevu : *7/12/18*
 *
 *
 *
+*  Test avec Junit sur les tâches realisées.
 
 
 ## Diagramme UML :
