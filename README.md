@@ -5,7 +5,7 @@
 * Petrou Kyriakos
 * Ben Abdeljelil Hassan
 * Hallaci Sabri
-* Nerssissian Tigran
+* Nersissian Tigran
 
 ##  **Milestones**
 
@@ -14,7 +14,7 @@ Date prevu : *26/10/18*
 
 *  Creation de la classe dé.
 *  Creation de la classe cartes.
-*  Creation d'un bot qu'il lance deux dés.
+*  Creation d'un joueur qu'il lance deux dés.
 *  Creation d'un compteur des points de gloire.
 *  Test avec Junit sur les tâches realisées.
 
