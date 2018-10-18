@@ -14,8 +14,8 @@
 Date prevu : *26/10/18*
 
 *  Version basique du jeu n'ayant qu'un joueur qui joue avec un dé à 6 face d'or non-amovible.
-*  Les points de victoire sont attribués en fonction des pièces d'or en fin de partie.
-*  Ressource disponible : Point d'or , Point de victoire.
+*  La victoire est attribué en fonction des pièces d'or en fin de partie (9 tours).
+*  Ressource disponible : Point d'or.
 *  Test avec Junit sur les tâches realisées.
 
 ### Livraison 2
@@ -23,6 +23,7 @@ Date prevu : *9/11/18*
 
 * Version basique du jeu n'ayant que 2 joueurs qui jouent avec deux dés à 6 face d'or non-amovible.
 * Posibilité d'acheter des faces d'or differentes de 1.
+* La victoire est attribué en fonction des pièces d'or en fin de partie (9 tours)
 * Ressource disponible : Point d'or , Point de victoire.
 * Test avec Junit sur les tâches realisées.
 
