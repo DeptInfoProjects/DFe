@@ -58,8 +58,6 @@ Date prevu : *7/12/18*
 
 * Création de la fonction qui permets d'obtenir des cartes héros (quête à accomplir) qui modifie la face de dés avec des face uniquement accessible via la quête.
 * Possibilité de choisir des quêtes alternatives.
-* 
-*
 *  Test avec Junit sur les tâches realisées.
 
 
