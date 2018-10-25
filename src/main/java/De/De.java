@@ -1,6 +1,5 @@
 package De;
 
-
 public class De {
 
     private Face FACE1;
@@ -10,7 +9,7 @@ public class De {
     private Face FACE5;
     private Face FACE6;
 
-    public De() {}
+    private De() {}
 
     public void InitDe(){
         FACE1 = new Face(1, Ressource.SOLAIRE);
@@ -40,29 +39,7 @@ public class De {
         FACE6 = new Face(1, Ressource.OR);
     }
 
-    public Integer  getDeValeur(Integer rand){
-        switch(rand){
-            case 1:
-                 FACE1.getValeur();
-                 break;
-            case 2:
-                 FACE2.getValeur();
-                 break;
-            case 3:
-                 FACE3.getValeur();
-                 break;
-            case 4:
-                 FACE4.getValeur();
-                 break;
-            case 5:
-                 FACE5.getValeur();
-                 break;
-            case 6:
-                 FACE6.getValeur();
-                 break;
-        }
-        return rand;
-    }
+
 
     public String toString(){
         String vide;
