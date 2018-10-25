@@ -12,18 +12,18 @@ public class De {
 
     public De() {}
 
-    public void InitDe(){
+    public void InitDe1(){
         FACE1 = new Face(1, Ressource.OR);
 
         FACE2 = new Face(2, Ressource.OR);
 
         FACE3 = new Face(3, Ressource.OR);
 
-        FACE4 = new Face(4, Ressource.OR);
+        FACE4 = new Face(3, Ressource.Solaire);
 
-        FACE5 = new Face(5, Ressource.OR);
+        FACE5 = new Face(2, Ressource.Solaire);
 
-        FACE6 = new Face(6, Ressource.OR);
+        FACE6 = new Face(1, Ressource.Solaire);
     }
 
 

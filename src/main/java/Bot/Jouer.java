@@ -3,8 +3,9 @@ import De.*;
 
 public class Jouer {
     private De d1 = new De();
+    private De d2 = new De();
     public Jouer(){
-        d1.InitDe();
+        d1.InitDe1();
     }
      public final Face lancerDe1(){
         Face cpt;
@@ -24,24 +25,6 @@ public class Jouer {
                 break;
         }
         return cpt;
-    }
-
-
-     public static void main(String[] args){
-         Jouer jouer1 = new Jouer();
-         int AccOR = 0;
-         Ressource MemRo = Ressource.OR;
-         for(int acc = 0 ; acc < 9; acc++) {
-             Face memF = jouer1.lancerDe1();
-             Ressource MemR = memF.getRes();
-             int memP = memF.getValeur();
-             AccOR = AccOR + memP;
-             System.out.println("Tour : " + (acc + 1) + " Face obtenu : " + memP + "point d'" + MemR + " gagné");
-         }
-             System.out.println("Total de point d'" + MemRo + " gagné : " + AccOR);
-         if (AccOR <= 31)   /* En moyenne on s'attend à avoir 31.5 point */
-             System.out.print("You Loose");
-         else System.out.print("You Win");
     }
 
 }
