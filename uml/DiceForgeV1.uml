@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="33.875" y="124.0">De.Face</node>
+    <node x="202.0" y="370.0">Game.Partie</node>
+    <node x="0.0" y="270.0">De.De</node>
+    <node x="69.875" y="0.0">De.Ressource</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="Game.Partie" target="De.Face">
+      <point x="-42.25" y="-25.5" />
+      <point x="244.25" y="245.0" />
+      <point x="208.875" y="245.0" />
+      <point x="75.0" y="48.0" />
+    </edge>
+    <edge source="Game.Partie" target="De.Ressource">
+      <point x="42.25" y="-25.5" />
+      <point x="328.75" y="94.0" />
+      <point x="181.875" y="94.0" />
+      <point x="48.0" y="37.0" />
+    </edge>
+    <edge source="De.De" target="De.Ressource">
+      <point x="-68.25" y="-125.5" />
+      <point x="23.375" y="94.0" />
+      <point x="85.875" y="94.0" />
+      <point x="-48.0" y="37.0" />
+    </edge>
+    <edge source="De.Face" target="De.Ressource">
+      <point x="-50.0" y="-48.0" />
+      <point x="83.875" y="104.0" />
+      <point x="117.875" y="104.0" />
+      <point x="-16.0" y="37.0" />
+    </edge>
+    <edge source="De.De" target="De.Face">
+      <point x="22.75" y="-125.5" />
+      <point x="113.75" y="245.0" />
+      <point x="108.875" y="245.0" />
+      <point x="-25.0" y="48.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="498.0" y="408.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
