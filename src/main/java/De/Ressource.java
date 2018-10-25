@@ -1,3 +1,5 @@
+package De;
+
 public enum Ressource {
 
     OR, LUNE, SOLAIRE, VICTOIRE;

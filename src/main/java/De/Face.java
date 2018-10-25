@@ -1,3 +1,5 @@
+package De;
+
 public class Face {
 
     private Integer valeur;
@@ -7,11 +9,10 @@ public class Face {
         this.valeur = valeur;
         this.res = res;
     }
-
-
     public Integer getValeur() {
         return valeur;
     }
+
 
     public Ressource getRes() {
         return res;
