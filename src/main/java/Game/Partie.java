@@ -5,9 +5,18 @@ import java.util.Scanner;
 
 public class Partie {
 
-    For(int i =0, i<9 ,i++){
-        getValeur
+
+    public static void main(String[] args) {
+        System.out.println("------------BIENVENUE SUR DICE-FORGE------------\n\n\n\n");
+
+
+        Jouer partieJ1 = new Jouer();
+
+        partieJ1.lancerDe1();
+
 
 
     }
+
+
 }
