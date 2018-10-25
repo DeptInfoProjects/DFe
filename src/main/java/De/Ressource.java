@@ -2,7 +2,7 @@ package De;
 
 public enum Ressource {
 
-    OR, LUNE, SOLAIRE, VICTOIRE;
+    OR;
 
     private void nom() {
         String nom = "";
