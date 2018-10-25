@@ -5,12 +5,15 @@ import De.De;
 import De.*;
 
 public class Jouer {
+
+
+
     private De d1 = new De();
-    int AccOR = 0;
-    int NbTour = 0;
     public Jouer(){
         d1.InitDe();
-    }
+        }
+
+
      public final void lancerDe1(){
         int rand = (int) (Math.random()*6+1);
         switch(rand){
@@ -37,14 +40,15 @@ public class Jouer {
 
     }
 
-
+/*
      public static void main(String[] args){
          Jouer jouer1 = new Jouer();
-         for(int acc = 0 ; acc < 9; acc++)
-         {jouer1.NbTour =+ 1;
-         jouer1.lancerDe1();
-         System.out.println(jouer1.AccOR);
+         for(int acc = 0 ; acc < 9; acc++) {
+             jouer1.NbTour =+ 1;
+             jouer1.lancerDe1();
+             System.out.println(jouer1.AccOR);
          }
     }
+*/
 
 }

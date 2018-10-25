@@ -1,10 +1,14 @@
 package Bot;
-
-import De.Ressource;
+import De.*;
 
 public class Joueurs {
 
-    public Joueurs(inventaireRessource Ress){
+    private char nom;
+    private inventaireRessource invJoueur;
 
+    public Joueurs(char nom, inventaireRessource invJoueur){
+        this.nom = nom;
+        this.invJoueur = invJoueur;
     }
+
 }
