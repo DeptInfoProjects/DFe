@@ -7,7 +7,7 @@ public class Jouer {
     public Jouer(){
         d1.InitDe1();
     }
-     public final Face lancerDe1(){
+    public final Face lancerDe1(){
         Face cpt;
         int rand = (int) (Math.random()*6+1);
         switch(rand){
