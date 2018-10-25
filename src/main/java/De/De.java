@@ -19,11 +19,11 @@ public class De {
 
         FACE3 = new Face(3, Ressource.OR);
 
-        FACE4 = new Face(3, Ressource.Solaire);
+        FACE4 = new Face(4, Ressource.Solaire);
 
-        FACE5 = new Face(2, Ressource.Solaire);
+        FACE5 = new Face(5, Ressource.Solaire);
 
-        FACE6 = new Face(1, Ressource.Solaire);
+        FACE6 = new Face(6, Ressource.Solaire);
     }
 
 
