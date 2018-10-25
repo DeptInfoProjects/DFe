@@ -1,54 +1,47 @@
 package Bot;
-import De.De;
-
-
 import De.*;
 
 public class Jouer {
-
-
-
     private De d1 = new De();
     public Jouer(){
         d1.InitDe();
-        }
-
-
-     public final void lancerDe1(){
+    }
+     public final Face lancerDe1(){
+        Face cpt;
         int rand = (int) (Math.random()*6+1);
         switch(rand){
-            case 1:   AccOR =+ d1.getDeValeur(1);
-                System.out.println("Tour " + NbTour + " : " + d1.getDeValeur(1) + " Point d'OR");
+            case 1: cpt = d1.getFace(rand);
                 break;
-            case 2:   AccOR =+ d1.getDeValeur(2);
-                System.out.println("Tour " + NbTour + " : " + d1.getDeValeur(2) + " Point d'OR");
+            case 2:  cpt = d1.getFace(rand);
                 break;
-            case 3:  AccOR =+ d1.getDeValeur(3);
-                System.out.println("Tour " + NbTour + " : " + d1.getDeValeur(3) + " Point d'OR");
+            case 3:  cpt = d1.getFace(rand);
                 break;
-            case 4:  AccOR =+ d1.getDeValeur(4);
-                System.out.println("Tour " + NbTour + " : " + d1.getDeValeur(4) + " Point d'OR");
+            case 4:  cpt = d1.getFace(rand);
                 break;
-            case 5:  AccOR =+ d1.getDeValeur(5);
-                System.out.println("Tour " + NbTour + " : " + d1.getDeValeur(5) + " Point d'OR");
+            case 5:  cpt = d1.getFace(rand);
                 break;
-            case 6:  AccOR =+ d1.getDeValeur(6);
-                System.out.println("Tour " + NbTour + " : " + d1.getDeValeur(6) + " Point d'OR");
+            default:  cpt = d1.getFace(rand);
                 break;
         }
-
-
+        return cpt;
     }
 
-/*
+
      public static void main(String[] args){
          Jouer jouer1 = new Jouer();
+         int AccOR = 0;
+         Ressource MemRo = Ressource.OR;
          for(int acc = 0 ; acc < 9; acc++) {
-             jouer1.NbTour =+ 1;
-             jouer1.lancerDe1();
-             System.out.println(jouer1.AccOR);
+             Face memF = jouer1.lancerDe1();
+             Ressource MemR = memF.getRes();
+             int memP = memF.getValeur();
+             AccOR = AccOR + memP;
+             System.out.println("Tour : " + (acc + 1) + " Face obtenu : " + memP + "point d'" + MemR + " gagné");
          }
+             System.out.println("Total de point d'" + MemRo + " gagné : " + AccOR);
+         if (AccOR <= 31)   /* En moyenne on s'attend à avoir 31.5 point */
+             System.out.print("You Loose");
+         else System.out.print("You Win");
     }
-*/
 
 }
