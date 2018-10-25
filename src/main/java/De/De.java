@@ -13,74 +13,45 @@ public class De {
     public De() {}
 
     public void InitDe(){
-        FACE1 = new Face(2, Ressource.SOLAIRE);
+        FACE1 = new Face(1, Ressource.OR);
 
-        FACE2 = new Face(4, Ressource.OR);
+        FACE2 = new Face(2, Ressource.OR);
 
-        FACE3 = new Face(6, Ressource.OR);
+        FACE3 = new Face(3, Ressource.OR);
 
-        FACE4 = new Face(8, Ressource.OR);
+        FACE4 = new Face(4, Ressource.OR);
 
-        FACE5 = new Face(10, Ressource.OR);
+        FACE5 = new Face(5, Ressource.OR);
 
-        FACE6 = new Face(12, Ressource.OR);
+        FACE6 = new Face(6, Ressource.OR);
     }
 
 
-    public Integer getDeValeur(Integer rand){
-        int compte = 0;
+    public Face getFace(Integer rand){
+        Face compte ;
         switch(rand){
             case 1:
-                compte =  FACE1.getValeur();
+                compte =  FACE1;
                 break;
             case 2:
-                compte = FACE2.getValeur();
+                compte = FACE2;
                 break;
             case 3:
-                compte = FACE3.getValeur();
+                compte = FACE3;
                 break;
             case 4:
-                compte = FACE4.getValeur();
+                compte = FACE4;
                 break;
             case 5:
-                compte = FACE5.getValeur();
+                compte = FACE5;
                 break;
-            case 6:
-                compte = FACE6.getValeur();
-                break ;
-            default: return 0;
-
-        }
-        return compte;
-    }
-
-
-    public Ressource getDeRessources(Integer rand){
-        Ressource compte = 0;
-        switch(rand){
-            case 1:
-                compte =  FACE1.getRes();
-                break;
-            case 2:
-                compte = FACE2.getRes();
-                break;
-            case 3:
-                compte = FACE3.getRes();
-                break;
-            case 4:
-                compte = FACE4.getRes();
-                break;
-            case 5:
-                compte = FACE5.getValeur();
-                break;
-            default: compte = FACE6.getValeur();
+            default:
+                compte = FACE6;
                 break ;
 
         }
         return compte;
     }
-
-
 
     public String toString(){
         String vide;
