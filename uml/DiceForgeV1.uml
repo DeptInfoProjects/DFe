@@ -1,48 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Diagram>
   <ID>JAVA</ID>
-  <OriginalElement />
+  <OriginalElement>Bot.Jouer</OriginalElement>
   <nodes>
-    <node x="33.875" y="124.0">De.Face</node>
-    <node x="202.0" y="370.0">Game.Partie</node>
+    <node x="49.875" y="124.0">De.Face</node>
+    <node x="112.2777777777778" y="784.0">Game.Partie</node>
+    <node x="87.82291666666669" y="0.0">De.Ressource</node>
     <node x="0.0" y="270.0">De.De</node>
-    <node x="69.875" y="0.0">De.Ressource</node>
+    <node x="52.0" y="593.0">Bot.Jouer</node>
   </nodes>
   <notes />
   <edges>
+    <edge source="Bot.Jouer" target="De.De">
+      <point x="0.0" y="-70.5" />
+      <point x="45.5" y="136.5" />
+    </edge>
+    <edge source="Bot.Jouer" target="De.Face">
+      <point x="56.33333333333334" y="-70.5" />
+      <point x="192.83333333333334" y="568.0" />
+      <point x="208.69444444444446" y="568.0" />
+      <point x="208.69444444444446" y="245.0" />
+      <point x="189.875" y="245.0" />
+      <point x="40.0" y="48.0" />
+    </edge>
+    <edge source="De.De" target="De.Face">
+      <point x="68.25" y="-136.5" />
+      <point x="159.25" y="245.0" />
+      <point x="149.875" y="245.0" />
+      <point x="0.0" y="48.0" />
+    </edge>
+    <edge source="Game.Partie" target="Bot.Jouer">
+      <point x="-21.125" y="-25.5" />
+      <point x="175.6527777777778" y="759.0" />
+      <point x="178.75" y="759.0" />
+      <point x="42.25" y="70.5" />
+    </edge>
     <edge source="Game.Partie" target="De.Face">
-      <point x="-42.25" y="-25.5" />
-      <point x="244.25" y="245.0" />
-      <point x="208.875" y="245.0" />
-      <point x="75.0" y="48.0" />
+      <point x="21.125" y="-25.5" />
+      <point x="217.9027777777778" y="759.0" />
+      <point x="234.6701388888889" y="759.0" />
+      <point x="234.6701388888889" y="245.0" />
+      <point x="229.875" y="245.0" />
+      <point x="80.0" y="48.0" />
     </edge>
     <edge source="Game.Partie" target="De.Ressource">
-      <point x="42.25" y="-25.5" />
-      <point x="328.75" y="94.0" />
-      <point x="181.875" y="94.0" />
+      <point x="63.375" y="-25.5" />
+      <point x="260.375" y="94.0" />
+      <point x="199.82291666666669" y="94.0" />
       <point x="48.0" y="37.0" />
     </edge>
     <edge source="De.De" target="De.Ressource">
-      <point x="-68.25" y="-125.5" />
-      <point x="23.375" y="94.0" />
-      <point x="85.875" y="94.0" />
+      <point x="-68.25" y="-136.5" />
+      <point x="22.75" y="245.0" />
+      <point x="39.375" y="245.0" />
+      <point x="39.375" y="94.0" />
+      <point x="103.82291666666669" y="94.0" />
       <point x="-48.0" y="37.0" />
     </edge>
     <edge source="De.Face" target="De.Ressource">
-      <point x="-50.0" y="-48.0" />
-      <point x="83.875" y="104.0" />
-      <point x="117.875" y="104.0" />
-      <point x="-16.0" y="37.0" />
-    </edge>
-    <edge source="De.De" target="De.Face">
-      <point x="22.75" y="-125.5" />
-      <point x="113.75" y="245.0" />
-      <point x="108.875" y="245.0" />
-      <point x="-25.0" y="48.0" />
+      <point x="50.0" y="-48.0" />
+      <point x="199.875" y="104.0" />
+      <point x="167.82291666666669" y="104.0" />
+      <point x="16.0" y="37.0" />
     </edge>
   </edges>
-  <settings layout="Hierarchic Group" zoom="1.0" x="498.0" y="408.0" />
-  <SelectedNodes />
+  <settings layout="Hierarchic Group" zoom="1.0" x="198.0" y="315.5" />
+  <SelectedNodes>
+    <node>Bot.Jouer</node>
+  </SelectedNodes>
   <Categories>
     <Category>Fields</Category>
     <Category>Constructors</Category>
