@@ -7,7 +7,7 @@ import De.*;
 public class Jouer {
     private De d1 = new De();
     int AccOR = 0;
-    public int NbTour = 0;
+    int NbTour = 0;
     public Jouer(){
         d1.InitDe();
     }

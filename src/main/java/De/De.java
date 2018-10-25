@@ -13,32 +13,20 @@ public class De {
     public De() {}
 
     public void InitDe(){
-        FACE1 = new Face(2, Ressource.SOLAIRE);
+        FACE1 = new Face(1, Ressource.OR);
 
-        FACE2 = new Face(4, Ressource.OR);
+        FACE2 = new Face(2, Ressource.OR);
 
-        FACE3 = new Face(6, Ressource.OR);
+        FACE3 = new Face(3, Ressource.OR);
 
-        FACE4 = new Face(8, Ressource.OR);
+        FACE4 = new Face(4, Ressource.OR);
 
-        FACE5 = new Face(10, Ressource.OR);
+        FACE5 = new Face(5, Ressource.OR);
 
-        FACE6 = new Face(12, Ressource.OR);
+        FACE6 = new Face(6, Ressource.OR);
     }
 
-    public void InitDe2(){
-        FACE1 = new Face(1, Ressource.LUNE);
 
-        FACE2 = new Face(2, Ressource.VICTOIRE);
-
-        FACE3 = new Face(1, Ressource.OR);
-
-        FACE4 = new Face(1, Ressource.OR);
-
-        FACE5 = new Face(1, Ressource.OR);
-
-        FACE6 = new Face(1, Ressource.OR);
-    }
     public Integer getDeValeur(Integer rand){
         int compte = 0;
         switch(rand){
@@ -57,16 +45,15 @@ public class De {
             case 5:
                 compte = FACE5.getValeur();
                 break;
-            case 6:
+            default:
                 compte = FACE6.getValeur();
                 break ;
-            default: return 0;
 
         }
         return compte;
     }
     public Ressource getDeRessources(Integer rand){
-        int compte = 0;
+        Ressource compte;
         switch(rand){
             case 1:
                 compte =  FACE1.getRes();
@@ -81,9 +68,9 @@ public class De {
                 compte = FACE4.getRes();
                 break;
             case 5:
-                compte = FACE5.getValeur();
+                compte = FACE5.getRes();
                 break;
-            default: compte = FACE6.getValeur();
+            default: compte = FACE6.getRes();
                 break ;
 
         }
