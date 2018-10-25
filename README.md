@@ -67,7 +67,7 @@ Date prevu : *7/12/18*
 
 ## Diagramme UML :
 
-* Livraison 1 :
+* Livraison 1 : DiceForgeV1.uml 
 * Livraison 2 :
 * Livraison 3 :
 * Livraison 4 :
