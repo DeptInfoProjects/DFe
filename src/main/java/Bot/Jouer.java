@@ -2,6 +2,7 @@ package Bot;
 import De.*;
 
 public class Jouer {
+    public static void main(String[] args){}
     private De d1 = new De();
     private De d2 = new De();
     public Jouer(){

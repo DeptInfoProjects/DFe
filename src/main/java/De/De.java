@@ -2,14 +2,13 @@ package De;
 
 
 public class De {
-
+    public static void main(String[] args){}
     private Face FACE1;
     private Face FACE2;
     private Face FACE3;
     private Face FACE4;
     private Face FACE5;
     private Face FACE6;
-
     public De() {}
 
     public void InitDe1(){
