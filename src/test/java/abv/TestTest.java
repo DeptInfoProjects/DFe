@@ -1,4 +1,0 @@
-package abv;
-
-class TestTest {
-}
