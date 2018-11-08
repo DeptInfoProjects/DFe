@@ -2,16 +2,13 @@ package De;
 
 
 public class De {
-
     private Face FACE1;
     private Face FACE2;
     private Face FACE3;
     private Face FACE4;
     private Face FACE5;
     private Face FACE6;
-
     public De() {}
-
 
     public void InitDe1(){
         FACE1 = new Face(1, Ressource.OR);
@@ -27,24 +24,6 @@ public class De {
         FACE6 = new Face(6, Ressource.OR);
     }
 
-
-    public void InitDe2(){
-        FACE1 = new Face(1, Ressource.OR);
-
-        FACE2 = new Face(2, Ressource.OR);
-
-        FACE3 = new Face(3, Ressource.OR);
-
-        FACE4 = new Face(4, Ressource.OR);
-
-        FACE5 = new Face(5, Ressource.OR);
-
-        FACE6 = new Face(6, Ressource.OR);
-    }
-
-    public void setDe1(){
-
-    }
 
     public Face getFace(Integer rand){
         Face compte ;
@@ -82,6 +61,7 @@ public class De {
                 '\n' + FACE6.getRes() + " " + FACE6.getValeur();
         return vide;
     }
+
 
 }
 
