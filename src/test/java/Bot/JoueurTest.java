@@ -1,18 +1,18 @@
-package Bot;
+/*package Bot;
 
 import De.Ressource;
 import junit.framework.Assert;
 import org.junit.Test;
 
-public class JouerTest {
-    public JouerTest() {
+public class JoueurTest {
+    public JoueurTest() {
     }
 
     @Test
     public void lancerDe1() {
-        Jouer tjouer = new Jouer();
+        Joueur tjouer = new Joueur();
         Assert.assertEquals(Ressource.OR, tjouer.lancerDe1().getRes());
         Assert.assertEquals("This is not Ressource", Ressource.OR, tjouer.lancerDe1().getRes());
         System.out.println("Unit test1 finished without error");
     }
-}
+}*/

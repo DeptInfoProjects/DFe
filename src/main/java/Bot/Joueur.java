@@ -2,14 +2,14 @@ package Bot;
 import De.*;
 import Game.*;
 
-public class Jouer {
+public class Joueur {
 
     private De d1 = new De();
     private De d2 = new De();
     public Inventaire Sac;
 
 
-    public Jouer(){
+    public Joueur(){
 
         d1.InitDe1();
         d2.InitDe1();
