@@ -1,13 +1,22 @@
 package Bot;
 import De.*;
+import Game.*;
 
 public class Jouer {
+
     private De d1 = new De();
     private De d2 = new De();
+    private Inventaire Sac;
+
+
     public Jouer(){
+
         d1.InitDe1();
         d2.InitDe1();
+        Sac = new Inventaire();
+
     }
+
     public final Face lancerDe1(){
         Face cpt;
         int rand = (int) (Math.random()*6+1);
