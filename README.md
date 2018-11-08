@@ -22,7 +22,8 @@ Date prevu : *26/10/18*
 Date prevu : *9/11/18*
 
 * Version basique du jeu n'ayant que 2 joueurs qui jouent avec deux dés à 6 face d'or.
-* Posibilité d'acheter des faces d'or differentes de 1.
+* Posibilité de modifier les faces du dé .
+* Ajout du sac permettant de gerer l'inventaire du joueur.
 * La victoire est attribué en fonction des pièces d'or en fin de partie (9 tours)
 * Ressource disponible : Point d'or .
 * Test avec Junit sur les tâches realisées.
