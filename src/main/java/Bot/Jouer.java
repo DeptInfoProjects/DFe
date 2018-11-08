@@ -6,6 +6,7 @@ public class Jouer {
     private De d2 = new De();
     public Jouer(){
         d1.InitDe1();
+        d2.InitDe1();
     }
     public final Face lancerDe1(){
         Face cpt;
