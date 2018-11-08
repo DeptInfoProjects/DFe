@@ -36,7 +36,7 @@
     <!-- éventuellement à changer : localisation des fichiers sources -->
 
 
-    <testSourceDirectory>src/test/java </testSourceDirectory>
+    <testSourceDirectory>src/test/java</testSourceDirectory>
 
     <!-- éventuellement à changer : localisation des fichiers sources des tests -->
 
