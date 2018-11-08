@@ -4,13 +4,12 @@ import Game.*;
 
 public class Joueur {
 
-    private De d1 = new De();
-    private De d2 = new De();
+    public De d1 = new De();
+    public De d2 = new De();
     public Inventaire Sac;//s
 
 
     public Joueur(){
-
         d1.InitDe1();
         d2.InitDe1();
         Sac = new Inventaire();

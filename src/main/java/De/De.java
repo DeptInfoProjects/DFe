@@ -1,6 +1,7 @@
 package De;
 import java.lang.*;
 
+
 public class De {
     private Face FACE1;
     private Face FACE2;
@@ -51,17 +52,16 @@ public class De {
         return compte;
     }
 
-    public Integer Minimum(int a ,int b , int c , int d , int e,int f){
+    private Integer Minimum(int a ,int b , int c , int d , int e,int f){
         return Math.min(a,Math.min(b,Math.min(c,Math.min(d,Math.min(e,f))))) ;
     }
 
-    public int ValeurMin(){
-        int ValeurMin = Minimum(FACE1.getValeur() ,FACE2.getValeur() ,FACE3.getValeur() ,FACE4.getValeur() ,FACE5.getValeur() ,FACE6.getValeur());
-        return ValeurMin;
+    private int ValeurMin(){
+        return Minimum(FACE1.getValeur() ,FACE2.getValeur() ,FACE3.getValeur() ,FACE4.getValeur() ,FACE5.getValeur() ,FACE6.getValeur());
     }
 
 
-    public   Face FACEMIN(){
+    private Face FACEMIN(){
         int ValeurMin = Minimum(FACE1.getValeur() ,FACE2.getValeur() ,FACE3.getValeur() ,FACE4.getValeur() ,FACE5.getValeur() ,FACE6.getValeur());
 
         if (ValeurMin == FACE1.getValeur()) return FACE1;
@@ -75,12 +75,12 @@ public class De {
 
     public void setFACE(){
 
-        FACEMIN().setValeur( (int) (Math.random() * ((6 -  ValeurMin() ) + 1) + ValeurMin()));
+        FACEMIN().setValeur(ValeurMin()+ (int)(Math.random() * (5 - ValeurMin())+1));
     }
 
 
 
-    public String toString(){
+    public String toString() {
         String vide;
         vide = "" + FACE1.getRes() + " " + FACE1.getValeur() + '\n' +
                 '\n' + FACE2.getRes() + " " + FACE2.getValeur() + '\n' +
@@ -89,12 +89,6 @@ public class De {
                 '\n' + FACE5.getRes() + " " + FACE5.getValeur() + '\n' +
                 '\n' + FACE6.getRes() + " " + FACE6.getValeur();
         return vide;
-    }
-    public static void main(String[] args){
-        De d1 = new De();
-        d1.InitDe1();
-        System.out.println(d1.toString());
-        System.out.println("C'est bon");
     }
 }
 

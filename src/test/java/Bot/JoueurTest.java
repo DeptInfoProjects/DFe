@@ -1,4 +1,4 @@
-/*package Bot;
+package Bot;
 
 import De.Ressource;
 import junit.framework.Assert;
@@ -15,4 +15,4 @@ public class JoueurTest {
         Assert.assertEquals("This is not Ressource", Ressource.OR, tjouer.lancerDe1().getRes());
         System.out.println("Unit test1 finished without error");
     }
-}*/
+}

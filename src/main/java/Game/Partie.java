@@ -16,6 +16,10 @@ public class Partie {
                 joueur2.Sac.setInventaire( memFd1J2.getValeur()+ memFd2J2.getValeur());
                 System.out.println("Tour : " + (acc + 1) + '\n' +  " Le joueur 1 a obtenu : " + memFd1J1.getValeur() + " et " + memFd2J1.getValeur() + " points d'" + memFd1J1.getRes() + '\n'
                         +  " Le joueur 2 a obtenu : " + memFd1J2.getValeur() + " et " + memFd2J2.getValeur() + " points d'" + memFd2J2.getRes());
+                joueur1.d1.setFACE();
+                joueur1.d2.setFACE();
+                joueur2.d1.setFACE();
+                joueur2.d2.setFACE();
             }
             System.out.println(" \n Total de point d'" + Ressource.OR + " gagné par le joueur 1: " + joueur1.Sac.getInventaire() + " \n Total de point d'" + Ressource.OR + " gagné par le joueur 2: " + joueur2.Sac.getInventaire());
             if (joueur1.Sac.getInventaire() < joueur2.Sac.getInventaire())   /* Celui qui a le plus de point Gagne ,si non match nul */
