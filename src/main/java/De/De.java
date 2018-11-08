@@ -52,13 +52,7 @@ public class De {
     }
 
     public Integer Minimum(int a ,int b , int c , int d , int e,int f){
-        int res = a ;
-        for(int i = 1 ; i<= 6 ; i++){
-            if(i < res){
-                res = i ;
-            }
-        }
-        return res ;
+        return Math.min(a,Math.min(b,Math.min(c,Math.min(d,Math.min(e,f))))) ;
     }
 
     public int ValeurMin(){
