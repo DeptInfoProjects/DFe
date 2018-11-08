@@ -6,7 +6,7 @@ public class Joueur {
 
     private De d1 = new De();
     private De d2 = new De();
-    public Inventaire Sac;
+    public Inventaire Sac;//s
 
 
     public Joueur(){
