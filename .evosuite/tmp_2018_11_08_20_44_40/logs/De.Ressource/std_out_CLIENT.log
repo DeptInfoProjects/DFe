@@ -1,0 +1,92 @@
+* Starting client
+* Connecting to master process on port 10455
+* Analyzing classpath: 
+  - C:/Users/Tiko/DFe/target/classes
+  - C:\Program Files\Java\jdk1.8.0_181\jre\lib\charsets.jar
+  - C:\Program Files\Java\jdk1.8.0_181\jre\lib\deploy.jar
+  - C:\Program Files\Java\jdk1.8.0_181\jre\lib\ext\access-bridge-64.jar
+  - C:\Program Files\Java\jdk1.8.0_181\jre\lib\ext\cldrdata.jar
+  - C:\Program Files\Java\jdk1.8.0_181\jre\lib\ext\dnsns.jar
+  - C:\Program Files\Java\jdk1.8.0_181\jre\lib\ext\jaccess.jar
+  - C:\Program Files\Java\jdk1.8.0_181\jre\lib\ext\jfxrt.jar
+  - C:\Program Files\Java\jdk1.8.0_181\jre\lib\ext\localedata.jar
+  - C:\Program Files\Java\jdk1.8.0_181\jre\lib\ext\nashorn.jar
+  - C:\Program Files\Java\jdk1.8.0_181\jre\lib\ext\sunec.jar
+  - C:\Program Files\Java\jdk1.8.0_181\jre\lib\ext\sunjce_provider.jar
+  - C:\Program Files\Java\jdk1.8.0_181\jre\lib\ext\sunmscapi.jar
+  - C:\Program Files\Java\jdk1.8.0_181\jre\lib\ext\sunpkcs11.jar
+  - C:\Program Files\Java\jdk1.8.0_181\jre\lib\ext\zipfs.jar
+  - C:\Program Files\Java\jdk1.8.0_181\jre\lib\javaws.jar
+  - C:\Program Files\Java\jdk1.8.0_181\jre\lib\jce.jar
+  - C:\Program Files\Java\jdk1.8.0_181\jre\lib\jfr.jar
+  - C:\Program Files\Java\jdk1.8.0_181\jre\lib\jfxswt.jar
+  - C:\Program Files\Java\jdk1.8.0_181\jre\lib\jsse.jar
+  - C:\Program Files\Java\jdk1.8.0_181\jre\lib\management-agent.jar
+  - C:\Program Files\Java\jdk1.8.0_181\jre\lib\plugin.jar
+  - C:\Program Files\Java\jdk1.8.0_181\jre\lib\resources.jar
+  - C:\Program Files\Java\jdk1.8.0_181\jre\lib\rt.jar
+  - C:\Users\Tiko\DFe\target\test-classes
+  - C:\Users\Tiko\DFe\target\classes
+  - C:\Users\Tiko\Desktop\junit-4.12.jar
+  - C:\Users\Tiko\Desktop\hamcrest-core-1.3.jar
+* Finished analyzing classpath
+* Generating tests for class De.Ressource
+* Test criteria:
+  - Line Coverage
+  - Branch Coverage
+  - Exception
+  - Mutation testing (weak)
+  - Method-Output Coverage
+  - Top-Level Method Coverage
+  - No-Exception Top-Level Method Coverage
+  - Context Branch Coverage
+* Setting up search algorithm for whole suite generation
+[MASTER] 20:51:00.020 [pool-2-thread-1] WARN  TestSuiteSerialization - Cannot load tests because file does not exist: C:\Users\Tiko\DFe\.evosuite\evosuite-seeds\De.Ressource.seed
+* Loaded 0 tests from C:\Users\Tiko\DFe\.evosuite\evosuite-seeds\De.Ressource.seed
+* Total number of test goals: 
+  - Line 2
+  - Branch 1
+  - Exception 0
+  - MutationFactory 0
+  - Output 5
+  - Method 0
+  - MethodNoException 0
+  - CBranchFitnessFactory 1
+* Using seed 1541706656606
+* Starting evolution
+* Search finished after 31s and 1432 generations, 77211 statements, best individual has fitness: 6.666666666666666
+* Writing sequences to pool
+* Minimizing test suite
+* Going to analyze the coverage criteria
+* Coverage analysis for criterion LINE
+* Coverage of criterion LINE: 0%
+* Total number of goals: 2
+* Number of covered goals: 0
+* Coverage analysis for criterion BRANCH
+* Coverage of criterion BRANCH: 0%
+* Total number of goals: 1
+* Number of covered goals: 0
+* Coverage analysis for criterion EXCEPTION
+* Coverage of criterion EXCEPTION: 100% (no goals)
+* Coverage analysis for criterion WEAKMUTATION
+* Coverage of criterion WEAKMUTATION: 100% (no goals)
+* Coverage analysis for criterion OUTPUT
+* Coverage of criterion OUTPUT: 40%
+* Total number of goals: 5
+* Number of covered goals: 2
+* Coverage analysis for criterion METHOD
+* Coverage of criterion METHOD: 100% (no goals)
+* Coverage analysis for criterion METHODNOEXCEPTION
+* Coverage of criterion METHODNOEXCEPTION: 100% (no goals)
+* Coverage analysis for criterion CBRANCH
+* Coverage of criterion CBRANCH: 0%
+* Total number of goals: 1
+* Number of covered goals: 0
+* Generated 2 tests with total length 2
+* Resulting test suite's coverage: 55% (average coverage for all fitness functions)
+* Generating assertions
+* Resulting test suite's mutation score: 100%
+* Compiling and checking tests
+* Writing JUnit test case 'Ressource_ESTest' to C:\Users\Tiko\DFe\.evosuite\tmp_2018_11_08_20_44_40\tests
+* Done!
+
