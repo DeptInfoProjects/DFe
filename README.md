@@ -33,16 +33,17 @@ Date prevu : *9/11/18*
 
 Date prevu : *16/11/18*
 
-* Version basique du jeu n'ayant que 2 joueurs qui jouent avec deux dés à 6 face (or,solaire,lunaire) non-amovible.
-* Fonction permettant d'acheter des cartes héros permettant d'obtenir des points de victoire en contre-partis d'une quantité de pierre lunaire ou de pierre solaire.
+* Version basique du jeu n'ayant que 2 joueurs qui jouent avec deux dés à 6 face (or,solaire,lunaire,victoire) amovibles.
+* Possibilité d'acheter des faces (or,lunaire,solaire) de dés aux sanctuaires.
 * Ressource disponible : Point d'or , Point de victoire , Pierre solaire  , Pierre lunaire.
+* Le joueur gagnant est celui avec le plus de points de victoire.
 * Test avec Junit sur les tâches realisées.
 
 ### Livraison 4
 
 Date prevu : *23/11/18*
 
-* Possibilité d'acheter des faces (or,lunaire,solaire) de dés aux sanctuaires.
+* Fonction permettant d'acheter des cartes héros permettant d'obtenir des points de victoire en contre-partis d'une quantité de pierre lunaire ou de pierre solaire.
 * Extention du catalogue des cartes héros (point victoire,carte à effet immédiat) .
 * Possibilité de jouer une deuxieme fois par tour en payant 2 pierre solaire.
 * Test avec Junit sur les tâches realisées.
@@ -69,7 +70,7 @@ Date prevu : *7/12/18*
 ## Diagramme UML :
 
 * Livraison 1 : DiceForgeV1.uml 
-* Livraison 2 :
+* Livraison 2 : DiceForgeV2.uml
 * Livraison 3 :
 * Livraison 4 :
 * Livraison 5 :
