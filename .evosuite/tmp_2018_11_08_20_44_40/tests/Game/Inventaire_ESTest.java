@@ -7,7 +7,7 @@ package Game;
 
 import org.junit.Test;
 import static org.junit.Assert.*;
-import Game.Inventaire;
+
 import org.evosuite.runtime.EvoRunner;
 import org.evosuite.runtime.EvoRunnerParameters;
 import org.junit.runner.RunWith;

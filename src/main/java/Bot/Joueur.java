@@ -1,6 +1,6 @@
 package Bot;
 import De.*;
-import Game.*;
+
 
 public class Joueur {
 
@@ -16,45 +16,18 @@ public class Joueur {
 
     }
 
-    public final Face lancerDe1(){
-        Face cpt;
-        int rand = (int) (Math.random()*6+1);
-        switch(rand){
-            case 1: cpt = d1.getFace(rand);
-                break;
-            case 2:  cpt = d1.getFace(rand);
-                break;
-            case 3:  cpt = d1.getFace(rand);
-                break;
-            case 4:  cpt = d1.getFace(rand);
-                break;
-            case 5:  cpt = d1.getFace(rand);
-                break;
-            default:  cpt = d1.getFace(rand);
-                break;
-        }
-        return cpt;
-    }
 
-    public final Face lancerDe2(){
-        Face cpt;
-        int rand = (int) (Math.random()*6+1);
-        switch(rand){
-            case 1: cpt = d1.getFace(rand);
-                break;
-            case 2:  cpt = d1.getFace(rand);
-                break;
-            case 3:  cpt = d1.getFace(rand);
-                break;
-            case 4:  cpt = d1.getFace(rand);
-                break;
-            case 5:  cpt = d1.getFace(rand);
-                break;
-            default:  cpt = d1.getFace(rand);
-                break;
-        }
-        return cpt;
+    public String toString() {
+        String vide;
+        vide =  "Dé 1 :" + '\t' + "Dé 2 : " + '\t' +  "Inventaire : " + '\n' +
+                d1.FACE1.getRes() + " " + d1.FACE1.getValeur() + '\t'+ d2.FACE1.getRes() + " " + d2.FACE1.getValeur() + '\t' + "Or       :  "     + Sac.getNbOR()      + '\n' +
+                d1.FACE2.getRes() + " " + d1.FACE2.getValeur() + '\t'+ d2.FACE2.getRes() + " " + d2.FACE2.getValeur() + '\t' + "Solaire  :  "     + Sac.getNbSolaire() + '\n' +
+                d1.FACE3.getRes() + " " + d1.FACE3.getValeur() + '\t'+ d2.FACE3.getRes() + " " + d2.FACE3.getValeur() + '\t' + "Lunaiare :  "     + Sac.getNbLunaire() + '\n' +
+                d1.FACE4.getRes() + " " + d1.FACE4.getValeur() + '\t'+ d2.FACE4.getRes() + " " + d2.FACE4.getValeur() + '\t' + "Victoire :  "     + Sac.getNbVictoire()+ '\n' +
+                d1.FACE5.getRes() + " " + d1.FACE5.getValeur() + '\t'+ d2.FACE5.getRes() + " " + d2.FACE5.getValeur() + '\n' +
+                d1.FACE6.getRes() + " " + d1.FACE6.getValeur() + '\t'+ d2.FACE6.getRes() + " " + d2.FACE6.getValeur() + '\n';
+        return vide;
     }
-
 }
+
 

@@ -1,14 +1,15 @@
 package De;
 import java.lang.*;
+import java.util.Random;
 
 
 public class De {
-    private Face FACE1;
-    private Face FACE2;
-    private Face FACE3;
-    private Face FACE4;
-    private Face FACE5;
-    private Face FACE6;
+    public Face FACE1;
+    public Face FACE2;
+    public Face FACE3;
+    public Face FACE4;
+    public Face FACE5;
+    public Face FACE6;
     public De() {}
 
     public void InitDe1(){
@@ -25,9 +26,15 @@ public class De {
         FACE6 = new Face(6, Ressource.OR);
     }
 
+    public  int Rand(){
+        Random rand = new Random();
+        return rand.nextInt(6) + 1;
+    }
 
-    public Face getFace(Integer rand){
+    public Face getFace(){
+        int rand = Rand();
         Face compte ;
+
         switch(rand){
             case 1:
                 compte =  FACE1;
@@ -78,17 +85,26 @@ public class De {
         FACEMIN().setValeur(ValeurMin()+ (int)(Math.random() * (5 - ValeurMin())+1));
     }
 
+    /*public void ChangerFace(Face Avant , Face Apres){
+        switch (Avant) {
+            case (FACE1) :FACE1 == Apres;
+
+        }
+        this.Avant = Apres;
+    }*/
+
 
 
     public String toString() {
         String vide;
-        vide = "" + FACE1.getRes() + " " + FACE1.getValeur() + '\n' +
-                '\n' + FACE2.getRes() + " " + FACE2.getValeur() + '\n' +
-                '\n' + FACE3.getRes() + " " + FACE3.getValeur() + '\n' +
-                '\n' + FACE4.getRes() + " " + FACE4.getValeur() + '\n' +
-                '\n' + FACE5.getRes() + " " + FACE5.getValeur() + '\n' +
-                '\n' + FACE6.getRes() + " " + FACE6.getValeur();
+        vide =   FACE1.getRes() + " " + FACE1.getValeur() + '\n'+
+                FACE2.getRes() + " " + FACE2.getValeur() + '\n' +
+                FACE3.getRes() + " " + FACE3.getValeur() + '\n' +
+                FACE4.getRes() + " " + FACE4.getValeur() + '\n' +
+                FACE5.getRes() + " " + FACE5.getValeur() + '\n' +
+                FACE6.getRes() + " " + FACE6.getValeur();
         return vide;
     }
+
 }
 
