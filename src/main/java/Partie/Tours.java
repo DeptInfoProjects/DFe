@@ -7,11 +7,18 @@ public class Tours {
     Joueur joueur1 = new Joueur();
     Joueur joueur2 = new Joueur();
 
+    public void InitInvent(){
+        joueur1.Sac.setInventaire(3,0,0,0);
+        joueur2.Sac.setInventaire(2,0,0,0);
+    }
 
     Tours(Joueur joueur1,Joueur joueur2){
         this.joueur1 = joueur1;
         this.joueur2 = joueur2;
+        InitInvent();
     }
+
+
 
 
 

@@ -10,6 +10,14 @@ public class Inventaire {
     private int nbLunaire;
     private int nbVictoire;
 
+    public void setInventaire(int OR, int SOLAIRE, int LUNAIRE , int VICTOIRE){
+        this.nbOR = OR;
+        this.nbSolaire = SOLAIRE;
+        this.nbLunaire = LUNAIRE;
+        this.nbVictoire = VICTOIRE;
+    }
+
+
 
     public int getNbOR() {
         return nbOR;

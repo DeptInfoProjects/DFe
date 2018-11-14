@@ -15,17 +15,29 @@ public class De {
     public void InitDe1(){
         FACE1 = new Face(1, Ressource.OR);
 
-        FACE2 = new Face(2, Ressource.OR);
+        FACE2 = new Face(1, Ressource.OR);
 
-        FACE3 = new Face(3, Ressource.OR);
+        FACE3 = new Face(1, Ressource.OR);
 
-        FACE4 = new Face(4, Ressource.OR);
+        FACE4 = new Face(1, Ressource.OR);
 
-        FACE5 = new Face(5, Ressource.OR);
+        FACE5 = new Face(1, Ressource.OR);
 
-        FACE6 = new Face(6, Ressource.OR);
+        FACE6 = new Face(1, Ressource.SOLAIRE);
     }
+    public void InitDe2(){
+        FACE1 = new Face(1, Ressource.OR);
 
+        FACE2 = new Face(1, Ressource.OR);
+
+        FACE3 = new Face(1, Ressource.OR);
+
+        FACE4 = new Face(1, Ressource.OR);
+
+        FACE5 = new Face(1, Ressource.LUNAIRE);
+
+        FACE6 = new Face(2, Ressource.VICTOIRE);
+    }
     public  int Rand(){
         Random rand = new Random();
         return rand.nextInt(6) + 1;
@@ -97,7 +109,7 @@ public class De {
 
     public String toString() {
         String vide;
-        vide =   FACE1.getRes() + " " + FACE1.getValeur() + '\n'+
+        vide =  FACE1.getRes() + " " + FACE1.getValeur() + '\n'+
                 FACE2.getRes() + " " + FACE2.getValeur() + '\n' +
                 FACE3.getRes() + " " + FACE3.getValeur() + '\n' +
                 FACE4.getRes() + " " + FACE4.getValeur() + '\n' +
