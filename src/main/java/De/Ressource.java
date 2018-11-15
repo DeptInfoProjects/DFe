@@ -11,4 +11,5 @@ public enum Ressource {
     private void nom() {
         String nom = "";
     }
+
 }

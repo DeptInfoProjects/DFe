@@ -13,6 +13,7 @@ public class Joueur {
         d1.InitDe1();
         d2.InitDe2();
         Sac = new Inventaire();
+
     }
 
 

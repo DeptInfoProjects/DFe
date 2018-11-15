@@ -83,29 +83,21 @@ public class De {
     private Face FACEMIN(){
         int ValeurMin = Minimum(FACE1.getValeur() ,FACE2.getValeur() ,FACE3.getValeur() ,FACE4.getValeur() ,FACE5.getValeur() ,FACE6.getValeur());
 
-        if (ValeurMin == FACE1.getValeur()) return FACE1;
-        if (ValeurMin == FACE2.getValeur()) return FACE2;
-        if (ValeurMin == FACE3.getValeur()) return FACE3;
-        if (ValeurMin == FACE4.getValeur()) return FACE4;
-        if (ValeurMin == FACE5.getValeur()) return FACE5;
-        if (ValeurMin == FACE6.getValeur()) return FACE6;
+        if (ValeurMin == FACE1.getValeur()&& FACE1.getRes() == Ressource.OR) return FACE1;
+        if (ValeurMin == FACE2.getValeur()&& FACE2.getRes() == Ressource.OR) return FACE2;
+        if (ValeurMin == FACE3.getValeur()&& FACE3.getRes() == Ressource.OR) return FACE3;
+        if (ValeurMin == FACE4.getValeur()&& FACE4.getRes() == Ressource.OR) return FACE4;
+        if (ValeurMin == FACE5.getValeur()&& FACE5.getRes() == Ressource.OR) return FACE5;
+        if (ValeurMin == FACE6.getValeur()&& FACE6.getRes() == Ressource.OR) return FACE6;
         return FACE1;
     }
 
-    public void setFACE(){
 
-        FACEMIN().setValeur(ValeurMin()+ (int)(Math.random() * (5 - ValeurMin())+1));
+    public void setFACE(Face Choix){
+        FACEMIN().setValeur(Choix.getValeur());
+        FACEMIN().setRes(Choix.getRes());
+
     }
-
-    /*public void ChangerFace(Face Avant , Face Apres){
-        switch (Avant) {
-            case (FACE1) :FACE1 == Apres;
-
-        }
-        this.Avant = Apres;
-    }*/
-
-
 
     public String toString() {
         String vide;
