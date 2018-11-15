@@ -50,6 +50,13 @@ public class Inventaire {
     public void setNbVictoire(int nbVictoire) {
         this.nbVictoire = nbVictoire;
     }
+
+    public void adderFace(Face FaceDe) {
+        if (FaceDe.getRes() == Ressource.OR) this.setNbOR(this.getNbOR() + FaceDe.getValeur());
+        if (FaceDe.getRes() == Ressource.SOLAIRE) this.setNbSolaire(this.getNbSolaire() + FaceDe.getValeur());
+        if (FaceDe.getRes() == Ressource.LUNAIRE) this.setNbLunaire(this.getNbLunaire() + FaceDe.getValeur());
+        if (FaceDe.getRes() == Ressource.VICTOIRE) this.setNbVictoire(this.getNbVictoire() + FaceDe.getValeur());
+    }
 }
 
 
