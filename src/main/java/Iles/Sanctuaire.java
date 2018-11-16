@@ -100,9 +100,11 @@ public class Sanctuaire {
                     J1.Sac.setNbOR(x - 8);
                     return victoire3;
                 }
-            default:
+            case 12:
                 J1.Sac.setNbOR(x - 12);
                 return  victoire4;
+            default:
+                return J1.d1.getFace();
             }
         }
 

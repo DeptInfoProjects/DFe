@@ -64,6 +64,11 @@ public class Tours {
                     joueur1.d1.FACE6.getRes() + " " + joueur1.d1.FACE6.getValeur() + '\t'+ joueur1.d2.FACE6.getRes() + " " + joueur1.d2.FACE6.getValeur() + '\t' + '\t' + '\t' + '\t' + s +                        joueur2.d1.FACE6.getRes() + " " + joueur2.d1.FACE6.getValeur() + '\t'+ joueur2.d2.FACE6.getRes() + " " + joueur2.d2.FACE6.getValeur() + '\n');
             System.out.println("__________________________________________________________________ \n");
         }
+        if (joueur1.Sac.getNbVictoire() < joueur2.Sac.getNbVictoire()){
+            System.out.println("Joueur 2 gagnant avec " + joueur1.Sac.getNbVictoire() + " points de victoires" );
+
+        }
+        else{System.out.println("Joueur 1 gagnant avec " + joueur2.Sac.getNbVictoire() + " points de victoires");}
     }
 
 }
