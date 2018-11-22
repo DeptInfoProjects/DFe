@@ -1,16 +1,12 @@
 package Iles;
 
-import Bot.Joueur;
-import De.Face;
-import De.Ressource;
-
-import java.util.Random;
-
+import De.*;
 
 
 
 public class Sanctuaire {
-    private Joueur joueur1 = new Joueur();
+
+
 
     private Face lunaire1 = new Face(1, Ressource.LUNAIRE);   /* x4  */
     private Face or3 = new Face(3, Ressource.OR);     /* x4 */
@@ -37,49 +33,35 @@ public class Sanctuaire {
 
     private Face victoire4 = new Face(4, Ressource.VICTOIRE);     /* x1*/
 
+    public  Sanctuaire() {
+        this.or3 = or3;
+        this.lunaire1 = lunaire1;
 
-    private int Rand(Integer f) {
-        Random rand = new Random();
-        return rand.nextInt(f);
+        this.or4 = or4;
+        this.solaire1 = solaire1;
+
+        this.or6 = or6;
+
+        this.lunaire2 = lunaire2;
+
+        this.solaire2 = solaire2;
+        this.victoire3 = victoire3;
+
+        this.victoire4 = victoire4;
     }
 
-    public Face AcheterFace(Joueur J1) {
-        int x = J1.getInventaireJoueur().getNbOR();
-        int rand = Rand(2);
-        if (x == 2) {
-            J1.getInventaireJoueur().setNbOR(x - 2);
-            if (rand == 0) return or3;
-            else return lunaire1;
-        }
 
-        if (x == 3) {
-            J1.getInventaireJoueur().setNbOR(x - 3);
-            if (rand == 0) return or4;
-            else return solaire1;
+    public Face getSanctuaire(int n){
+            if (n == 1){
+                return lunaire1;
+                }
+            if (n ==2) {
+                return or3;
+                }
+             else {
+                 return victoire4;
+            }
+            }
 
-        }
-
-        if (x == 4 | x == 5 ) {
-            J1.getInventaireJoueur().setNbOR(x - 4);
-            return or6;
-        }
-
-        if (x == 6 | x == 7) {
-            J1.getInventaireJoueur().setNbOR(x - 6);
-            return lunaire2;
-        }
-
-        if (x == 8 | x == 9 | x == 10 | x == 11){
-            J1.getInventaireJoueur().setNbOR(x - 8);
-            if (rand == 0) return solaire2;
-            else return victoire3;
-        }
-
-        if (x >= 12){
-            J1.getInventaireJoueur().setNbOR(x - 12);
-            return  victoire4;
-        }
-        else return victoire4;
-    }
 
     }

@@ -43,8 +43,9 @@ public class Tours {
                     '\t' + memFd1J1.getValeur() + " " +  memFd1J1.getRes()  + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + s +'\t' + memFd1J2.getValeur() + " " + memFd1J2.getRes() + '\n' +
                     '\t' + memFd2J1.getValeur() + " " +  memFd2J1.getRes()  + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + s +'\t' + memFd2J2.getValeur() + " " + memFd2J2.getRes() + '\n');
 
-            Face AchatJ1 = Jardin.AcheterFace(joueur1);
-            Face AchatJ2 = Jardin.AcheterFace(joueur2);
+
+            Face AchatJ1 = joueur1.AcheterFace(joueur1);
+            Face AchatJ2 = joueur2.AcheterFace(joueur2);
 
             joueur1.changementFace(AchatJ1);
             joueur2.changementFace(AchatJ2);
