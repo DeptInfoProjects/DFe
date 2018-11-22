@@ -4,31 +4,47 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.aenmr</groupId>
-    <artifactId>Dice-Forge</artifactId>
+    <groupId>DFe</groupId> <!-- à changer par le nom du groupe -->
+    <artifactId>DiceForge</artifactId> <!-- et le nom du projet -->
     <version>1.0-SNAPSHOT</version>
 
+
     <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <compiler.source>1.8</compiler.source>
-        <compiler.target>1.8</compiler.target>
+        <project.build.sourceEncoding>UTF-8
+        </project.build.sourceEncoding> <!-- éventuellement à changer : encodage de vos fichiers -->
+        <compiler.source>1.8
+        </compiler.source> <!-- éventuellement à changer : version de java (sdk) utilisée pour le développement -->
+        <compiler.target>1.8</compiler.target> <!-- éventuellement à changer : version de java pour l'utilisateur -->
     </properties>
 
+
     <build>
-        <sourceDirectory>src/main/java</sourceDirectory>
-        <testSourceDirectory>src/test/</testSourceDirectory>
+        <sourceDirectory>src/main/java
+        </sourceDirectory>  <!-- éventuellement à changer : localisation des fichiers sources -->
+        <testSourceDirectory>src/test
+        </testSourceDirectory> <!-- éventuellement à changer : localisation des fichiers sources des tests -->
         <plugins>
+            <plugin>
+                <groupId>org.evosuite.plugins</groupId>
+                <artifactId>evosuite-maven-plugin</artifactId>
+                <version>1.0.6</version>
+                <executions><execution>
+                    <goals> <goal> prepare </goal> </goals>
+                    <phase> process-test-classes </phase>
+                </execution></executions>
+            </plugin>
+            <!-- la génération de la  javadoc s'utilise avec "mvn site" -->
 
             <plugin>
+
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
                 <version>3.0.1</version>
-
                 <configuration>
                     <show>package</show>
                     <nohelp>true</nohelp>
-                    <encoding>utf-8</encoding>
-                    <charset>utf-8</charset>
+                    <encoding>utf-8</encoding> <!-- éventuellement à changer : encodage de vos fichiers -->
+                    <charset>utf-8</charset> <!-- éventuellement à changer : encodage de vos fichiers -->
                     <docencoding>utf-8</docencoding>
                 </configuration>
 
@@ -40,17 +56,13 @@
                         </goals>
                         <phase>site</phase>
                         <configuration>
-                            <!--<overview>${basedir}/src/main/java/jeu421/overview.html</overview>-->
-                            <!--à changer : selon que vous avez des descriptions du projet et des packages-->
-                            <!--endroit où seront les fichiers html générés ! attention au .gitignore !-->
+                            <!-- <overview>${basedir}/src/main/java/jeu421/overview.html</overview> --><!-- à changer : selon que vous avez des descriptions du projet et des packages -->
+                            <!-- endroit où seront les fichiers html générés ! attention au .gitignore ! -->
                             <!-- ici, c'est dans src/main/apidocs -->
                             <outputDirectory>${basedir}/src/main/</outputDirectory>
-                            <reportOutputDirectory>${basedir}/src/main/javadoc</reportOutputDirectory>
-                            <destDir>${basedir}/src/main/javadoc</destDir>
+                            <reportOutputDirectory>${basedir}/src/main/</reportOutputDirectory>
                         </configuration>
-
                     </execution>
-
                     <execution>
                         <id>test-javadoc</id>
                         <goals>
@@ -58,33 +70,20 @@
                         </goals>
                         <phase>site</phase>
                         <configuration>
-                            <!--endroit où seront les fichiers html générés ! attention au .gitignore !-->
+                            <!-- endroit où seront les fichiers html générés ! attention au .gitignore ! -->
                             <!-- ici, c'est dans src/test/apidocs -->
-                            <reportOutputDirectory>${basedir}/src/test/test-javadoc</reportOutputDirectory>
+                            <reportOutputDirectory>${basedir}/src/test/</reportOutputDirectory>
                         </configuration>
                     </execution>
-
                 </executions>
 
             </plugin>
 
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.0</version>
-                <configuration>
-                    <source>1.8</source>
-                    <!-- éventuellement à changer : version de java -->
-                    <target>1.8</target>
-                    <!-- éventuellement à changer : version de java -->
-                </configuration>
-            </plugin>
 
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
-                <version>1.6.0</version>
-                <!--à ne pas changer : c'est la version du plugin (et pas de java)-->
+                <version>1.6.0</version> <!-- à ne pas changer : c'est la version du plugin (et pas de java) -->
                 <executions>
                     <execution>
                         <goals>
@@ -93,42 +92,59 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <mainClass>Final</mainClass>
-                    <!--à changer : classe avec point d'entrée pour votre projet-->
-                    <!--argument de la commande java (en plus du nom de la classe et du classpath-->
-                    <!-- arguments récupérés dans le main -->
+                    <mainClass>Partie.Final
+                    </mainClass>  <!-- à changer : classe avec point d'entrée pour votre projet -->
+                    <!-- argument de la commande java (en plus du nom de la classe et du classpath -->
 
-                    <!--<arguments>
-                            <argument>argument1</argument>
-                    </arguments>-->
+                    <!-- arguments récupérés dans le main -->
+                    <!--
+                        <arguments>
+                                <argument>argument1</argument>
+                        </arguments>
+                    -->
 
                     <!-- arguments de configuration système -->
-                    <systemProperties>
-                        <systemProperty>
-                            <key>myproperty</key>
-                            <value>myvalue</value>
-                        </systemProperty>
-                    </systemProperties>
-
+                    <!--
+                        <systemProperties>
+                                <systemProperty>
+                                    <key>myproperty</key>
+                                    <value>myvalue</value>
+                                </systemProperty>
+                        </systemProperties>
+                     -->
                 </configuration>
             </plugin>
+
         </plugins>
     </build>
+    <parent>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-parent</artifactId>
+        <version>1.7.25</version>
+    </parent>
+
 
     <dependencies>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.12</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.mockito</groupId>
-            <artifactId>mockito-core</artifactId>
-            <version>2.23.0</version>
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
 
+         <dependency>
+             <groupId>junit</groupId>
+             <artifactId>junit</artifactId>
+             <version>4.12</version>
+             <scope>test</scope>
+         </dependency>
+        <dependency>
+            <groupId>org.evosuite</groupId>
+            <artifactId>evosuite-standalone-runtime</artifactId>
+            <version>1.0.6</version>
+            <scope>test</scope>
+        </dependency>
+
+         <dependency>
+             <groupId>org.mockito</groupId>
+             <artifactId>mockito-core</artifactId>
+             <version>2.23.0</version>
+             <scope>test</scope>
+         </dependency>
+    </dependencies>
 
 </project>
