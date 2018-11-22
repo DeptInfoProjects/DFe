@@ -24,18 +24,9 @@
         <testSourceDirectory>src/test
         </testSourceDirectory> <!-- éventuellement à changer : localisation des fichiers sources des tests -->
         <plugins>
-            <plugin>
-                <groupId>org.evosuite.plugins</groupId>
-                <artifactId>evosuite-maven-plugin</artifactId>
-                <version>1.0.6</version>
-                <executions><execution>
-                    <goals> <goal> prepare </goal> </goals>
-                    <phase> process-test-classes </phase>
-                </execution></executions>
-            </plugin>
             <!-- la génération de la  javadoc s'utilise avec "mvn site" -->
-
             <plugin>
+
 
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
@@ -81,6 +72,17 @@
 
 
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.0</version>
+                <configuration>
+                    <source>1.8</source> <!-- éventuellement à changer : version de java -->
+                    <target>1.8</target> <!-- éventuellement à changer : version de java -->
+                </configuration>
+            </plugin>
+
+
+            <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>1.6.0</version> <!-- à ne pas changer : c'est la version du plugin (et pas de java) -->
@@ -117,34 +119,30 @@
 
         </plugins>
     </build>
-    <parent>
-        <groupId>org.slf4j</groupId>
-        <artifactId>slf4j-parent</artifactId>
-        <version>1.7.25</version>
-    </parent>
 
 
     <dependencies>
 
-         <dependency>
-             <groupId>junit</groupId>
-             <artifactId>junit</artifactId>
-             <version>4.12</version>
-             <scope>test</scope>
-         </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>2.23.0</version>
+            <scope>test</scope>
+        </dependency>
         <dependency>
             <groupId>org.evosuite</groupId>
-            <artifactId>evosuite-standalone-runtime</artifactId>
+            <artifactId>evosuite-master</artifactId>
             <version>1.0.6</version>
             <scope>test</scope>
         </dependency>
 
-         <dependency>
-             <groupId>org.mockito</groupId>
-             <artifactId>mockito-core</artifactId>
-             <version>2.23.0</version>
-             <scope>test</scope>
-         </dependency>
     </dependencies>
 
 </project>

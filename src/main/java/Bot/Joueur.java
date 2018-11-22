@@ -30,6 +30,8 @@ public class Joueur {
         return this.d2;
     }
 
+
+
     public void changementFace(Face Achat){
         Face FaceMinD1 = this.d1.FACEMIN();
         Face FaceMinD2 = this.d2.FACEMIN();
@@ -81,7 +83,7 @@ public class Joueur {
         if ( x >= 12 ){
         J1.getInventaireJoueur().setNbOR(x - 12);
         return Jardin.getSanctuaire(9);}
-        return J1.d1.compare2Face(d1.FACEMIN(), d2.FACEMIN());
+        return De.compare2Face(d1.FACEMIN(), d2.FACEMIN());
     }
 
     public String toString(){

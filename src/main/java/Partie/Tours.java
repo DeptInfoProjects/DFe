@@ -5,8 +5,17 @@ import De.Face;
 import Iles.Sanctuaire;
 
 public class Tours {
-    private Joueur joueur1 = new Joueur();
-    private Joueur joueur2 = new Joueur();
+    private Joueur joueur1;
+
+    static {
+        new Joueur();
+    }
+
+    private Joueur joueur2;
+
+   static {
+        new Joueur();
+    }
 
     private void InitInvent(){
         joueur1.getInventaireJoueur().setInventaire(3,0,0,0);
@@ -28,7 +37,6 @@ public class Tours {
             Face memFd2J1 = joueur1.getD2().getFace();
             Face memFd1J2 = joueur2.getD1().getFace();
             Face memFd2J2 = joueur2.getD2().getFace();
-
             // On ajoute les ressources obtenues aux ressources de l'inventaire
             joueur1.getInventaireJoueur().adderFace(memFd1J1);
             joueur1.getInventaireJoueur().adderFace(memFd2J1);
