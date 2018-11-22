@@ -4,9 +4,9 @@ import De.*;
 
 public class Joueur {
 
-    public De d1 = new De();
-    public De d2 = new De();
-    public Inventaire Sac;
+    private De d1 = new De();
+    private De d2 = new De();
+    private Inventaire Sac;
 
 
     public Joueur(){
@@ -15,7 +15,23 @@ public class Joueur {
         Sac = new Inventaire();
 
     }
+    public Inventaire getInventaireJoueur(){return this.Sac;}
 
+    public De getD1() {
+        return this.d1;
+    }
+
+    public De getD2() {
+        return this.d2;
+    }
+
+    public void changementFace(Face Achat){
+        Face FaceMinD1 = this.d1.FACEMIN();
+        Face FaceMinD2 = this.d2.FACEMIN();
+        if (FaceMinD1 == FaceMinD2 ) this.d1.setFACE(Achat);
+        if (De.compare2Face(FaceMinD1,FaceMinD2) == FaceMinD1) this.d1.setFACE(Achat);
+        else this.d2.setFACE(Achat);
+    }
 
     public String toString() {
         String vide;

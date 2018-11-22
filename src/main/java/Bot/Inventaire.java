@@ -10,6 +10,14 @@ public class Inventaire {
     private int nbLunaire;
     private int nbVictoire;
 
+    public Inventaire(){}
+
+    public void Inventaire(int OR, int SOLAIRE, int LUNAIRE , int VICTOIRE){
+        this.nbOR = OR;
+        this.nbSolaire = SOLAIRE;
+        this.nbLunaire = LUNAIRE;
+        this.nbVictoire = VICTOIRE;
+    }
     public void setInventaire(int OR, int SOLAIRE, int LUNAIRE , int VICTOIRE){
         this.nbOR = OR;
         this.nbSolaire = SOLAIRE;
@@ -31,7 +39,7 @@ public class Inventaire {
         return nbSolaire;
     }
 
-    public void setNbSolaire(int nbSolaire) {
+    private void setNbSolaire(int nbSolaire) {
         this.nbSolaire = nbSolaire;
     }
 
@@ -39,7 +47,7 @@ public class Inventaire {
         return nbLunaire;
     }
 
-    public void setNbLunaire(int nbLunaire) {
+    private void setNbLunaire(int nbLunaire) {
         this.nbLunaire = nbLunaire;
     }
 
@@ -47,7 +55,7 @@ public class Inventaire {
         return nbVictoire;
     }
 
-    public void setNbVictoire(int nbVictoire) {
+    private void setNbVictoire(int nbVictoire) {
         this.nbVictoire = nbVictoire;
     }
 

@@ -38,7 +38,7 @@ public class De {
 
         FACE6 = new Face(2, Ressource.VICTOIRE);
     }
-    public  int Rand(){
+    private  int Rand(){
         Random rand = new Random();
         return rand.nextInt(6) + 1;
     }
@@ -80,7 +80,7 @@ public class De {
     }
 
 
-    private Face FACEMIN(){
+    public Face FACEMIN(){
         int ValeurMin = Minimum(FACE1.getValeur() ,FACE2.getValeur() ,FACE3.getValeur() ,FACE4.getValeur() ,FACE5.getValeur() ,FACE6.getValeur());
 
         if (ValeurMin == FACE1.getValeur()&& FACE1.getRes() == Ressource.OR) return FACE1;
@@ -98,6 +98,30 @@ public class De {
         FACEMIN().setRes(Choix.getRes());
 
     }
+
+    public static Face compare2Face(Face Face1, Face Face2) {
+        if (Face1.getRes() == Face2.getRes()) return Face1;
+        if (Face1.getRes() == Face2.getRes() && Face1.getValeur() < Face2.getValeur()) return Face1;
+        if (Face1.getRes() == Face2.getRes() && Face1.getValeur() > Face2.getValeur()) return Face2;
+
+        if (Face1.getRes() == Ressource.OR && Face2.getRes() == Ressource.LUNAIRE) return Face1;
+        if (Face1.getRes() == Ressource.OR && Face2.getRes() == Ressource.SOLAIRE) return Face1;
+        if (Face1.getRes() == Ressource.OR && Face2.getRes() == Ressource.VICTOIRE) return Face1;
+        if (Face2.getRes() == Ressource.OR && Face1.getRes() == Ressource.LUNAIRE) return Face2;
+        if (Face2.getRes() == Ressource.OR && Face1.getRes() == Ressource.SOLAIRE) return Face2;
+        if (Face2.getRes() == Ressource.OR && Face1.getRes() == Ressource.VICTOIRE) return Face2;
+
+        if (Face1.getRes() == Ressource.LUNAIRE && Face2.getRes() == Ressource.SOLAIRE) return Face1;
+        if (Face1.getRes() == Ressource.LUNAIRE && Face2.getRes() == Ressource.VICTOIRE) return Face1;
+        if (Face2.getRes() == Ressource.LUNAIRE && Face1.getRes() == Ressource.SOLAIRE) return Face2;
+        if (Face2.getRes() == Ressource.LUNAIRE && Face1.getRes() == Ressource.VICTOIRE) return Face2;
+
+        if (Face1.getRes() == Ressource.SOLAIRE && Face2.getRes() == Ressource.VICTOIRE) return Face1;
+        if (Face2.getRes() == Ressource.SOLAIRE && Face1.getRes() == Ressource.VICTOIRE) return Face2;
+        else return Face1;
+
+    }
+
 
     public String toString() {
         String vide;
