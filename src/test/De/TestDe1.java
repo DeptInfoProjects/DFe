@@ -6404,7 +6404,7 @@ public class TestDe1 extends TestDe2 {
         assertNotEquals(face1, face0);
         assertNotEquals(face1, face2);
         assertNotSame(face1, face0);
-        assertNotSame(face1, face2);
+        assertNotSame(face2, face1);
         assertEquals(1, (int) face1.getValeur());
         assertEquals(Ressource.SOLAIRE, face1.getRes());
 
