@@ -17,12 +17,12 @@ public class Face {
         return valeur;
     }
 
-    public void setValeur(Integer valeur)  {
+    void setValeur(Integer valeur) {
         this.valeur = valeur;
     }
 
     //  GETTER & SETTER RESSOURCE //
-    public void setRes(Ressource res){
+    void setRes(Ressource res) {
         this.res = res;
     }
 

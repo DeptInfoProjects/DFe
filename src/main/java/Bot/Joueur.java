@@ -40,9 +40,9 @@ public class Joueur {
         else this.d2.setFACE(Achat);
     }
 
-    private int Rand(Integer f) {
+    private int Rand(Integer x) {
         Random rand = new Random();
-        return rand.nextInt(f);
+        return rand.nextInt(x);
     }
 
     public Face AcheterFace(Joueur J1) {

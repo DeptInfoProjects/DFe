@@ -2,7 +2,6 @@ package Partie;
 
 import Bot.Joueur;
 import De.Face;
-import Iles.Sanctuaire;
 
 public class Tours {
     private Joueur joueur1;
@@ -30,8 +29,7 @@ public class Tours {
     }
 
 
-    public void Partie(){
-        Sanctuaire Jardin = new Sanctuaire();
+    void Partie() {
         for(int acc = 0 ; acc < 9; acc++) {
             Face memFd1J1 = joueur1.getD1().getFace();
             Face memFd2J1 = joueur1.getD2().getFace();
@@ -44,7 +42,7 @@ public class Tours {
             joueur2.getInventaireJoueur().adderFace(memFd2J2);
 
 
-            String s = String.format("| \t");
+            String s = "| \t";
 
             System.out.println("              Tour : " + (acc + 1) + '\n' +
                     " Joueur 1 a obtenu : " + '\t' + '\t' + '\t' + '\t' + s + " Joueur 2 a obtenu : " + '\n' +

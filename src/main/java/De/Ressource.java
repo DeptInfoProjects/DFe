@@ -8,11 +8,7 @@ public enum Ressource {
     OR,
     SOLAIRE,
     LUNAIRE,
-    VICTOIRE;
+    VICTOIRE
 
-
-    private void nom() {
-        String nom = "";
-    }
 
 }
