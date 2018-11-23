@@ -20,8 +20,8 @@ public class TestSanctuaire1 extends TestSanctuaire2 {
     @Test(timeout = 4000)
     public void test1()  {
         Sanctuaire sanctuaire0 = new Sanctuaire();
-        Face face0 = sanctuaire0.getSanctuaire(2);
-        assertEquals(3, (int)face0.getValeur());
+        Face face0 = sanctuaire0.getSanctuaire(5);
+        assertEquals(6, (int) face0.getValeur());
     }
     
     @Test(timeout = 4000)

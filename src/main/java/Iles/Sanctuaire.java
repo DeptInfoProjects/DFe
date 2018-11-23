@@ -20,7 +20,6 @@ public class Sanctuaire {
 
     private Face or6 = new Face(6, Ressource.OR); /* x1  */
 
-    // pour les FACES qui cout 5 //
 
     // pour les FACES qui cout 6 //
     private Face lunaire2 = new Face(2, Ressource.LUNAIRE);  /* x4 */
@@ -34,20 +33,7 @@ public class Sanctuaire {
     private Face victoire4 = new Face(4, Ressource.VICTOIRE);     /* x1*/
 
     public  Sanctuaire() {
-        this.or3 = or3;
-        this.lunaire1 = lunaire1;
 
-        this.or4 = or4;
-        this.solaire1 = solaire1;
-
-        this.or6 = or6;
-
-        this.lunaire2 = lunaire2;
-
-        this.solaire2 = solaire2;
-        this.victoire3 = victoire3;
-
-        this.victoire4 = victoire4;
     }
 
 
@@ -57,9 +43,26 @@ public class Sanctuaire {
                 }
             if (n ==2) {
                 return or3;
-                }
-             else {
-                 return victoire4;
+            }
+        if (n == 3) {
+            return or4;
+        }
+        if (n == 4) {
+            return solaire1;
+        }
+        if (n == 5) {
+            return or6;
+        }
+        if (n == 6) {
+            return lunaire2;
+        }
+        if (n == 7) {
+            return solaire2;
+        }
+        if (n == 8) {
+            return victoire3;
+        } else {
+            return victoire4;
             }
             }
 
