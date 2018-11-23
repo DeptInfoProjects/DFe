@@ -2,13 +2,13 @@ package Partie;
 
 import org.junit.Test;
 import static org.junit.Assert.*;
-import Partie.Final;
+
 import org.evosuite.runtime.EvoRunner;
 import org.evosuite.runtime.EvoRunnerParameters;
 import org.junit.runner.RunWith;
 
 @RunWith(EvoRunner.class) @EvoRunnerParameters(mockJVMNonDeterminism = true, useVFS = true, useVNET = true, resetStaticState = true, separateClassLoader = true, useJEE = true)
-public class FinalTest1 extends FinalTest2 {
+public class TestFinal1 extends TestFinal2 {
     
     @Test(timeout = 4000)
     public void test0()  {

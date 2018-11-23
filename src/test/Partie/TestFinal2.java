@@ -8,7 +8,7 @@ import org.junit.AfterClass;
 import org.evosuite.runtime.sandbox.Sandbox;
 
 @EvoSuiteClassExclude
-public class FinalTest2{
+public class TestFinal2 {
     
     @org.junit.Rule
     public org.evosuite.runtime.vnet.NonFunctionalRequirementRule nfr = new org.evosuite.runtime.vnet.NonFunctionalRequirementRule();
@@ -77,7 +77,7 @@ public class FinalTest2{
     }
     
     private static void initializeClasses() {
-        org.evosuite.runtime.classhandling.ClassStateSupport.initializeClasses(FinalTest2.class.getClassLoader() ,
+        org.evosuite.runtime.classhandling.ClassStateSupport.initializeClasses(TestFinal2.class.getClassLoader() ,
                                                                                "De.Face",
                                                                                "Bot.Joueur",
                                                                                "De.De",
@@ -90,7 +90,7 @@ public class FinalTest2{
     } 
     
     private static void resetClasses() {
-        org.evosuite.runtime.classhandling.ClassResetter.getInstance().setClassLoader(FinalTest2.class.getClassLoader());
+        org.evosuite.runtime.classhandling.ClassResetter.getInstance().setClassLoader(TestFinal2.class.getClassLoader());
         
         org.evosuite.runtime.classhandling.ClassStateSupport.resetClasses(
                                                                           "Partie.Final",

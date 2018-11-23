@@ -6,11 +6,10 @@ import org.junit.Before;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.evosuite.runtime.sandbox.Sandbox;
-import org.evosuite.runtime.sandbox.Sandbox.SandboxMode;
 
 import static org.evosuite.shaded.org.mockito.Mockito.*;
 @EvoSuiteClassExclude
-public class ToursTest2 {
+public class TestTours2 {
     
     @org.junit.Rule
     public org.evosuite.runtime.vnet.NonFunctionalRequirementRule nfr = new org.evosuite.runtime.vnet.NonFunctionalRequirementRule();
@@ -21,7 +20,7 @@ public class ToursTest2 {
     
     
     @BeforeClass
-    public static void initEvoSuiteFramework() {
+    public static void initEvoSuiteFramework() throws ClassNotFoundException {
         org.evosuite.runtime.RuntimeSettings.className = "Partie.Tours";
         org.evosuite.runtime.GuiSupport.initialize();
         org.evosuite.runtime.RuntimeSettings.maxNumberOfThreads = 100;
@@ -33,7 +32,7 @@ public class ToursTest2 {
         setSystemProperties();
         initializeClasses();
         org.evosuite.runtime.Runtime.getInstance().resetRuntime();
-        try { initMocksToAvoidTimeoutsInTheTests(); } catch(ClassNotFoundException e) {}
+        initMocksToAvoidTimeoutsInTheTests();
     }
     
     @AfterClass
@@ -80,7 +79,7 @@ public class ToursTest2 {
     }
     
     private static void initializeClasses() {
-        org.evosuite.runtime.classhandling.ClassStateSupport.initializeClasses(ToursTest2.class.getClassLoader() ,
+        org.evosuite.runtime.classhandling.ClassStateSupport.initializeClasses(TestTours2.class.getClassLoader() ,
                                                                                "De.Face",
                                                                                "Bot.Joueur",
                                                                                "De.De",
@@ -91,14 +90,14 @@ public class ToursTest2 {
                                                                                );
     } 
     private static void initMocksToAvoidTimeoutsInTheTests() throws ClassNotFoundException { 
-        mock(Class.forName("Bot.Inventaire", false, ToursTest2.class.getClassLoader()));
-        mock(Class.forName("Bot.Joueur", false, ToursTest2.class.getClassLoader()));
-        mock(Class.forName("De.De", false, ToursTest2.class.getClassLoader()));
-        mock(Class.forName("De.Face", false, ToursTest2.class.getClassLoader()));
+        mock(Class.forName("Bot.Inventaire", false, TestTours2.class.getClassLoader()));
+        mock(Class.forName("Bot.Joueur", false, TestTours2.class.getClassLoader()));
+        mock(Class.forName("De.De", false, TestTours2.class.getClassLoader()));
+        mock(Class.forName("De.Face", false, TestTours2.class.getClassLoader()));
     }
     
     private static void resetClasses() {
-        org.evosuite.runtime.classhandling.ClassResetter.getInstance().setClassLoader(ToursTest2.class.getClassLoader()); 
+        org.evosuite.runtime.classhandling.ClassResetter.getInstance().setClassLoader(TestTours2.class.getClassLoader());
         
         org.evosuite.runtime.classhandling.ClassStateSupport.resetClasses(
                                                                           "Partie.Tours",

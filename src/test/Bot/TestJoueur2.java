@@ -1,4 +1,5 @@
-package Iles;
+package Bot;
+
 import org.evosuite.runtime.annotation.EvoSuiteClassExclude;
 import org.junit.BeforeClass;
 import org.junit.Before;
@@ -7,19 +8,19 @@ import org.junit.AfterClass;
 import org.evosuite.runtime.sandbox.Sandbox;
 
 @EvoSuiteClassExclude
-public class SanctuaireTest2{
-    
+public class TestJoueur2 {
+
     @org.junit.Rule
     public org.evosuite.runtime.vnet.NonFunctionalRequirementRule nfr = new org.evosuite.runtime.vnet.NonFunctionalRequirementRule();
-    
+
     private static final java.util.Properties defaultProperties = (java.util.Properties) java.lang.System.getProperties().clone();
-    
+
     private org.evosuite.runtime.thread.ThreadStopper threadStopper =  new org.evosuite.runtime.thread.ThreadStopper (org.evosuite.runtime.thread.KillSwitchHandler.getInstance(), 3000);
-    
-    
+
+
     @BeforeClass
     public static void initEvoSuiteFramework() {
-        org.evosuite.runtime.RuntimeSettings.className = "Iles.Sanctuaire";
+        org.evosuite.runtime.RuntimeSettings.className = "Bot.Joueur";
         org.evosuite.runtime.GuiSupport.initialize();
         org.evosuite.runtime.RuntimeSettings.maxNumberOfThreads = 100;
         org.evosuite.runtime.RuntimeSettings.maxNumberOfIterationsPerLoop = 10000;
@@ -31,13 +32,13 @@ public class SanctuaireTest2{
         initializeClasses();
         org.evosuite.runtime.Runtime.getInstance().resetRuntime();
     }
-    
+
     @AfterClass
     public static void clearEvoSuiteFramework(){
         Sandbox.resetDefaultSecurityManager();
         java.lang.System.setProperties((java.util.Properties) defaultProperties.clone());
     }
-    
+
     @Before
     public void initTestCase(){
         threadStopper.storeCurrentThreads();
@@ -49,7 +50,7 @@ public class SanctuaireTest2{
         org.evosuite.runtime.Runtime.getInstance().resetRuntime();
         org.evosuite.runtime.agent.InstrumentingAgent.activate();
     }
-    
+
     @After
     public void doneWithTestCase(){
         threadStopper.killAndJoinClientThreads();
@@ -60,9 +61,9 @@ public class SanctuaireTest2{
         org.evosuite.runtime.agent.InstrumentingAgent.deactivate();
         org.evosuite.runtime.GuiSupport.restoreHeadlessMode();
     }
-    
+
     private static void setSystemProperties() {
-        
+
         java.lang.System.setProperties((java.util.Properties) defaultProperties.clone());
         java.lang.System.setProperty("file.encoding", "UTF-8");
         java.lang.System.setProperty("java.awt.headless", "true");
@@ -74,22 +75,28 @@ public class SanctuaireTest2{
         java.lang.System.setProperty("user.name", "hide");
         java.lang.System.setProperty("user.timezone", "Europe/Paris");
     }
-    
+
     private static void initializeClasses() {
-        org.evosuite.runtime.classhandling.ClassStateSupport.initializeClasses(SanctuaireTest2.class.getClassLoader() ,
-                                                                               "De.Face",
-                                                                               "De.Ressource",
-                                                                               "Iles.Sanctuaire"
-                                                                               );
-    } 
-    
+        org.evosuite.runtime.classhandling.ClassStateSupport.initializeClasses(TestJoueur2.class.getClassLoader() ,
+                "De.Face",
+                "Bot.Joueur",
+                "De.De",
+                "De.Ressource",
+                "Iles.Sanctuaire",
+                "Bot.Inventaire"
+        );
+    }
+
     private static void resetClasses() {
-        org.evosuite.runtime.classhandling.ClassResetter.getInstance().setClassLoader(SanctuaireTest2.class.getClassLoader());
-        
+        org.evosuite.runtime.classhandling.ClassResetter.getInstance().setClassLoader(TestJoueur2.class.getClassLoader());
+
         org.evosuite.runtime.classhandling.ClassStateSupport.resetClasses(
-                                                                          "Iles.Sanctuaire",
-                                                                          "De.Ressource",
-                                                                          "De.Face"
-                                                                          );
+                "Bot.Joueur",
+                "De.Ressource",
+                "De.De",
+                "De.Face",
+                "Bot.Inventaire",
+                "Iles.Sanctuaire"
+        );
     }
 }

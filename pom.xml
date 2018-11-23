@@ -23,7 +23,16 @@
         </sourceDirectory>  <!-- éventuellement à changer : localisation des fichiers sources -->
         <testSourceDirectory>src/test
         </testSourceDirectory> <!-- éventuellement à changer : localisation des fichiers sources des tests -->
+
         <plugins>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.22.1</version>
+            </plugin>
+
+
             <!-- la génération de la  javadoc s'utilise avec "mvn site" -->
             <plugin>
 
@@ -116,13 +125,17 @@
                      -->
                 </configuration>
             </plugin>
-
         </plugins>
     </build>
 
 
     <dependencies>
-
+        <dependency>
+            <groupId>org.evosuite</groupId>
+            <artifactId>evosuite-master</artifactId>
+            <version>1.0.6</version>
+            <scope>test</scope>
+        </dependency>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -136,12 +149,7 @@
             <version>2.23.0</version>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>org.evosuite</groupId>
-            <artifactId>evosuite-master</artifactId>
-            <version>1.0.6</version>
-            <scope>test</scope>
-        </dependency>
+
 
     </dependencies>
 
