@@ -3,6 +3,8 @@ package De;
 
 import org.junit.Test;
 
+import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.*;
 import static org.evosuite.runtime.EvoAssertions.*;
 
@@ -3859,7 +3861,6 @@ public class TestDe1 extends TestDe2 {
         assertEquals(Ressource.SOLAIRE, face2.getRes());
         assertNotNull(face2);
 
-        int int0 = 4459;
         de0.FACE5 = null;
         Random.setNextRandom(4459);
         Face face3 = de0.getFace();
@@ -5076,7 +5077,6 @@ public class TestDe1 extends TestDe2 {
         assertEquals(Ressource.OR, face2.getRes());
         assertNotNull(face2);
 
-        int int0 = 4438;
         de0.FACE5 = null;
         Random.setNextRandom(4438);
         Face face3 = de0.getFace();

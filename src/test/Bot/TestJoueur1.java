@@ -1,16 +1,15 @@
 package Bot;
-
-import org.junit.Test;
-import static org.junit.Assert.*;
-import static org.evosuite.runtime.EvoAssertions.*;
-
 import De.De;
 import De.Face;
 import De.Ressource;
 import org.evosuite.runtime.EvoRunner;
 import org.evosuite.runtime.EvoRunnerParameters;
 import org.evosuite.runtime.Random;
+import org.junit.Test;
 import org.junit.runner.RunWith;
+
+import static org.evosuite.runtime.EvoAssertions.verifyException;
+import static org.junit.Assert.*;
 
 @RunWith(EvoRunner.class) @EvoRunnerParameters(mockJVMNonDeterminism = true, useVFS = true, useVNET = true, resetStaticState = true, separateClassLoader = true, useJEE = true)
 public class TestJoueur1 extends TestJoueur2 {

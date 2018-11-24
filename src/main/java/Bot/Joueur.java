@@ -40,15 +40,15 @@ public class Joueur {
         else this.d2.setFACE(Achat);
     }
 
-    private int Rand(Integer x) {
+    private int Rand() {
         Random rand = new Random();
-        return rand.nextInt(x);
+        return rand.nextInt(2);
     }
 
     public Face AcheterFace(Joueur J1) {
         Sanctuaire Jardin = new Sanctuaire();
         int x = J1.getInventaireJoueur().getNbOR();
-        int rand = Rand(2);
+        int rand = Rand();
         if (x == 2) {
             J1.getInventaireJoueur().setNbOR(x - 2);
             if (rand == 0) return Jardin.getSanctuaire(2);

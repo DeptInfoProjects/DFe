@@ -1,15 +1,16 @@
 package Bot;
 
-import org.junit.Test;
-import static org.junit.Assert.*;
-import static org.evosuite.shaded.org.mockito.Mockito.*;
-
 import De.Face;
 import De.Ressource;
 import org.evosuite.runtime.EvoRunner;
 import org.evosuite.runtime.EvoRunnerParameters;
 import org.evosuite.runtime.ViolatedAssumptionAnswer;
+import org.junit.Test;
 import org.junit.runner.RunWith;
+
+import static org.evosuite.shaded.org.mockito.Mockito.doReturn;
+import static org.evosuite.shaded.org.mockito.Mockito.mock;
+import static org.junit.Assert.assertEquals;
 
 @RunWith(EvoRunner.class) @EvoRunnerParameters(mockJVMNonDeterminism = true, useVFS = true, useVNET = true, resetStaticState = true, separateClassLoader = true, useJEE = true)
 public class TestInventaire1 extends TestInventaire2 {
@@ -33,8 +34,6 @@ public class TestInventaire1 extends TestInventaire2 {
         Inventaire inventaire0 = new Inventaire();
         Ressource ressource0 = Ressource.OR;
         Integer integer0 = 0;
-        Ressource ressource1 = Ressource.SOLAIRE;
-        Integer integer1 = 2;
         Face face0 = mock(Face.class, new ViolatedAssumptionAnswer());
         doReturn(ressource0, null, null, null).when(face0).getRes();
         doReturn(integer0).when(face0).getValeur();
