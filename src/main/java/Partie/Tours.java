@@ -74,7 +74,10 @@ public class Tours {
         else if (joueur1.getInventaireJoueur().getNbVictoire() > joueur2.getInventaireJoueur().getNbVictoire()){
             System.out.println("Joueur 1 gagnant avec " + joueur1.getInventaireJoueur().getNbVictoire() + " points de victoires" );
 
-        } else{System.out.println("Les deux joueurs ont fait match nul avec " + joueur1.getInventaireJoueur().getNbVictoire() + " points de victoires");}
+
+        } else {
+            System.out.println("Les deux joueurs ont fait match nul avec " + joueur1.getInventaireJoueur().getNbVictoire() + " points de victoires");
+        }
     }
 
 }
