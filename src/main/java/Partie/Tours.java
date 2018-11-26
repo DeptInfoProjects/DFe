@@ -2,7 +2,7 @@ package Partie;
 
 import Bot.Joueur;
 import De.Face;
-import Iles.Sanctuaire;
+
 
 public class Tours {
     private Joueur joueur1;
@@ -28,10 +28,18 @@ public class Tours {
         InitInvent();
 
     }
+    private  void affichage(){
+        System.out.println("        Joueur 1  : " + '\t' + '\t'+ '\t' + '\t' +"  Joueur 2  :");
+        System.out.println(String.format("|%-8s %s|  |%-8s %s|     |%-8s %s|  |%-8s %s|    |%-12s  %s|  " , joueur1.getD1().FACE1.getRes(), joueur1.getD1().FACE1.getValeur(),joueur1.getD2().FACE1.getRes(), joueur1.getD2().FACE1.getValeur(),joueur2.getD1().FACE1.getRes(),joueur2.getD1().FACE1.getValeur(),joueur2.getD2().FACE1.getRes(),joueur2.getD2().FACE1.getValeur() , "Inventaire J1 :" , "Inventaire J2 :"));
+        System.out.println(String.format("|%-8s %s|  |%-8s %s|     |%-8s %s|  |%-8s %s|    |%-12s %s|  |%-12s %s|" , joueur1.getD1().FACE2.getRes(), joueur1.getD1().FACE2.getValeur(),joueur1.getD2().FACE2.getRes(), joueur1.getD2().FACE2.getValeur(),joueur2.getD1().FACE2.getRes(),joueur2.getD1().FACE2.getValeur(),joueur2.getD2().FACE2.getRes(),joueur2.getD2().FACE2.getValeur() , "OR :" ,joueur1.getInventaireJoueur().getNbOR(), "OR :" ,joueur2.getInventaireJoueur().getNbOR()));
+        System.out.println(String.format("|%-8s %s|  |%-8s %s|     |%-8s %s|  |%-8s %s|    |%-12s %s|  |%-12s %s|" , joueur1.getD1().FACE3.getRes(), joueur1.getD1().FACE3.getValeur(),joueur1.getD2().FACE3.getRes(), joueur1.getD2().FACE3.getValeur(),joueur2.getD1().FACE3.getRes(),joueur2.getD1().FACE3.getValeur(),joueur2.getD2().FACE3.getRes(),joueur2.getD2().FACE3.getValeur() , "SOLAIRE : ", joueur1.getInventaireJoueur().getNbSolaire(), "SOLAIRE : ", joueur2.getInventaireJoueur().getNbSolaire()));
+        System.out.println(String.format("|%-8s %s|  |%-8s %s|     |%-8s %s|  |%-8s %s|    |%-12s %s|  |%-12s %s|" , joueur1.getD1().FACE4.getRes(), joueur1.getD1().FACE4.getValeur(),joueur1.getD2().FACE4.getRes(), joueur1.getD2().FACE4.getValeur(),joueur2.getD1().FACE4.getRes(),joueur2.getD1().FACE4.getValeur(),joueur2.getD2().FACE4.getRes(),joueur2.getD2().FACE4.getValeur() , "LUNAIRE : ", joueur1.getInventaireJoueur().getNbLunaire(), "LUNAIRE : ", joueur2.getInventaireJoueur().getNbLunaire()));
+        System.out.println(String.format("|%-8s %s|  |%-8s %s|     |%-8s %s|  |%-8s %s|    |%-12s %s|  |%-12s %s|" , joueur1.getD1().FACE5.getRes(), joueur1.getD1().FACE5.getValeur(),joueur1.getD2().FACE5.getRes(), joueur1.getD2().FACE5.getValeur(),joueur2.getD1().FACE5.getRes(),joueur2.getD1().FACE5.getValeur(),joueur2.getD2().FACE5.getRes(),joueur2.getD2().FACE5.getValeur() , "VICTOIRE : ",joueur1.getInventaireJoueur().getNbVictoire(),"VICTOIRE : " ,joueur2.getInventaireJoueur().getNbVictoire()));
+        System.out.println(String.format("|%-8s %s|  |%-8s %s|     |%-8s %s|  |%-8s %s|" , joueur1.getD1().FACE6.getRes(), joueur1.getD1().FACE6.getValeur(),joueur1.getD2().FACE6.getRes(), joueur1.getD2().FACE6.getValeur(),joueur2.getD1().FACE6.getRes(),joueur2.getD1().FACE6.getValeur(),joueur2.getD2().FACE6.getRes(),joueur2.getD2().FACE6.getValeur()));
+    }
 
 
     public void Partie(){
-        Sanctuaire Jardin = new Sanctuaire();
         for(int acc = 0 ; acc < 9; acc++) {
             Face memFd1J1 = joueur1.getD1().getFace();
             Face memFd2J1 = joueur1.getD2().getFace();
@@ -42,33 +50,23 @@ public class Tours {
             joueur1.getInventaireJoueur().adderFace(memFd2J1);
             joueur2.getInventaireJoueur().adderFace(memFd1J2);
             joueur2.getInventaireJoueur().adderFace(memFd2J2);
+            System.out.println("__________________________________________________________________________________________");
+            System.out.println(" Tour " + acc + ":");
+            System.out.println("__________________________________________________________________________________________");
 
-
-            String s = String.format("| \t");
-
-            System.out.println("              Tour : " + (acc + 1) + '\n' +
-                    " Joueur 1 a obtenu : " + '\t' + '\t' + '\t' + '\t' + s + " Joueur 2 a obtenu : " + '\n' +
-                    '\t' + memFd1J1.getValeur() + " " +  memFd1J1.getRes()  + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + s +'\t' + memFd1J2.getValeur() + " " + memFd1J2.getRes() + '\n' +
-                    '\t' + memFd2J1.getValeur() + " " +  memFd2J1.getRes()  + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + s +'\t' + memFd2J2.getValeur() + " " + memFd2J2.getRes() + '\n');
-
-
+            System.out.println(" Joueur 1 a obtenu : " + '\t' + '\t' + '\t' + '\t' + " Joueur 2 a obtenu : ");
+            System.out.println(String.format("     |%-8s %s|                        |%-8s %s|     ",memFd1J1.getRes(), memFd1J1.getValeur(),memFd1J2.getRes(),memFd1J2.getValeur()));
+            System.out.println(String.format("     |%-8s %s|                        |%-8s %s|      \n",memFd2J1.getRes(), memFd2J1.getValeur(),memFd2J2.getRes(),memFd2J2.getValeur()));
+            affichage();
+            
             Face AchatJ1 = joueur1.AcheterFace(joueur1);
             Face AchatJ2 = joueur2.AcheterFace(joueur2);
 
             joueur1.changementFace(AchatJ1);
             joueur2.changementFace(AchatJ2);
 
-
-            System.out.println("  Joueur 1  : " + '\t' + '\t'+ '\t' + '\t' +  '\t' + '\t' + s + "  Joueur 2  :");
-            System.out.println( "Dé 1 :" + '\t' + "Dé 2 : " + '\t' +  "Inventaire : " + '\t' + '\t' + s + "Dé 1 :" + '\t' + "Dé 2 : " + '\t' +  "Inventaire : " + '\n' +
-                    joueur1.getD1().FACE1.getRes() + " " + joueur1.getD1().FACE1.getValeur() + '\t'+ joueur1.getD2().FACE1.getRes() + " " + joueur1.getD2().FACE1.getValeur() + '\t' + "Or       :  "     + joueur1.getInventaireJoueur().getNbOR()      + '\t' + '\t' + s + joueur2.getD1().FACE1.getRes() + " " + joueur2.getD1().FACE1.getValeur() + '\t'+ joueur2.getD2().FACE1.getRes() + " " + joueur2.getD2().FACE1.getValeur() + '\t' + "Or       :  "     + joueur2.getInventaireJoueur().getNbOR()      + '\n' +
-                    joueur1.getD1().FACE2.getRes() + " " + joueur1.getD1().FACE2.getValeur() + '\t'+ joueur1.getD2().FACE2.getRes() + " " + joueur1.getD2().FACE2.getValeur() + '\t' + "Solaire  :  "     + joueur1.getInventaireJoueur().getNbSolaire() + '\t' + '\t' + s + joueur2.getD1().FACE2.getRes() + " " + joueur2.getD1().FACE2.getValeur() + '\t'+ joueur2.getD2().FACE2.getRes() + " " + joueur2.getD2().FACE2.getValeur() + '\t' + "Solaire  :  "     + joueur2.getInventaireJoueur().getNbSolaire() + '\n' +
-                    joueur1.getD1().FACE3.getRes() + " " + joueur1.getD1().FACE3.getValeur() + '\t'+ joueur1.getD2().FACE3.getRes() + " " + joueur1.getD2().FACE3.getValeur() + '\t' + "Lunaire :  "     + joueur1.getInventaireJoueur().getNbLunaire() + '\t' + '\t' + s + joueur2.getD1().FACE3.getRes() + " " + joueur2.getD1().FACE3.getValeur() + '\t'+ joueur2.getD2().FACE3.getRes() + " " + joueur2.getD2().FACE3.getValeur() + '\t' + "Lunaire  :  "     + joueur2.getInventaireJoueur().getNbLunaire() + '\n' +
-                    joueur1.getD1().FACE4.getRes() + " " + joueur1.getD1().FACE4.getValeur() + '\t'+ joueur1.getD2().FACE4.getRes() + " " + joueur1.getD2().FACE4.getValeur() + '\t' + "Victoire :  "     + joueur1.getInventaireJoueur().getNbVictoire()+ '\t' + '\t' + s + joueur2.getD1().FACE4.getRes() + " " + joueur2.getD1().FACE4.getValeur() + '\t'+ joueur2.getD2().FACE4.getRes() + " " + joueur2.getD2().FACE4.getValeur() + '\t' + "Victoire :  "     + joueur2.getInventaireJoueur().getNbVictoire()+ '\n' +
-                    joueur1.getD1().FACE5.getRes() + " " + joueur1.getD1().FACE5.getValeur() + '\t'+ joueur1.getD2().FACE5.getRes() + " " + joueur1.getD2().FACE5.getValeur() + '\t' + '\t' + '\t' + '\t' + '\t' + s +                 joueur2.getD1().FACE5.getRes() + " " + joueur2.getD1().FACE5.getValeur() + '\t'+ joueur2.getD2().FACE5.getRes() + " " + joueur2.getD2().FACE5.getValeur() + '\n' +
-                    joueur1.getD1().FACE6.getRes() + " " + joueur1.getD1().FACE6.getValeur() + '\t'+ joueur1.getD2().FACE6.getRes() + " " + joueur1.getD2().FACE6.getValeur() + '\t' + '\t' + '\t' + '\t' + s +                        joueur2.getD1().FACE6.getRes() + " " + joueur2.getD1().FACE6.getValeur() + '\t'+ joueur2.getD2().FACE6.getRes() + " " + joueur2.getD2().FACE6.getValeur() + '\n');
-            System.out.println("__________________________________________________________________ \n");
         }
+        System.out.println("__________________________________________________________________________________________");
         if (joueur1.getInventaireJoueur().getNbVictoire() < joueur2.getInventaireJoueur().getNbVictoire()){
             System.out.println("Joueur 2 gagnant avec " + joueur2.getInventaireJoueur().getNbVictoire() + " points de victoires" );
 
