@@ -75,9 +75,9 @@ public class De {
         return Math.min(a,Math.min(b,Math.min(c,Math.min(d,Math.min(e,f))))) ;
     }
 
-    private int ValeurMin(){
+   /*private int ValeurMin(){
         return Minimum(FACE1.getValeur() ,FACE2.getValeur() ,FACE3.getValeur() ,FACE4.getValeur() ,FACE5.getValeur() ,FACE6.getValeur());
-    }
+    }*/
 
 
     public Face FACEMIN(){

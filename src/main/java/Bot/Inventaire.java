@@ -1,6 +1,5 @@
 package Bot;
 
-import Bot.*;
 import De.*;
 
 
@@ -12,7 +11,7 @@ public class Inventaire {
 
     public Inventaire(){}
 
-    public void Inventaire(int OR, int SOLAIRE, int LUNAIRE , int VICTOIRE){
+    public Inventaire(int OR, int SOLAIRE, int LUNAIRE, int VICTOIRE) {
         this.nbOR = OR;
         this.nbSolaire = SOLAIRE;
         this.nbLunaire = LUNAIRE;
@@ -31,7 +30,7 @@ public class Inventaire {
         return nbOR;
     }
 
-    public void setNbOR(int nbOR) {
+    void setNbOR(int nbOR) {
         this.nbOR = nbOR;
     }
 
