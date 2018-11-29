@@ -53,7 +53,7 @@ Date prevu : *23/11/18*
 Date prevu : *30/11/18*
 
 * Possibilité d'occuper la dernière quête réalisée (gestion de la postion des joueurs).
-* Extention du catalogue des face de dés achetable aux sanctuaires.
+* Ajout du catalogue des face de dés achetable aux sanctuaires.
 * Implémentation de la fonction permettant d'obtenir des cartes héros (quête à accomplir) utilisable à chaque tour (permanant et à effet immédiat).
 *  Test avec Junit sur les tâches realisées.
 
