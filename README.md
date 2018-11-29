@@ -44,7 +44,7 @@ Date prevu : *16/11/18*
 Date prevu : *23/11/18*
 
 * Fonction permettant d'acheter des cartes héros permettant d'obtenir des points de victoire en contre-partis d'une quantité de pierre lunaire ou de pierre solaire.
-* Extention du catalogue des cartes héros (point victoire,carte à effet immédiat) .
+* Ajout du catalogue des cartes héros (point victoire,carte à effet immédiat) .
 * Possibilité de jouer une deuxieme fois par tour en payant 2 pierre solaire.
 * Test avec Junit sur les tâches realisées.
 
@@ -53,7 +53,7 @@ Date prevu : *23/11/18*
 Date prevu : *30/11/18*
 
 * Possibilité d'occuper la dernière quête réalisée (gestion de la postion des joueurs).
-* Ajout du catalogue des face de dés achetable aux sanctuaires.
+* Extention du catalogue des face de dés achetable aux sanctuaires.
 * Implémentation de la fonction permettant d'obtenir des cartes héros (quête à accomplir) utilisable à chaque tour (permanant et à effet immédiat).
 *  Test avec Junit sur les tâches realisées.
 
