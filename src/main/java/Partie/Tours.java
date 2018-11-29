@@ -89,6 +89,7 @@ public class Tours {
             System.out.println(String.format("     |%-8s %s|                        |%-8s %s|      \n",memFd2J1.getRes(), memFd2J1.getValeur(),memFd2J2.getRes(),memFd2J2.getValeur()));
             affichage();
 
+
             Face AchatJ1 = joueur1.AcheterFace(joueur1);
             Face AchatJ2 = joueur2.AcheterFace(joueur2);
 

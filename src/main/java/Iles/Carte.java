@@ -1,8 +1,6 @@
 package Iles;
 
-import De.*;
-
-import java.lang.reflect.Type;
+import De.Ressource;
 
 public enum Carte {
     MARTEAU(1,"Le Marteau du forgeron",0,TypeEffet.IMMEDIAT,1,Ressource.LUNAIRE,4),
@@ -19,7 +17,8 @@ public enum Carte {
     //HYDRE(12,"L'Hydre",26,TypeEffet.IMMEDIAT,5,Ressource.LUNAIRE && Ressource.SOLAIRE,4),//
     MEDUSE(13,"La Meduse",14,TypeEffet.IMMEDIAT,4,Ressource.SOLAIRE,4),//
     MIRROIR(14,"Le Mirroir abyssal",10,TypeEffet.IMMEDIAT,5,Ressource.SOLAIRE,4),
-    ENIGME(15,"L'Enigme",10,TypeEffet.IMMEDIAT,6,Ressource.SOLAIRE,4);
+    ENIGME(15,"L'Enigme",10,TypeEffet.IMMEDIAT,6,Ressource.SOLAIRE,4),
+    NULL(16,"Carte nulle invisible",0,TypeEffet.IMMEDIAT,0,Ressource.OR,999) ;
 
 
     private final Integer Indice;
@@ -67,7 +66,7 @@ public enum Carte {
     }
 
     public void ModStock(){
-        this.Stock -= 1;
+        this.Stock = Stock - 1;
     }
 }
 

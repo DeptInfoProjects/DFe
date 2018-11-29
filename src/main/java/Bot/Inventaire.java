@@ -38,7 +38,7 @@ public class Inventaire {
         return nbSolaire;
     }
 
-    private void setNbSolaire(int nbSolaire) {
+    public void setNbSolaire(int nbSolaire) {
         this.nbSolaire = nbSolaire;
     }
 
@@ -46,7 +46,7 @@ public class Inventaire {
         return nbLunaire;
     }
 
-    private void setNbLunaire(int nbLunaire) {
+    public void setNbLunaire(int nbLunaire) {
         this.nbLunaire = nbLunaire;
     }
 
@@ -54,7 +54,7 @@ public class Inventaire {
         return nbVictoire;
     }
 
-    private void setNbVictoire(int nbVictoire) {
+    public void setNbVictoire(int nbVictoire) {
         this.nbVictoire = nbVictoire;
     }
 
