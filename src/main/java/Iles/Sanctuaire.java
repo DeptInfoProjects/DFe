@@ -38,12 +38,12 @@ public class Sanctuaire {
 
 
     public Face getSanctuaire(int n){
-            if (n == 1){
-                return lunaire1;
-                }
-            if (n ==2) {
-                return or3;
-            }
+        if (n == 1){
+            return lunaire1;
+        }
+        if (n ==2) {
+            return or3;
+        }
         if (n == 3) {
             return or4;
         }
@@ -64,7 +64,7 @@ public class Sanctuaire {
         } else {
             return victoire4;
         }
-            }
-
-
     }
+
+
+}

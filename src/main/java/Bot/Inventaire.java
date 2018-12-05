@@ -1,6 +1,10 @@
 package Bot;
 
 import De.*;
+import Iles.Carte;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class Inventaire {
@@ -8,20 +12,23 @@ public class Inventaire {
     private int nbSolaire;
     private int nbLunaire;
     private int nbVictoire;
+    private List<Carte> cartes = new ArrayList<>();
 
     public Inventaire(){}
 
-    public Inventaire(int OR, int SOLAIRE, int LUNAIRE, int VICTOIRE) {
+    public Inventaire(int OR, int SOLAIRE, int LUNAIRE, int VICTOIRE, List<Carte> cartes) {
         this.nbOR = OR;
         this.nbSolaire = SOLAIRE;
         this.nbLunaire = LUNAIRE;
         this.nbVictoire = VICTOIRE;
+        this.cartes = cartes;
     }
-    public void setInventaire(int OR, int SOLAIRE, int LUNAIRE , int VICTOIRE){
+    public void setInventaire(int OR, int SOLAIRE, int LUNAIRE , int VICTOIRE, List<Carte> cartes){
         this.nbOR = OR;
         this.nbSolaire = SOLAIRE;
         this.nbLunaire = LUNAIRE;
         this.nbVictoire = VICTOIRE;
+        this.cartes = cartes;
     }
 
 
@@ -57,6 +64,12 @@ public class Inventaire {
     public void setNbVictoire(int nbVictoire) {
         this.nbVictoire = nbVictoire;
     }
+
+    public List<Carte> getCartes() {return cartes;}
+
+    public int getSizeCarte(){return cartes.size();}
+
+    public void addCartes(Carte c){cartes.add(c);}
 
     public void adderFace(Face FaceDe) {
         if (FaceDe.getRes() == Ressource.OR) this.setNbOR(this.getNbOR() + FaceDe.getValeur());

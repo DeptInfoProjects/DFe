@@ -54,12 +54,12 @@ public class Joueur {
         return rand.nextInt(2);
     }
 
-    public Face AcheterFace(Joueur J1) {
+    public Face AcheterFace() {
         Sanctuaire Jardin = new Sanctuaire();
-        int x = J1.getInventaireJoueur().getNbOR();
+        int x = this.getInventaireJoueur().getNbOR();
         int rand = Rand();
         if (x == 2) {
-            J1.getInventaireJoueur().setNbOR(x - 2);
+            this.getInventaireJoueur().setNbOR(x - 2);
             if (rand == 0) return Jardin.getSanctuaire(2);
             else {
                 return Jardin.getSanctuaire(1);
@@ -67,54 +67,54 @@ public class Joueur {
         }
 
         if (x == 3) {
-            J1.getInventaireJoueur().setNbOR(x - 3);
+            this.getInventaireJoueur().setNbOR(x - 3);
             if (rand == 0) return Jardin.getSanctuaire(3);
             else return Jardin.getSanctuaire(4);
 
         }
 
         if (x == 4 | x == 5) {
-            J1.getInventaireJoueur().setNbOR(x - 4);
+            this.getInventaireJoueur().setNbOR(x - 4);
             return Jardin.getSanctuaire(5);
         }
 
         if (x == 6 | x == 7) {
-            J1.getInventaireJoueur().setNbOR(x - 6);
+            this.getInventaireJoueur().setNbOR(x - 6);
             return Jardin.getSanctuaire(6);
         }
 
         if (x == 8 | x == 9 | x == 10 | x == 11) {
-            J1.getInventaireJoueur().setNbOR(x - 8);
+            this.getInventaireJoueur().setNbOR(x - 8);
             if (rand == 0) return Jardin.getSanctuaire(7);
             else return Jardin.getSanctuaire(8);
 
         }
         if ( x >= 12 ){
-        J1.getInventaireJoueur().setNbOR(x - 12);
-        return Jardin.getSanctuaire(9);}
+            this.getInventaireJoueur().setNbOR(x - 12);
+            return Jardin.getSanctuaire(9);}
         return De.compare2Face(d1.FACEMIN(), d2.FACEMIN());
     }
 
 
-    public Carte AcheterCarte(Joueur J) {
-        int x1 = J.getInventaireJoueur().getNbLunaire(); /* ressources en lunaire */
-        int x2 = J.getInventaireJoueur().getNbSolaire();/* ressources en solaire  */
-        int x3 = J.getInventaireJoueur().getNbVictoire();/* ressources en victoire  */
+    public Carte AcheterCarte() {
+        int x1 = this.getInventaireJoueur().getNbLunaire(); /* ressources en lunaire */
+        int x2 = this.getInventaireJoueur().getNbSolaire();/* ressources en solaire  */
+        int x3 = this.getInventaireJoueur().getNbVictoire();/* ressources en victoire  */
 
 
         if (x1 == 1) {
             int rand = Rand();
             if ((rand == 0) && (Carte.MARTEAU.getStock() > 0)) {
-                J.getInventaireJoueur().setNbLunaire(x1 - 1); /* enlever 1 lunaire de l'inventaire  */
+                this.getInventaireJoueur().setNbLunaire(x1 - 1); /* enlever 1 lunaire de l'inventaire  */
                 Carte.MARTEAU.ModStock();   /* maj du stock */
                 /* 0 pts de Victoire pour cette carte */
                 return Carte.MARTEAU ;
 
             }
             if (Carte.COFFRE.getStock() > 0) {
-                J.getInventaireJoueur().setNbLunaire(x1 - 1); /* enlever 1 lunaire de l'inventaire  */
+                this.getInventaireJoueur().setNbLunaire(x1 - 1); /* enlever 1 lunaire de l'inventaire  */
                 Carte.COFFRE.ModStock();   /* maj du stock */
-                J.getInventaireJoueur().setNbVictoire(x3 + 2);/* maj des nb de Victoire */
+                this.getInventaireJoueur().setNbVictoire(x3 + 2);/* maj des nb de Victoire */
                 return Carte.COFFRE ;
 
             }
@@ -122,39 +122,39 @@ public class Joueur {
         }
 
         if ((x1 == 2) && (Carte.SABOTS.getStock() > 0)) {
-            J.getInventaireJoueur().setNbLunaire(x1 - 2); /* enlever 2 lunaires de l'inventaire  */
+            this.getInventaireJoueur().setNbLunaire(x1 - 2); /* enlever 2 lunaires de l'inventaire  */
             Carte.SABOTS.ModStock();   /* maj du stock */
-            J.getInventaireJoueur().setNbVictoire(x3 + 2); /* maj des nb de Victoire */
+            this.getInventaireJoueur().setNbVictoire(x3 + 2); /* maj des nb de Victoire */
             return Carte.SABOTS ;
 
         }
         if ((x1 == 3) && (Carte.SATYRES.getStock() > 0)) {
-            J.getInventaireJoueur().setNbLunaire(x1 - 3); /* enlever 3 lunaires de l'inventaire  */
+            this.getInventaireJoueur().setNbLunaire(x1 - 3); /* enlever 3 lunaires de l'inventaire  */
             Carte.SATYRES.ModStock();   /* maj du stock */
-            J.getInventaireJoueur().setNbVictoire(x3 + 6); /* maj des nb de Victoire */
+            this.getInventaireJoueur().setNbVictoire(x3 + 6); /* maj des nb de Victoire */
             return Carte.SATYRES ;
 
         }
 
         if ((x1 == 4) && (Carte.PASSEUR.getStock() > 0)) {
-            J.getInventaireJoueur().setNbLunaire(x1 - 4); /* enlever 4 lunaires de l'inventaire  */
+            this.getInventaireJoueur().setNbLunaire(x1 - 4); /* enlever 4 lunaires de l'inventaire  */
             Carte.PASSEUR.ModStock();   /* maj du stock */
-            J.getInventaireJoueur().setNbVictoire(x3 + 12); /* maj des nb de Victoire */
+            this.getInventaireJoueur().setNbVictoire(x3 + 12); /* maj des nb de Victoire */
             return Carte.PASSEUR ;
 
         }
 
         if ((x1 == 5) && (Carte.CASQUE.getStock() > 0)) {
-            J.getInventaireJoueur().setNbLunaire(x1 - 5); /* enlever 5 lunaires de l'inventaire  */
+            this.getInventaireJoueur().setNbLunaire(x1 - 5); /* enlever 5 lunaires de l'inventaire  */
             Carte.CASQUE.ModStock();   /* maj du stock */
-            J.getInventaireJoueur().setNbVictoire(x3 + 4); /* maj des nb de Victoire */
+            this.getInventaireJoueur().setNbVictoire(x3 + 4); /* maj des nb de Victoire */
             return Carte.CASQUE ;
 
         }
         if ((x1 >= 6) && (Carte.PINCE.getStock() > 0)) {
-            J.getInventaireJoueur().setNbLunaire(x1 - 6); /* enlever 6 lunaires de l'inventaire  */
+            this.getInventaireJoueur().setNbLunaire(x1 - 6); /* enlever 6 lunaires de l'inventaire  */
             Carte.PINCE.ModStock();   /* maj du stock */
-            J.getInventaireJoueur().setNbVictoire(x3 + 8); /* maj des nb de Victoire */
+            this.getInventaireJoueur().setNbVictoire(x3 + 8); /* maj des nb de Victoire */
             return Carte.PINCE ;
 
         }
@@ -165,7 +165,7 @@ public class Joueur {
         if (x2 == 1) {
             int rand = Rand();
             if ((rand == 0) && (Carte.ANCIEN.getStock() > 0)) {
-                J.getInventaireJoueur().setNbSolaire(x2 - 1); /* enlever 1 solaire de l'inventaire  */
+                this.getInventaireJoueur().setNbSolaire(x2 - 1); /* enlever 1 solaire de l'inventaire  */
                 Carte.ANCIEN.ModStock();   /* maj du stock */
                 /* 0 pts de Victoire pour cette carte */
                 return Carte.ANCIEN ;
@@ -173,50 +173,50 @@ public class Joueur {
             }
 
             if (Carte.HERBES.getStock() > 0) {
-                J.getInventaireJoueur().setNbSolaire(x2 - 1); /* enlever 1 solaire de l'inventaire  */
+                this.getInventaireJoueur().setNbSolaire(x2 - 1); /* enlever 1 solaire de l'inventaire  */
                 Carte.HERBES.ModStock();   /* maj du stock */
-                J.getInventaireJoueur().setNbVictoire(x3 + 2);/* maj des nb de Victoire */
+                this.getInventaireJoueur().setNbVictoire(x3 + 2);/* maj des nb de Victoire */
                 return Carte.HERBES ;
 
             }
         }
 
         if ((x2 == 2) && (Carte.AILES.getStock() > 0)) {
-            J.getInventaireJoueur().setNbSolaire(x2 - 2); /* enlever 2 solaires de l'inventaire  */
+            this.getInventaireJoueur().setNbSolaire(x2 - 2); /* enlever 2 solaires de l'inventaire  */
             Carte.AILES.ModStock();   /* maj du stock */
-            J.getInventaireJoueur().setNbVictoire(x3 + 4); /* maj des nb de Victoire */
+            this.getInventaireJoueur().setNbVictoire(x3 + 4); /* maj des nb de Victoire */
             return Carte.AILES ;
 
         }
 
         if ((x2 == 3) && (Carte.MINOTAURE.getStock() > 0)) {
-            J.getInventaireJoueur().setNbSolaire(x2 - 3); /* enlever 3 solaires de l'inventaire  */
+            this.getInventaireJoueur().setNbSolaire(x2 - 3); /* enlever 3 solaires de l'inventaire  */
             Carte.MINOTAURE.ModStock();   /* maj du stock */
-            J.getInventaireJoueur().setNbVictoire(x3 + 8); /* maj des nb de Victoire */
+            this.getInventaireJoueur().setNbVictoire(x3 + 8); /* maj des nb de Victoire */
             return Carte.MINOTAURE ;
 
         }
 
         if ((x2 == 4) && (Carte.MEDUSE.getStock() > 0)) {
-            J.getInventaireJoueur().setNbSolaire(x2 - 4); /* enlever 4 solaires de l'inventaire  */
+            this.getInventaireJoueur().setNbSolaire(x2 - 4); /* enlever 4 solaires de l'inventaire  */
             Carte.MEDUSE.ModStock();   /* maj du stock */
-            J.getInventaireJoueur().setNbVictoire(x3 + 14); /* maj des nb de Victoire */
+            this.getInventaireJoueur().setNbVictoire(x3 + 14); /* maj des nb de Victoire */
             return Carte.MEDUSE ;
 
         }
 
         if ((x2 == 5) && (Carte.MIRROIR.getStock() > 0)) {
-            J.getInventaireJoueur().setNbSolaire(x2 - 5); /* enlever 5 solaires de l'inventaire  */
+            this.getInventaireJoueur().setNbSolaire(x2 - 5); /* enlever 5 solaires de l'inventaire  */
             Carte.MIRROIR.ModStock();   /* maj du stock */
-            J.getInventaireJoueur().setNbVictoire(x3 + 10); /* maj des nb de Victoire */
+            this.getInventaireJoueur().setNbVictoire(x3 + 10); /* maj des nb de Victoire */
             return Carte.MIRROIR ;
 
         }
 
         if ((x2 >= 6) && (Carte.ENIGME.getStock() > 0)) {
-            J.getInventaireJoueur().setNbSolaire(x2 - 6); /* enlever 6 solaires de l'inventaire  */
+            this.getInventaireJoueur().setNbSolaire(x2 - 6); /* enlever 6 solaires de l'inventaire  */
             Carte.ENIGME.ModStock();   /* maj du stock */
-            J.getInventaireJoueur().setNbVictoire(x3 + 10); /* maj des nb de Victoire */
+            this.getInventaireJoueur().setNbVictoire(x3 + 10); /* maj des nb de Victoire */
             return Carte.ENIGME ;
 
         }
@@ -224,6 +224,7 @@ public class Joueur {
         return Carte.NULL ;    /* Si le joueur a 0 solaire et 0 lunaire  */
 
     }
+
 
 
 

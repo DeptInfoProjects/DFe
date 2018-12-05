@@ -23,8 +23,8 @@ class TourStat {
     }
 
     private void InitInvent() {
-        joueur1.getInventaireJoueur().setInventaire(3, 0, 0, 0);
-        joueur2.getInventaireJoueur().setInventaire(2, 0, 0, 0);
+        joueur1.getInventaireJoueur().setInventaire(3, 0, 0, 0,null);
+        joueur2.getInventaireJoueur().setInventaire(2, 0, 0, 0,null);
     }
 
     int Partie() {
@@ -40,8 +40,8 @@ class TourStat {
             joueur2.getInventaireJoueur().adderFace(memFd2J2);
 
 
-            Face AchatJ1 = joueur1.AcheterFace(joueur1);
-            Face AchatJ2 = joueur2.AcheterFace(joueur2);
+            Face AchatJ1 = joueur1.AcheterFace();
+            Face AchatJ2 = joueur2.AcheterFace();
 
             joueur1.changementFace(AchatJ1);
             joueur2.changementFace(AchatJ2);

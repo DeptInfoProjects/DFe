@@ -5,7 +5,7 @@ public class Face {
     private Integer valeur;
     private Ressource res;
 
-  // CONSTRUCTEUR D'UNE FACE //
+    // CONSTRUCTEUR D'UNE FACE //
 
     public Face(Integer valeur, Ressource res){
         this.valeur = valeur;
@@ -17,16 +17,21 @@ public class Face {
         return valeur;
     }
 
-    void setValeur(Integer valeur) {
+    public void setValeur(Integer valeur)  {
         this.valeur = valeur;
     }
 
     //  GETTER & SETTER RESSOURCE //
-    void setRes(Ressource res) {
+    public void setRes(Ressource res){
         this.res = res;
     }
 
     public Ressource getRes() {
         return res;
     }
+
+    public String AfficheFace(){
+        return getValeur() + " " + getRes();
+    }
+
 }
