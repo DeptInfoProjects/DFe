@@ -1,8 +1,8 @@
 package partie;
 
-import iles.Carte;
 import bot.Joueur;
 import de.Face;
+import iles.Carte;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -21,7 +21,7 @@ public class Tours {
         new Joueur();
     }
 
-    Tours(Joueur joueur1, Joueur joueur2){
+    public Tours(Joueur joueur1, Joueur joueur2) {
         this.joueur1 = joueur1;
         this.joueur2 = joueur2;
         initInvent();
@@ -77,7 +77,40 @@ public class Tours {
         return rand.nextInt(2) + 1;
     }
 
-    public void partie() {
+    public int partieStat() {
+        for (int acc = 0; acc < 9; acc++) {
+            Face memFd1J1 = joueur1.getD1().getFace();
+            Face memFd2J1 = joueur1.getD2().getFace();
+            Face memFd1J2 = joueur2.getD1().getFace();
+            Face memFd2J2 = joueur2.getD2().getFace();
+
+            joueur1.getInventaireJoueur().adderFace(memFd1J1);
+            joueur1.getInventaireJoueur().adderFace(memFd2J1);
+            joueur2.getInventaireJoueur().adderFace(memFd1J2);
+            joueur2.getInventaireJoueur().adderFace(memFd2J2);
+
+
+            Face AchatJ1 = joueur1.acheterFace();
+            Face AchatJ2 = joueur2.acheterFace();
+
+            joueur1.changementFace(AchatJ1);
+            joueur2.changementFace(AchatJ2);
+
+
+        }
+        if (joueur1.getInventaireJoueur().getNbVictoire() < joueur2.getInventaireJoueur().getNbVictoire()) {
+            return 2;
+
+        } else if (joueur1.getInventaireJoueur().getNbVictoire() > joueur2.getInventaireJoueur().getNbVictoire()) {
+            return 1;
+
+
+        } else {
+            return 0;
+        }
+    }
+
+    void partie() {
         for(int acc = 0 ; acc < 9; acc++) {
             Face memFd1J1 = joueur1.getD1().getFace();
             Face memFd2J1 = joueur1.getD2().getFace();
