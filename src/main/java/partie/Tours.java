@@ -1,8 +1,8 @@
 package partie;
 
+import Iles.Carte;
 import bot.Joueur;
 import de.Face;
-import Iles.Carte;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -21,21 +21,21 @@ public class Tours {
         new Joueur();
     }
 
-    private void InitInvent(){
-        joueur1.getInventaireJoueur().setInventaire(3,0,0,0,new ArrayList<>());
-        joueur2.getInventaireJoueur().setInventaire(2,0,0,0,new ArrayList<>());
-    }
-
-    Tours(Joueur joueur1,Joueur joueur2){
+    Tours(Joueur joueur1, Joueur joueur2){
         this.joueur1 = joueur1;
         this.joueur2 = joueur2;
-        InitInvent();
+        initInvent();
 
+    }
+
+    private void initInvent() {
+        joueur1.getInventaireJoueur().setInventaire(3, 0, 0, 0, new ArrayList<>());
+        joueur2.getInventaireJoueur().setInventaire(2, 0, 0, 0, new ArrayList<>());
     }
     /* Choisir soit acheter une carte soit acheter une face */
 
-    private int CarteOuFace(){
-        return Rand();
+    private int carteOuFace() {
+        return rand();
     }
 
 
@@ -72,11 +72,12 @@ public class Tours {
         System.out.println(String.format("|%-8s %s|  |%-8s %s|     |%-8s %s|  |%-8s %s|" , joueur1.getD1().FACE6.getRes(), joueur1.getD1().FACE6.getValeur(),joueur1.getD2().FACE6.getRes(), joueur1.getD2().FACE6.getValeur(),joueur2.getD1().FACE6.getRes(),joueur2.getD1().FACE6.getValeur(),joueur2.getD2().FACE6.getRes(),joueur2.getD2().FACE6.getValeur()));
     }
 
-    private int Rand() {
+    private int rand() {
         Random rand = new Random();
         return rand.nextInt(2) + 1;
     }
-    public void Partie(){
+
+    public void partie() {
         for(int acc = 0 ; acc < 9; acc++) {
             Face memFd1J1 = joueur1.getD1().getFace();
             Face memFd2J1 = joueur1.getD2().getFace();
@@ -98,10 +99,10 @@ public class Tours {
             affichage();
             System.out.println("______________________________________________________________________________________________________");
             System.out.println("Actions : ");
-            int rand1 = Rand();
-            int rand2 = Rand();
-            int choix1 = CarteOuFace(); /* 0 il acheter une carte 1 il achete une face */
-            int choix2 = CarteOuFace(); /* 0 il acheter une carte 1 il achete une face */
+            int rand1 = rand();
+            int rand2 = rand();
+            int choix1 = carteOuFace(); /* 0 il acheter une carte 1 il achete une face */
+            int choix2 = carteOuFace(); /* 0 il acheter une carte 1 il achete une face */
 
             /* pour le Joueur1 */
             /* Si il veut une carte */

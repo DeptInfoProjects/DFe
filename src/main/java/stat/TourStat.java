@@ -1,4 +1,4 @@
-package stat;
+package Stat;
 
 import bot.Joueur;
 import de.Face;
@@ -18,16 +18,16 @@ class TourStat {
     TourStat(Joueur joueur1, Joueur joueur2) {
         this.joueur1 = joueur1;
         this.joueur2 = joueur2;
-        InitInvent();
+        initInvent();
 
     }
 
-    private void InitInvent() {
+    private void initInvent() {
         joueur1.getInventaireJoueur().setInventaire(3, 0, 0, 0,null);
         joueur2.getInventaireJoueur().setInventaire(2, 0, 0, 0,null);
     }
 
-    int Partie() {
+    int partie() {
         for (int acc = 0; acc < 9; acc++) {
             Face memFd1J1 = joueur1.getD1().getFace();
             Face memFd2J1 = joueur1.getD2().getFace();

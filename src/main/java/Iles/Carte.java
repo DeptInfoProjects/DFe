@@ -21,52 +21,52 @@ public enum Carte {
     NULL(16,"Carte nulle invisible",0,TypeEffet.IMMEDIAT,0,Ressource.OR,999) ;
 
 
-    private final Integer Indice;
+    private final Integer indice;
     private final String nom;
-    private final Integer Victoire;
-    private final TypeEffet Effet;
-    private final Integer CoutNb;
-    private final Ressource CoutRes;
-    private  int  Stock;
+    private final Integer victoire;
+    private final TypeEffet effet;
+    private final Integer coutNb;
+    private final Ressource coutRes;
+    private int stock;
 
     Carte(int i, String s, int i1, TypeEffet effet, int i2, Ressource S, int i3) {
-        this.Indice = i;
+        this.indice = i;
         this.nom = s;
-        this.Victoire = i1;
-        this.Effet =  effet;
-        this.CoutNb = i2;
-        this.CoutRes = S;
-        this.Stock = i3;
+        this.victoire = i1;
+        this.effet = effet;
+        this.coutNb = i2;
+        this.coutRes = S;
+        this.stock = i3;
     }
 
     public int getIndice(){
-        return this.Indice;
+        return this.indice;
     }
     public String getNom(){
         return this.nom;
     }
     public int getVictoire(){
-        return this.Victoire;
+        return this.victoire;
     }
 
     public TypeEffet getEffet(){
-        return this.Effet;
+        return this.effet;
     }
 
     public int getCoutNb(){
-        return this.CoutNb;
+        return this.coutNb;
     }
 
     public Ressource getCountRes(){
-        return this.CoutRes;
+        return this.coutRes;
     }
 
     public int getStock(){
-        return this.Stock;
+        return this.stock;
     }
 
     public void ModStock(){
-        this.Stock = Stock - 1;
+        this.stock = stock - 1;
     }
 }
 
