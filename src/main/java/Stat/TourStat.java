@@ -1,7 +1,7 @@
-package Stat;
+package stat;
 
-import Bot.Joueur;
-import De.Face;
+import bot.Joueur;
+import de.Face;
 
 class TourStat {
     static {
@@ -40,8 +40,8 @@ class TourStat {
             joueur2.getInventaireJoueur().adderFace(memFd2J2);
 
 
-            Face AchatJ1 = joueur1.AcheterFace();
-            Face AchatJ2 = joueur2.AcheterFace();
+            Face AchatJ1 = joueur1.acheterFace();
+            Face AchatJ2 = joueur2.acheterFace();
 
             joueur1.changementFace(AchatJ1);
             joueur2.changementFace(AchatJ2);

@@ -1,6 +1,6 @@
-package Bot;
+package bot;
 
-import De.*;
+import de.*;
 import Iles.Carte;
 
 import java.util.ArrayList;

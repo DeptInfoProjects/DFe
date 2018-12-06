@@ -1,4 +1,4 @@
-package De;
+package de;
 
 public enum Ressource {
 

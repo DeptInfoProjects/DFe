@@ -1,5 +1,5 @@
-package Bot;
-import De.*;
+package bot;
+import de.*;
 import Iles.*;
 
 
@@ -14,8 +14,8 @@ public class Joueur {
 
 
     public Joueur(){
-        d1.InitDe1();
-        d2.InitDe2();
+        d1.initDe1();
+        d2.initDe2();
         Sac = new Inventaire();
 
 
@@ -32,32 +32,32 @@ public class Joueur {
     }
 
 
-    public Face ancienneFace(){
+    /*public Face ancienneFace(){
         Face FaceMinD1 = this.d1.FACEMIN();
         Face FaceMinD2 = this.d2.FACEMIN();
         if (FaceMinD1 == FaceMinD2 ) return FaceMinD1;
-        if (De.compare2Face(FaceMinD1,FaceMinD2) == FaceMinD1) return FaceMinD1;
+        if (de.compare2Face(FaceMinD1,FaceMinD2) == FaceMinD1) return FaceMinD1;
         else return FaceMinD2;
-    }
+    }*/
 
 
     public void changementFace(Face Achat){
-        Face FaceMinD1 = this.d1.FACEMIN();
-        Face FaceMinD2 = this.d2.FACEMIN();
+        Face FaceMinD1 = this.d1.faceMin();
+        Face FaceMinD2 = this.d2.faceMin();
         if (FaceMinD1 == FaceMinD2 ) this.d1.setFACE(Achat);
         if (De.compare2Face(FaceMinD1,FaceMinD2) == FaceMinD1) this.d1.setFACE(Achat);
         else this.d2.setFACE(Achat);
     }
 
-    private int Rand() {
+    private int rand() {
         Random rand = new Random();
         return rand.nextInt(2);
     }
 
-    public Face AcheterFace() {
+    public Face acheterFace() {
         Sanctuaire Jardin = new Sanctuaire();
         int x = this.getInventaireJoueur().getNbOR();
-        int rand = Rand();
+        int rand = rand();
         if (x == 2) {
             this.getInventaireJoueur().setNbOR(x - 2);
             if (rand == 0) return Jardin.getSanctuaire(2);
@@ -92,18 +92,18 @@ public class Joueur {
         if ( x >= 12 ){
             this.getInventaireJoueur().setNbOR(x - 12);
             return Jardin.getSanctuaire(9);}
-        return De.compare2Face(d1.FACEMIN(), d2.FACEMIN());
+        return De.compare2Face(d1.faceMin(), d2.faceMin());
     }
 
 
-    public Carte AcheterCarte() {
+    public Carte acheterCarte() {
         int x1 = this.getInventaireJoueur().getNbLunaire(); /* ressources en lunaire */
         int x2 = this.getInventaireJoueur().getNbSolaire();/* ressources en solaire  */
         int x3 = this.getInventaireJoueur().getNbVictoire();/* ressources en victoire  */
 
 
         if (x1 == 1) {
-            int rand = Rand();
+            int rand = rand();
             if ((rand == 0) && (Carte.MARTEAU.getStock() > 0)) {
                 this.getInventaireJoueur().setNbLunaire(x1 - 1); /* enlever 1 lunaire de l'inventaire  */
                 Carte.MARTEAU.ModStock();   /* maj du stock */
@@ -163,7 +163,7 @@ public class Joueur {
 
 
         if (x2 == 1) {
-            int rand = Rand();
+            int rand = rand();
             if ((rand == 0) && (Carte.ANCIEN.getStock() > 0)) {
                 this.getInventaireJoueur().setNbSolaire(x2 - 1); /* enlever 1 solaire de l'inventaire  */
                 Carte.ANCIEN.ModStock();   /* maj du stock */

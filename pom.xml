@@ -108,13 +108,13 @@
                             <goal>java</goal>
                         </goals>
                         <configuration>
-                            <mainClass>Stat.Stat</mainClass>
+                            <mainClass>stat.Stat</mainClass>
                         </configuration>
                     </execution>
                 </executions>
 
                 <configuration>
-                    <mainClass>Partie.Final
+                    <mainClass>partie.Final
                     </mainClass>
                 </configuration>
             </plugin>

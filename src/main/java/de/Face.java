@@ -1,15 +1,17 @@
-package De;
+package de;
 
 public class Face {
 
     private Integer valeur;
     private Ressource res;
+    private Type type;
 
     // CONSTRUCTEUR D'UNE FACE //
 
-    public Face(Integer valeur, Ressource res){
+    public Face(Integer valeur, Ressource res,Type type){
         this.valeur = valeur;
         this.res = res;
+        this.type = type;
     }
 
     //  GETTER & SETTER VALEUR  //
@@ -29,6 +31,11 @@ public class Face {
     public Ressource getRes() {
         return res;
     }
+
+    //  GETTER & SETTER TYPE //
+    public void setType(Type type){this.type = type;}
+
+    public Type getType(){return type;}
 
     public String AfficheFace(){
         return getValeur() + " " + getRes();

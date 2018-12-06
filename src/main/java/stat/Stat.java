@@ -1,6 +1,6 @@
-package Stat;
+package stat;
 
-import Bot.*;
+import bot.*;
 
 public class Stat {
     public static void main(String[] args) {

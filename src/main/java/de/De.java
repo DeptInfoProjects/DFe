@@ -1,7 +1,9 @@
-package De;
+package de;
 import java.lang.*;
 import java.util.Random;
 
+
+import static de.Type.*;
 
 public class De {
     public Face FACE1;
@@ -12,39 +14,39 @@ public class De {
     public Face FACE6;
     public De() {}
 
-    public void InitDe1(){
-        FACE1 = new Face(1, Ressource.OR);
+    public void initDe1(){
+        FACE1 = new Face(1, Ressource.OR,NORMAL);
 
-        FACE2 = new Face(1, Ressource.OR);
+        FACE2 = new Face(1, Ressource.OR,NORMAL);
 
-        FACE3 = new Face(1, Ressource.OR);
+        FACE3 = new Face(1, Ressource.OR,NORMAL);
 
-        FACE4 = new Face(1, Ressource.OR);
+        FACE4 = new Face(1, Ressource.OR,NORMAL);
 
-        FACE5 = new Face(1, Ressource.OR);
+        FACE5 = new Face(1, Ressource.OR,NORMAL);
 
-        FACE6 = new Face(1, Ressource.SOLAIRE);
+        FACE6 = new Face(1, Ressource.SOLAIRE,NORMAL);
     }
-    public void InitDe2(){
-        FACE1 = new Face(1, Ressource.OR);
+    public void initDe2(){
+        FACE1 = new Face(1, Ressource.OR,NORMAL);
 
-        FACE2 = new Face(1, Ressource.OR);
+        FACE2 = new Face(1, Ressource.OR,NORMAL);
 
-        FACE3 = new Face(1, Ressource.OR);
+        FACE3 = new Face(1, Ressource.OR,NORMAL);
 
-        FACE4 = new Face(1, Ressource.OR);
+        FACE4 = new Face(1, Ressource.OR,NORMAL);
 
-        FACE5 = new Face(1, Ressource.LUNAIRE);
+        FACE5 = new Face(1, Ressource.LUNAIRE,NORMAL);
 
-        FACE6 = new Face(2, Ressource.VICTOIRE);
+        FACE6 = new Face(2, Ressource.VICTOIRE,NORMAL);
     }
-    private  int Rand(){
+    private  int rand(){
         Random rand = new Random();
         return rand.nextInt(6) + 1;
     }
 
     public Face getFace(){
-        int rand = Rand();
+        int rand = rand();
         Face compte ;
 
         switch(rand){
@@ -71,7 +73,7 @@ public class De {
         return compte;
     }
 
-    private Integer Minimum(int a ,int b , int c , int d , int e,int f){
+    private Integer minimum(int a ,int b , int c , int d , int e,int f){
         return Math.min(a,Math.min(b,Math.min(c,Math.min(d,Math.min(e,f))))) ;
     }
 
@@ -80,8 +82,8 @@ public class De {
     }*/
 
 
-    public Face FACEMIN(){
-        int ValeurMin = Minimum(FACE1.getValeur() ,FACE2.getValeur() ,FACE3.getValeur() ,FACE4.getValeur() ,FACE5.getValeur() ,FACE6.getValeur());
+    public Face faceMin(){
+        int ValeurMin = minimum(FACE1.getValeur() ,FACE2.getValeur() ,FACE3.getValeur() ,FACE4.getValeur() ,FACE5.getValeur() ,FACE6.getValeur());
 
         if (ValeurMin == FACE1.getValeur()&& FACE1.getRes() == Ressource.OR) return FACE1;
         if (ValeurMin == FACE2.getValeur()&& FACE2.getRes() == Ressource.OR) return FACE2;
@@ -94,8 +96,8 @@ public class De {
 
 
     public void setFACE(Face Choix){
-        FACEMIN().setValeur(Choix.getValeur());
-        FACEMIN().setRes(Choix.getRes());
+        faceMin().setValeur(Choix.getValeur());
+        faceMin().setRes(Choix.getRes());
 
     }
 

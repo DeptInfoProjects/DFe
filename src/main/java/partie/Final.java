@@ -1,6 +1,6 @@
-package Partie;
+package partie;
 
-import Bot.*;
+import bot.*;
 
 public class Final {
     public static void main(String[] args){
