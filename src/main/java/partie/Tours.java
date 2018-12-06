@@ -1,8 +1,8 @@
 package partie;
 
+import iles.Carte;
 import bot.Joueur;
 import de.Face;
-import iles.Carte;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -21,21 +21,21 @@ public class Tours {
         new Joueur();
     }
 
-    private void InitInvent(){
-        joueur1.getInventaireJoueur().setInventaire(3,0,0,0,new ArrayList<>());
-        joueur2.getInventaireJoueur().setInventaire(2,0,0,0,new ArrayList<>());
-    }
-
-    Tours(Joueur joueur1,Joueur joueur2){
+    Tours(Joueur joueur1, Joueur joueur2){
         this.joueur1 = joueur1;
         this.joueur2 = joueur2;
-        InitInvent();
+        initInvent();
 
+    }
+
+    private void initInvent() {
+        joueur1.getInventaireJoueur().setInventaire(3, 0, 0, 0, new ArrayList<>());
+        joueur2.getInventaireJoueur().setInventaire(2, 0, 0, 0, new ArrayList<>());
     }
     /* Choisir soit acheter une carte soit acheter une face */
 
-    private int CarteOuFace(){
-        return Rand();
+    private int carteOuFace() {
+        return rand();
     }
 
 
@@ -72,11 +72,12 @@ public class Tours {
         System.out.println(String.format("|%-8s %s|  |%-8s %s|     |%-8s %s|  |%-8s %s|" , joueur1.getD1().FACE6.getRes(), joueur1.getD1().FACE6.getValeur(),joueur1.getD2().FACE6.getRes(), joueur1.getD2().FACE6.getValeur(),joueur2.getD1().FACE6.getRes(),joueur2.getD1().FACE6.getValeur(),joueur2.getD2().FACE6.getRes(),joueur2.getD2().FACE6.getValeur()));
     }
 
-    private int Rand() {
+    private int rand() {
         Random rand = new Random();
         return rand.nextInt(2) + 1;
     }
-    public void Partie(){
+
+    public void partie() {
         for(int acc = 0 ; acc < 9; acc++) {
             Face memFd1J1 = joueur1.getD1().getFace();
             Face memFd2J1 = joueur1.getD2().getFace();
@@ -98,34 +99,34 @@ public class Tours {
             affichage();
             System.out.println("______________________________________________________________________________________________________");
             System.out.println("Actions : ");
-            int rand1 = Rand();
-            int rand2 = Rand();
-            int choix1 = CarteOuFace(); /* 0 il acheter une carte 1 il achete une face */
-            int choix2 = CarteOuFace(); /* 0 il acheter une carte 1 il achete une face */
+            int rand1 = rand();
+            int rand2 = rand();
+            int choix1 = carteOuFace(); /* 0 il acheter une carte 1 il achete une face */
+            int choix2 = carteOuFace(); /* 0 il acheter une carte 1 il achete une face */
 
             /* pour le Joueur1 */
             /* Si il veut une carte */
             if (choix1 == 0){
-                Carte Choix = joueur1.AcheterCarte();
+                Carte Choix = joueur1.acheterCarte();
                 joueur1.getInventaireJoueur().addCartes(Choix); /* on l'a rajoute dans son inventaire */
                 System.out.println("Joueur1 veut acheter la Carte " + Choix.getNom() );
             }
 
             /* Si il veut une face */
             if (choix1 == 1){
-                Face AchatJ1 = joueur1.AcheterFace();
-                joueur1.changementFace(AchatJ1);               /* on l'implement sur son dé */
+                Face AchatJ1 = joueur1.acheterFace();
+                joueur1.changementFace(AchatJ1);               /* on l'implement sur son dÃ© */
                 System.out.println("Joueur1 veut acheter la Face " + AchatJ1.AfficheFace());
             }
             /* pour le Jouer2 */
             if (choix2 == 2){
-                Carte Choix2 = joueur2.AcheterCarte();
+                Carte Choix2 = joueur2.acheterCarte();
                 joueur2.getInventaireJoueur().addCartes(Choix2);
                 System.out.println("Joueur2 veut acheter la Carte " + Choix2.getNom());
             }
 
             if (choix2 == 1){
-                Face AchatJ2 = joueur2.AcheterFace();
+                Face AchatJ2 = joueur2.acheterFace();
                 joueur2.changementFace(AchatJ2);
                 System.out.println("Joueur2 veut acheter la Face " + AchatJ2.AfficheFace());
 
@@ -148,14 +149,14 @@ public class Tours {
                 /* pour le Joueur1 */
                 /* Si il veut une carte */
                 if (choix1 == 2){
-                    Carte Choix = joueur1.AcheterCarte();
+                    Carte Choix = joueur1.acheterCarte();
                     joueur1.getInventaireJoueur().addCartes(Choix); /* on l'a rajoute dans son inventaire */
                 }
 
                 /* Si il veut une face */
                 if (choix1 == 1){
-                    Face AchatJ1 = joueur1.AcheterFace();
-                    joueur1.changementFace(AchatJ1);               /* on l'implement sur son dé */
+                    Face AchatJ1 = joueur1.acheterFace();
+                    joueur1.changementFace(AchatJ1);               /* on l'implement sur son dÃ© */
                 }
             }
             if (((rand1 == 2) & (rand2 == 1) & (joueur2.getInventaireJoueur().getNbSolaire() > 1))
@@ -176,11 +177,11 @@ public class Tours {
                 affichageJ2bis();
                 /* pour le Jouer2 */
                 if (choix2 == 0){
-                    Carte Choix2 = joueur2.AcheterCarte();
+                    Carte Choix2 = joueur2.acheterCarte();
                     joueur2.getInventaireJoueur().addCartes(Choix2);
                 }
                 if (choix2 == 1){
-                    Face AchatJ2 = joueur2.AcheterFace();
+                    Face AchatJ2 = joueur2.acheterFace();
                     joueur2.changementFace(AchatJ2);
 
                 }
@@ -209,22 +210,22 @@ public class Tours {
                 /* pour le Joueur1 */
                 /* Si il veut une carte */
                 if (choix1 == 0){
-                    Carte Choix = joueur1.AcheterCarte();
+                    Carte Choix = joueur1.acheterCarte();
                     joueur1.getInventaireJoueur().addCartes(Choix); /* on l'a rajoute dans son inventaire */
                 }
 
                 /* Si il veut une face */
                 if (choix1 == 1){
-                    Face AchatJ1 = joueur1.AcheterFace();
-                    joueur1.changementFace(AchatJ1);               /* on l'implement sur son dé */
+                    Face AchatJ1 = joueur1.acheterFace();
+                    joueur1.changementFace(AchatJ1);               /* on l'implement sur son dÃ© */
                 }
                 /* pour le Jouer2 */
                 if (choix2 == 0){
-                    Carte Choix2 = joueur2.AcheterCarte();
+                    Carte Choix2 = joueur2.acheterCarte();
                     joueur2.getInventaireJoueur().addCartes(Choix2);
                 }
                 if (choix2 == 1){
-                    Face AchatJ2 = joueur2.AcheterFace();
+                    Face AchatJ2 = joueur2.acheterFace();
                     joueur2.changementFace(AchatJ2);
 
                 }

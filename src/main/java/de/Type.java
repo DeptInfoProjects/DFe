@@ -1,6 +1,6 @@
 package de;
 
-public enum Type {
+public enum Type {    /* enumeration de 5 types de Face de dé */
     NORMAL{
         @Override
         public String toString() {

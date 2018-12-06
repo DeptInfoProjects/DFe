@@ -5,7 +5,7 @@ import de.*;
 import static de.Ressource.*;
 import static de.Type.*;
 
-
+/* Définition du sanctuaire qui contient les différents bassins comportant les faces de dé à acheter */
 public class Sanctuaire {
     private Face lunaire1 = new Face(1, LUNAIRE,NORMAL);   /* x4  */
     private Face or3 = new Face(3, OR,NORMAL);     /* x4 */
@@ -32,7 +32,7 @@ public class Sanctuaire {
     }
 
 
-    public Face getSanctuaire(int n){
+    public Face getSanctuaire(int n){ /* Return le contenu du sanctuaire */
         if (n == 1){
             return lunaire1;
         }
