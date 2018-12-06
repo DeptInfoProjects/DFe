@@ -1,20 +1,20 @@
 package bot;
 
 import de.*;
-import Iles.Carte;
+import iles.Carte;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
-public class Inventaire {
+public class Inventaire {  /* l'inventaire possède 5 attributs : les 3 ressources + nb victoire et la liste des cartes du joueur */
     private int nbOR;
     private int nbSolaire;
     private int nbLunaire;
     private int nbVictoire;
     private List<Carte> cartes = new ArrayList<>();
 
-    public Inventaire(){}
+    public Inventaire(){}  /* constructeur de l'inventaire vide */
 
     public Inventaire(int OR, int SOLAIRE, int LUNAIRE, int VICTOIRE, List<Carte> cartes) {
         this.nbOR = OR;
@@ -23,7 +23,7 @@ public class Inventaire {
         this.nbVictoire = VICTOIRE;
         this.cartes = cartes;
     }
-    public void setInventaire(int OR, int SOLAIRE, int LUNAIRE , int VICTOIRE, List<Carte> cartes){
+    public void setInventaire(int OR, int SOLAIRE, int LUNAIRE , int VICTOIRE, List<Carte> cartes){  /* maj de l'inventaire */
         this.nbOR = OR;
         this.nbSolaire = SOLAIRE;
         this.nbLunaire = LUNAIRE;
@@ -32,7 +32,7 @@ public class Inventaire {
     }
 
 
-
+    /* get et set des ressources/nb victoire/liste des cartes de l'inventaire */
     public int getNbOR() {
         return nbOR;
     }
@@ -69,7 +69,8 @@ public class Inventaire {
 
     public int getSizeCarte(){return cartes.size();}
 
-    public void addCartes(Carte c){cartes.add(c);}
+    public void addCartes(Carte c){  /* ajout d'une carte donnée en parametre dans la liste des cartes de l'inventaire du joueur */
+        cartes.add(c);}
 
     public void adderFace(Face FaceDe) {
         if (FaceDe.getRes() == Ressource.OR) this.setNbOR(this.getNbOR() + FaceDe.getValeur());

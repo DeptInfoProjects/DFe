@@ -1,4 +1,4 @@
-package Iles;
+package iles;
 
 public enum TypeEffet {
     IMMEDIAT,

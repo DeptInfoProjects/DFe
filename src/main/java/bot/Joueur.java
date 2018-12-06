@@ -1,11 +1,11 @@
 package bot;
 import de.*;
-import Iles.*;
+import iles.*;
 
 
 import java.util.Random;
 
-
+/* Un joueur possède (est caractérisé par) 2 Dés (d1 et d2) et d'un sac (son inventaire) */
 public class Joueur {
 
     private De d1 = new De();
@@ -13,51 +13,45 @@ public class Joueur {
     private Inventaire Sac;
 
 
-    public Joueur(){
-        d1.initDe1();
-        d2.initDe2();
+    public Joueur(){  /* Constructeur du joueur */
+        d1.InitDe1();
+        d2.InitDe2();
         Sac = new Inventaire();
 
 
 
     }
-    public Inventaire getInventaireJoueur(){return this.Sac;}
+    public Inventaire getInventaireJoueur(){ /* retourne l'inventaire du joueur */
+        return this.Sac;}
 
-    public De getD1() {
+    public De getD1() {  /* retourne le dé d1 */
         return this.d1;
     }
 
-    public De getD2() {
+    public De getD2() {/* retourne le dé d2 */
         return this.d2;
     }
 
 
-    /*public Face ancienneFace(){
+
+
+    public void changementFace(Face Achat){  /* prend en parametre la nouvelle face , cette méthode remplace la plus petite Face parmi toutes les faces (du d1 et du d2) par la Face donnée en parametre */
         Face FaceMinD1 = this.d1.FACEMIN();
         Face FaceMinD2 = this.d2.FACEMIN();
-        if (FaceMinD1 == FaceMinD2 ) return FaceMinD1;
-        if (de.compare2Face(FaceMinD1,FaceMinD2) == FaceMinD1) return FaceMinD1;
-        else return FaceMinD2;
-    }*/
-
-
-    public void changementFace(Face Achat){
-        Face FaceMinD1 = this.d1.faceMin();
-        Face FaceMinD2 = this.d2.faceMin();
         if (FaceMinD1 == FaceMinD2 ) this.d1.setFACE(Achat);
         if (De.compare2Face(FaceMinD1,FaceMinD2) == FaceMinD1) this.d1.setFACE(Achat);
         else this.d2.setFACE(Achat);
     }
 
-    private int rand() {
+    private int Rand() {  /* retourne un chiffre aléatoire entre 0 et 1 */
         Random rand = new Random();
         return rand.nextInt(2);
     }
 
-    public Face acheterFace() {
+    public Face AcheterFace() {     /*  Achat d'une Face dans la limite des moyens du joueur  */
         Sanctuaire Jardin = new Sanctuaire();
-        int x = this.getInventaireJoueur().getNbOR();
-        int rand = rand();
+        int x = this.getInventaireJoueur().getNbOR(); // x : le nombre d'Or possedant le joueur
+        int rand = Rand();
         if (x == 2) {
             this.getInventaireJoueur().setNbOR(x - 2);
             if (rand == 0) return Jardin.getSanctuaire(2);
@@ -92,18 +86,18 @@ public class Joueur {
         if ( x >= 12 ){
             this.getInventaireJoueur().setNbOR(x - 12);
             return Jardin.getSanctuaire(9);}
-        return De.compare2Face(d1.faceMin(), d2.faceMin());
+        return De.compare2Face(d1.FACEMIN(), d2.FACEMIN());
     }
 
 
-    public Carte acheterCarte() {
+    public Carte AcheterCarte() {  /* Achat d'une carte dans limite des moyens du joueur */
         int x1 = this.getInventaireJoueur().getNbLunaire(); /* ressources en lunaire */
         int x2 = this.getInventaireJoueur().getNbSolaire();/* ressources en solaire  */
         int x3 = this.getInventaireJoueur().getNbVictoire();/* ressources en victoire  */
 
 
         if (x1 == 1) {
-            int rand = rand();
+            int rand = Rand();
             if ((rand == 0) && (Carte.MARTEAU.getStock() > 0)) {
                 this.getInventaireJoueur().setNbLunaire(x1 - 1); /* enlever 1 lunaire de l'inventaire  */
                 Carte.MARTEAU.ModStock();   /* maj du stock */
@@ -163,7 +157,7 @@ public class Joueur {
 
 
         if (x2 == 1) {
-            int rand = rand();
+            int rand = Rand();
             if ((rand == 0) && (Carte.ANCIEN.getStock() > 0)) {
                 this.getInventaireJoueur().setNbSolaire(x2 - 1); /* enlever 1 solaire de l'inventaire  */
                 Carte.ANCIEN.ModStock();   /* maj du stock */

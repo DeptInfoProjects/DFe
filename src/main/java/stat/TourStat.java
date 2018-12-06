@@ -1,4 +1,4 @@
-package Stat;
+package stat;
 
 import bot.Joueur;
 import de.Face;

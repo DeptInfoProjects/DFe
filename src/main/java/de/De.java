@@ -2,8 +2,7 @@ package de;
 import java.lang.*;
 import java.util.Random;
 
-
-import static de.Type.*;
+/*   Dé comportant 6 attributs de type Face*/
 
 public class De {
     public Face FACE1;
@@ -12,31 +11,41 @@ public class De {
     public Face FACE4;
     public Face FACE5;
     public Face FACE6;
-    public De() {}
+    public De() {}             /* Constructeur du dé (avec 6 faces "vides" ) */
 
-    public void initDe1(){
-        FACE1 = new Face(1, Ressource.OR,NORMAL);
-        FACE2 = new Face(1, Ressource.OR,NORMAL);
-        FACE3 = new Face(1, Ressource.OR,NORMAL);
-        FACE4 = new Face(1, Ressource.OR,NORMAL);
-        FACE5 = new Face(1, Ressource.OR,NORMAL);
-        FACE6 = new Face(1, Ressource.SOLAIRE,NORMAL);
+    public void InitDe1(){      /* Initialisation du 1er dé avec les 6 faces donées */
+        FACE1 = new Face(1, Ressource.OR);
+
+        FACE2 = new Face(1, Ressource.OR);
+
+        FACE3 = new Face(1, Ressource.OR);
+
+        FACE4 = new Face(1, Ressource.OR);
+
+        FACE5 = new Face(1, Ressource.OR);
+
+        FACE6 = new Face(1, Ressource.SOLAIRE);
     }
-    public void initDe2(){
-        FACE1 = new Face(1, Ressource.OR,NORMAL);
-        FACE2 = new Face(1, Ressource.OR,NORMAL);
-        FACE3 = new Face(1, Ressource.OR,NORMAL);
-        FACE4 = new Face(1, Ressource.OR,NORMAL);
-        FACE5 = new Face(1, Ressource.LUNAIRE,NORMAL);
-        FACE6 = new Face(2, Ressource.VICTOIRE,NORMAL);
+    public void InitDe2(){               /* Initialisation du 2eme dé avec les 6 faces donées */
+        FACE1 = new Face(1, Ressource.OR);
+
+        FACE2 = new Face(1, Ressource.OR);
+
+        FACE3 = new Face(1, Ressource.OR);
+
+        FACE4 = new Face(1, Ressource.OR);
+
+        FACE5 = new Face(1, Ressource.LUNAIRE);
+
+        FACE6 = new Face(2, Ressource.VICTOIRE);
     }
-    private  int rand(){
+    private  int Rand(){        /* méthode retournant un chiffre aléatoire entre 1 et 6*/
         Random rand = new Random();
         return rand.nextInt(6) + 1;
     }
 
-    public Face getFace(){
-        int rand = rand();
+    public Face getFace(){          /* Retourne le resultat d'un lancé de dé (une Face aléatoire)*/
+        int rand = Rand();
         Face compte ;
 
         switch(rand){
@@ -63,17 +72,15 @@ public class De {
         return compte;
     }
 
-    private Integer minimum(int a ,int b , int c , int d , int e,int f){
+    private Integer Minimum(int a ,int b , int c , int d , int e,int f){  /* prend en parametre 6 entiers et retourne le minimum */
         return Math.min(a,Math.min(b,Math.min(c,Math.min(d,Math.min(e,f))))) ;
     }
 
-   /*private int ValeurMin(){
-        return Minimum(FACE1.getValeur() ,FACE2.getValeur() ,FACE3.getValeur() ,FACE4.getValeur() ,FACE5.getValeur() ,FACE6.getValeur());
-    }*/
 
 
-    public Face faceMin(){
-        int ValeurMin = minimum(FACE1.getValeur() ,FACE2.getValeur() ,FACE3.getValeur() ,FACE4.getValeur() ,FACE5.getValeur() ,FACE6.getValeur());
+
+    public Face FACEMIN(){   /* retourne la Face la moins importante (plus petite) */
+        int ValeurMin = Minimum(FACE1.getValeur() ,FACE2.getValeur() ,FACE3.getValeur() ,FACE4.getValeur() ,FACE5.getValeur() ,FACE6.getValeur());
 
         if (ValeurMin == FACE1.getValeur()&& FACE1.getRes() == Ressource.OR) return FACE1;
         if (ValeurMin == FACE2.getValeur()&& FACE2.getRes() == Ressource.OR) return FACE2;
@@ -85,13 +92,14 @@ public class De {
     }
 
 
-    public void setFACE(Face Choix){
-        faceMin().setValeur(Choix.getValeur());
-        faceMin().setRes(Choix.getRes());
+    public void setFACE(Face Choix){   /* remplace la Face minimale par la Face récupérée en parametre */
+        Face FaceAchanger = FACEMIN() ;
+        FaceAchanger.setValeur(Choix.getValeur());
+        FaceAchanger.setRes(Choix.getRes());
 
     }
 
-    public static Face compare2Face(Face Face1, Face Face2) {
+    public static Face compare2Face(Face Face1, Face Face2) {   /* prend en parametre 2 Faces et retourne la Face plus petite */
         if (Face1.getRes() == Face2.getRes()) return Face1;
         if (Face1.getRes() == Face2.getRes() && Face1.getValeur() < Face2.getValeur()) return Face1;
         if (Face1.getRes() == Face2.getRes() && Face1.getValeur() > Face2.getValeur()) return Face2;
@@ -115,7 +123,7 @@ public class De {
     }
 
 
-    public String toString() {
+    public String toString() {   /* Affichage d'un Dé*/
         String vide;
         vide =  FACE1.getRes() + " " + FACE1.getValeur() + '\n'+
                 FACE2.getRes() + " " + FACE2.getValeur() + '\n' +

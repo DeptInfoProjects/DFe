@@ -1,4 +1,4 @@
-package Iles;
+package iles;
 
 import de.*;
 
