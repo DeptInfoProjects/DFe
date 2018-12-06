@@ -7,21 +7,14 @@ import static de.Type.*;
 
 
 public class Sanctuaire {
-
-
-
     private Face lunaire1 = new Face(1, LUNAIRE,NORMAL);   /* x4  */
     private Face or3 = new Face(3, OR,NORMAL);     /* x4 */
-
 
     // pour les FACES qui cout 3 //
     private Face or4 = new Face(4, OR,NORMAL);      /* x4 */
     private Face solaire1 = new Face(1, SOLAIRE,NORMAL);     /* x4 */
-
     // pour les FACES qui cout 4 //
-
     private Face or6 = new Face(6, OR,NORMAL); /* x1  */
-
 
     // pour les FACES qui cout 6 //
     private Face lunaire2 = new Face(2, LUNAIRE,NORMAL);  /* x4 */
