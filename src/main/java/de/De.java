@@ -16,28 +16,18 @@ public class De {
 
     public void initDe1(){
         FACE1 = new Face(1, Ressource.OR,NORMAL);
-
         FACE2 = new Face(1, Ressource.OR,NORMAL);
-
         FACE3 = new Face(1, Ressource.OR,NORMAL);
-
         FACE4 = new Face(1, Ressource.OR,NORMAL);
-
         FACE5 = new Face(1, Ressource.OR,NORMAL);
-
         FACE6 = new Face(1, Ressource.SOLAIRE,NORMAL);
     }
     public void initDe2(){
         FACE1 = new Face(1, Ressource.OR,NORMAL);
-
         FACE2 = new Face(1, Ressource.OR,NORMAL);
-
         FACE3 = new Face(1, Ressource.OR,NORMAL);
-
         FACE4 = new Face(1, Ressource.OR,NORMAL);
-
         FACE5 = new Face(1, Ressource.LUNAIRE,NORMAL);
-
         FACE6 = new Face(2, Ressource.VICTOIRE,NORMAL);
     }
     private  int rand(){
