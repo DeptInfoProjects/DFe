@@ -10,7 +10,7 @@ public class Stat {
         for (int acc = 0; acc < 499; acc++) {
             Joueur J1 = new Joueur();
             Joueur J2 = new Joueur();
-            int mem = new TourStat(J1, J2).Partie();
+            int mem = new TourStat(J1, J2).partie();
             if (mem == 0) {
                 memNull = memNull + 1;
             }

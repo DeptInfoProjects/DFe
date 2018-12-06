@@ -14,8 +14,8 @@ public class Joueur {
 
 
     public Joueur(){  /* Constructeur du joueur */
-        d1.InitDe1();
-        d2.InitDe2();
+        d1.initDe1();
+        d2.initDe2();
         Sac = new Inventaire();
 
 
@@ -36,8 +36,8 @@ public class Joueur {
 
 
     public void changementFace(Face Achat){  /* prend en parametre la nouvelle face , cette méthode remplace la plus petite Face parmi toutes les faces (du d1 et du d2) par la Face donnée en parametre */
-        Face FaceMinD1 = this.d1.FACEMIN();
-        Face FaceMinD2 = this.d2.FACEMIN();
+        Face FaceMinD1 = this.d1.faceMin();
+        Face FaceMinD2 = this.d2.faceMin();
         if (FaceMinD1 == FaceMinD2 ) this.d1.setFACE(Achat);
         if (De.compare2Face(FaceMinD1,FaceMinD2) == FaceMinD1) this.d1.setFACE(Achat);
         else this.d2.setFACE(Achat);
@@ -48,7 +48,7 @@ public class Joueur {
         return rand.nextInt(2);
     }
 
-    public Face AcheterFace() {     /*  Achat d'une Face dans la limite des moyens du joueur  */
+    public Face acheterFace() {     /*  Achat d'une Face dans la limite des moyens du joueur  */
         Sanctuaire Jardin = new Sanctuaire();
         int x = this.getInventaireJoueur().getNbOR(); // x : le nombre d'Or possedant le joueur
         int rand = Rand();
@@ -86,11 +86,11 @@ public class Joueur {
         if ( x >= 12 ){
             this.getInventaireJoueur().setNbOR(x - 12);
             return Jardin.getSanctuaire(9);}
-        return De.compare2Face(d1.FACEMIN(), d2.FACEMIN());
+        return De.compare2Face(d1.faceMin(), d2.faceMin());
     }
 
 
-    public Carte AcheterCarte() {  /* Achat d'une carte dans limite des moyens du joueur */
+    public Carte acheterCarte() {  /* Achat d'une carte dans limite des moyens du joueur */
         int x1 = this.getInventaireJoueur().getNbLunaire(); /* ressources en lunaire */
         int x2 = this.getInventaireJoueur().getNbSolaire();/* ressources en solaire  */
         int x3 = this.getInventaireJoueur().getNbVictoire();/* ressources en victoire  */
