@@ -18,11 +18,11 @@ class TourStat {
     TourStat(Joueur joueur1, Joueur joueur2) {
         this.joueur1 = joueur1;
         this.joueur2 = joueur2;
-        initInvent();
+        InitInvent();
 
     }
 
-    private void initInvent() {
+    private void InitInvent() {
         joueur1.getInventaireJoueur().setInventaire(3, 0, 0, 0,null);
         joueur2.getInventaireJoueur().setInventaire(2, 0, 0, 0,null);
     }

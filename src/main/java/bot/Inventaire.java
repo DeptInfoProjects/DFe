@@ -2,12 +2,11 @@ package bot;
 
 import Iles.Exploit;
 import de.*;
-import Iles.Carte;
 
 import java.util.ArrayList;
 import java.util.List;
 
-/* l'inventaire possède 5 attributs : les 3 ressources + nb victoire et la liste des cartes du joueur */
+
 public class Inventaire {
     private int nbOR;
     private int nbSolaire;
@@ -17,15 +16,14 @@ public class Inventaire {
 
     public Inventaire(){}
 
-    public Inventaire(int OR, int SOLAIRE, int LUNAIRE, int VICTOIRE, List<Exploit> cartes) {
+    public Inventaire(int OR, int SOLAIRE, int LUNAIRE, int VICTOIRE, ArrayList<Exploit> cartes) {
         this.nbOR = OR;
         this.nbSolaire = SOLAIRE;
         this.nbLunaire = LUNAIRE;
         this.nbVictoire = VICTOIRE;
         this.cartes = cartes;
     }
-    /* maj de l'inventaire */
-    public void setInventaire(int OR, int SOLAIRE, int LUNAIRE , int VICTOIRE, List<Exploit> cartes){
+    public void setInventaire(int OR, int SOLAIRE, int LUNAIRE , int VICTOIRE, ArrayList<Exploit> cartes){
         this.nbOR = OR;
         this.nbSolaire = SOLAIRE;
         this.nbLunaire = LUNAIRE;
@@ -34,7 +32,7 @@ public class Inventaire {
     }
 
 
-    /* get et set des ressources/nb victoire/liste des cartes de l'inventaire */
+
     public int getNbOR() {
         return nbOR;
     }
@@ -67,14 +65,12 @@ public class Inventaire {
         this.nbVictoire = nbVictoire;
     }
 
-    public List<Exploit> getCartes() {return cartes;}
+    public ArrayList<Exploit> getCartes() {return (ArrayList<Exploit>) cartes;}
 
     public int getSizeCarte(){return cartes.size();}
 
-    /* ajout d'une carte donnée en parametre dans la liste des cartes de l'inventaire du joueur */
     public void addCartes(Exploit c){cartes.add(c);}
 
-    /* Ajout de la gagne dans l'inventaire */
     public void adderFace(Face FaceDe) {
         if (FaceDe.getRes() == Ressource.OR) this.setNbOR(this.getNbOR() + FaceDe.getValeur());
         if (FaceDe.getRes() == Ressource.SOLAIRE) this.setNbSolaire(this.getNbSolaire() + FaceDe.getValeur());
