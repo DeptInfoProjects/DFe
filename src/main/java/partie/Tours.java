@@ -1,6 +1,7 @@
 package partie;
 
 import Iles.Carte;
+import Iles.Exploit;
 import bot.Joueur;
 import de.Face;
 
@@ -29,8 +30,8 @@ public class Tours {
     }
 
     private void initInvent() {
-        joueur1.getInventaireJoueur().setInventaire(3, 0, 0, 0, new ArrayList<>());
-        joueur2.getInventaireJoueur().setInventaire(2, 0, 0, 0, new ArrayList<>());
+        joueur1.getInventaireJoueur().setInventaire(3, 0, 0, 0, new ArrayList<Exploit>());
+        joueur2.getInventaireJoueur().setInventaire(2, 0, 0, 0, new ArrayList<Exploit>());
     }
     /* Choisir soit acheter une carte soit acheter une face */
 
@@ -107,7 +108,7 @@ public class Tours {
             /* pour le Joueur1 */
             /* Si il veut une carte */
             if (choix1 == 0){
-                Carte Choix = joueur1.acheterCarte();
+                Exploit Choix = joueur1.acheterCarte();
                 joueur1.getInventaireJoueur().addCartes(Choix); /* on l'a rajoute dans son inventaire */
                 System.out.println("Joueur1 veut acheter la Carte " + Choix.getNom() );
             }
@@ -120,7 +121,7 @@ public class Tours {
             }
             /* pour le Jouer2 */
             if (choix2 == 2){
-                Carte Choix2 = joueur2.acheterCarte();
+                Exploit Choix2 = joueur2.acheterCarte();
                 joueur2.getInventaireJoueur().addCartes(Choix2);
                 System.out.println("Joueur2 veut acheter la Carte " + Choix2.getNom());
             }
@@ -149,7 +150,7 @@ public class Tours {
                 /* pour le Joueur1 */
                 /* Si il veut une carte */
                 if (choix1 == 2){
-                    Carte Choix = joueur1.acheterCarte();
+                    Exploit Choix = joueur1.acheterCarte();
                     joueur1.getInventaireJoueur().addCartes(Choix); /* on l'a rajoute dans son inventaire */
                 }
 
@@ -177,7 +178,7 @@ public class Tours {
                 affichageJ2bis();
                 /* pour le Jouer2 */
                 if (choix2 == 0){
-                    Carte Choix2 = joueur2.acheterCarte();
+                    Exploit Choix2 = joueur2.acheterCarte();
                     joueur2.getInventaireJoueur().addCartes(Choix2);
                 }
                 if (choix2 == 1){
@@ -210,7 +211,7 @@ public class Tours {
                 /* pour le Joueur1 */
                 /* Si il veut une carte */
                 if (choix1 == 0){
-                    Carte Choix = joueur1.acheterCarte();
+                    Exploit Choix = joueur1.acheterCarte();
                     joueur1.getInventaireJoueur().addCartes(Choix); /* on l'a rajoute dans son inventaire */
                 }
 
@@ -221,7 +222,7 @@ public class Tours {
                 }
                 /* pour le Jouer2 */
                 if (choix2 == 0){
-                    Carte Choix2 = joueur2.acheterCarte();
+                    Exploit Choix2 = joueur2.acheterCarte();
                     joueur2.getInventaireJoueur().addCartes(Choix2);
                 }
                 if (choix2 == 1){
