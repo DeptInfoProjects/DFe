@@ -1,7 +1,7 @@
 package de;
 
 public class Face {  /* Face comportant un attribut valeur et un attribut ressource  */
-
+    public int toto;
     private Integer valeur;
     private Ressource res;
     private Type type;
