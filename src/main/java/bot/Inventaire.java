@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+
+
 public class Inventaire {
     private int nbOR;
     private int nbSolaire;
@@ -33,7 +35,7 @@ public class Inventaire {
 
 
 
-    public int getNbOR() {
+    public int  getNbOR() {
         return nbOR;
     }
 
@@ -41,7 +43,7 @@ public class Inventaire {
         this.nbOR = nbOR;
     }
 
-    public int getNbSolaire() {
+    public int  getNbSolaire() {
         return nbSolaire;
     }
 
@@ -49,7 +51,7 @@ public class Inventaire {
         this.nbSolaire = nbSolaire;
     }
 
-    public int getNbLunaire() {
+    public int  getNbLunaire() {
         return nbLunaire;
     }
 
@@ -57,7 +59,7 @@ public class Inventaire {
         this.nbLunaire = nbLunaire;
     }
 
-    public int getNbVictoire() {
+    public int  getNbVictoire() {
         return nbVictoire;
     }
 
@@ -77,6 +79,7 @@ public class Inventaire {
         if (FaceDe.getRes() == Ressource.LUNAIRE) this.setNbLunaire(this.getNbLunaire() + FaceDe.getValeur());
         if (FaceDe.getRes() == Ressource.VICTOIRE) this.setNbVictoire(this.getNbVictoire() + FaceDe.getValeur());
     }
+
 }
 
 

@@ -125,12 +125,12 @@ public class De {
     /* Affichage d'un Dé*/
     public String toString() {
         String vide;
-        vide =  FACE1.getRes() + " " + FACE1.getValeur() + '\n'+
-                FACE2.getRes() + " " + FACE2.getValeur() + '\n' +
-                FACE3.getRes() + " " + FACE3.getValeur() + '\n' +
-                FACE4.getRes() + " " + FACE4.getValeur() + '\n' +
-                FACE5.getRes() + " " + FACE5.getValeur() + '\n' +
-                FACE6.getRes() + " " + FACE6.getValeur();
+        vide =  FACE1.AfficheFace() + '\n'+
+                FACE2.AfficheFace() + '\n' +
+                FACE3.AfficheFace() + '\n' +
+                FACE4.AfficheFace() + '\n' +
+                FACE5.AfficheFace() + '\n' +
+                FACE6.AfficheFace();
         return vide;
     }
 
