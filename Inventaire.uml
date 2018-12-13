@@ -9,7 +9,7 @@
     <node x="323.7014367816091" y="591.0">bot.Joueur</node>
     <node x="195.55560344827583" y="882.0">partie.Tours</node>
     <node x="356.32643678160906" y="1029.0">partie.Final</node>
-    <node x="27.375" y="726.0">iles.Sanctuaire</node>
+    <node x="27.375" y="726.0">Iles.Sanctuaire</node>
     <node x="413.375" y="333.5">bot.Inventaire</node>
   </nodes>
   <notes />
@@ -20,7 +20,7 @@
       <point x="228.9565065681445" y="72.0" />
       <point x="49.599999999999966" y="26.0" />
     </edge>
-    <edge source="partie.Tours" target="iles.Sanctuaire">
+    <edge source="partie.Tours" target="Iles.Sanctuaire">
       <point x="-45.25000000000003" y="-48.5" />
       <point x="240.8056034482758" y="852.0" />
       <point x="68.125" y="852.0" />
@@ -80,7 +80,7 @@
       <point x="445.5764367816091" y="696.0" />
       <point x="46.875" y="37.5" />
     </edge>
-    <edge source="iles.Sanctuaire" target="de.Ressource">
+    <edge source="Iles.Sanctuaire" target="de.Ressource">
       <point x="-69.85714285714286" y="-48.0" />
       <point x="39.01785714285714" y="706.0" />
       <point x="0.0" y="706.0" />
@@ -88,13 +88,13 @@
       <point x="129.75650656814452" y="82.0" />
       <point x="-49.599999999999994" y="26.0" />
     </edge>
-    <edge source="iles.Sanctuaire" target="bot.Joueur">
+    <edge source="Iles.Sanctuaire" target="bot.Joueur">
       <point x="46.571428571428584" y="-48.0" />
       <point x="155.44642857142858" y="696.0" />
       <point x="351.8264367816091" y="696.0" />
       <point x="-46.875" y="37.5" />
     </edge>
-    <edge source="iles.Sanctuaire" target="de.Face">
+    <edge source="Iles.Sanctuaire" target="de.Face">
       <point x="-23.285714285714306" y="-48.0" />
       <point x="85.5892857142857" y="706.0" />
       <point x="68.375" y="706.0" />

@@ -1,41 +1,49 @@
+
+
 package de;
 import java.lang.*;
 import java.util.Random;
 
 
 import static de.Type.*;
-
-public class De {  /*   Dé comportant 6 attributs de type Face*/
+/*   Dé comportant 6 attributs de type Face*/
+public class De {
     public Face FACE1;
     public Face FACE2;
     public Face FACE3;
     public Face FACE4;
     public Face FACE5;
     public Face FACE6;
-    public De() {}    /* Constructeur du dé (avec 6 faces "vides" ) */
 
-    public void initDe1(){/* Initialisation du 1er dé avec les 6 faces donées */
-        FACE1 = new Face(1, Ressource.OR,NORMAL);
-        FACE2 = new Face(1, Ressource.OR,NORMAL);
-        FACE3 = new Face(1, Ressource.OR,NORMAL);
-        FACE4 = new Face(1, Ressource.OR,NORMAL);
-        FACE5 = new Face(1, Ressource.OR,NORMAL);
-        FACE6 = new Face(1, Ressource.SOLAIRE,NORMAL);
+    /* Constructeur du dé (avec 6 faces "vides" ) */
+    public De() {}
+
+    /* Initialisation du 1er dé avec les 6 faces donées */
+    public void initDe1(){
+        FACE1 = new Face(NORMAL,1, Ressource.OR);
+        FACE2 = new Face(NORMAL,1, Ressource.OR);
+        FACE3 = new Face(NORMAL,1, Ressource.OR);
+        FACE4 = new Face(NORMAL,1, Ressource.OR);
+        FACE5 = new Face(NORMAL,1, Ressource.OR);
+        FACE6 = new Face(NORMAL,1, Ressource.SOLAIRE);
     }
-    public void initDe2(){/* Initialisation du 2eme dé avec les 6 faces donées */
-        FACE1 = new Face(1, Ressource.OR,NORMAL);
-        FACE2 = new Face(1, Ressource.OR,NORMAL);
-        FACE3 = new Face(1, Ressource.OR,NORMAL);
-        FACE4 = new Face(1, Ressource.OR,NORMAL);
-        FACE5 = new Face(1, Ressource.LUNAIRE,NORMAL);
-        FACE6 = new Face(2, Ressource.VICTOIRE,NORMAL);
+
+    /* Initialisation du 2eme dé avec les 6 faces donées */
+    public void initDe2(){
+        FACE1 = new Face(NORMAL,1, Ressource.OR);
+        FACE2 = new Face(NORMAL,1, Ressource.OR);
+        FACE3 = new Face(NORMAL,1, Ressource.OR);
+        FACE4 = new Face(NORMAL,1, Ressource.OR);
+        FACE5 = new Face(NORMAL,1, Ressource.LUNAIRE);
+        FACE6 = new Face(NORMAL,2, Ressource.VICTOIRE);
     }
-    private  int rand(){  /* méthode retournant un chiffre aléatoire entre 1 et 6*/
+    /* méthode retournant un chiffre aléatoire entre 1 et 6*/
+    private  int rand(){
         Random rand = new Random();
         return rand.nextInt(6) + 1;
     }
-
-    public Face getFace(){/* Retourne le resultat d'un lancé de dé (une Face aléatoire)*/
+    /* Retourne le resultat d'un lancé de dé (une Face aléatoire)*/
+    public Face getFace(){
         int rand = rand();
         Face compte ;
 
@@ -68,27 +76,52 @@ public class De {  /*   Dé comportant 6 attributs de type Face*/
         return Math.min(a,Math.min(b,Math.min(c,Math.min(d,Math.min(e,f))))) ;
     }
 
+   /*private int ValeurMin(){
+        return Minimum(FACE1.getValeur() ,FACE2.getValeur() ,FACE3.getValeur() ,FACE4.getValeur() ,FACE5.getValeur() ,FACE6.getValeur());
+    }*/
 
-    public Face faceMin(){   /* return la petite face (qui contient la plus petite valeur) d'un dé*/
-        int ValeurMin = minimum(FACE1.getValeur() ,FACE2.getValeur() ,FACE3.getValeur() ,FACE4.getValeur() ,FACE5.getValeur() ,FACE6.getValeur());
+    /* retourne la Face la moins importante (plus petite) */
+    public Face faceMin() {
+        try {
+            int ValeurMin = minimum(FACE1.getValeur(), FACE2.getValeur(), FACE3.getValeur(), FACE4.getValeur(), FACE5.getValeur(), FACE6.getValeur());
 
-        if (ValeurMin == FACE1.getValeur()&& FACE1.getRes() == Ressource.OR) return FACE1;
-        if (ValeurMin == FACE2.getValeur()&& FACE2.getRes() == Ressource.OR) return FACE2;
-        if (ValeurMin == FACE3.getValeur()&& FACE3.getRes() == Ressource.OR) return FACE3;
-        if (ValeurMin == FACE4.getValeur()&& FACE4.getRes() == Ressource.OR) return FACE4;
-        if (ValeurMin == FACE5.getValeur()&& FACE5.getRes() == Ressource.OR) return FACE5;
-        if (ValeurMin == FACE6.getValeur()&& FACE6.getRes() == Ressource.OR) return FACE6;
-        return FACE1;
+            if (ValeurMin == FACE1.getValeur() && FACE1.getRes() == Ressource.OR) return FACE1;
+            if (ValeurMin == FACE2.getValeur() && FACE2.getRes() == Ressource.OR) return FACE2;
+            if (ValeurMin == FACE3.getValeur() && FACE3.getRes() == Ressource.OR) return FACE3;
+            if (ValeurMin == FACE4.getValeur() && FACE4.getRes() == Ressource.OR) return FACE4;
+            if (ValeurMin == FACE5.getValeur() && FACE5.getRes() == Ressource.OR) return FACE5;
+            if (ValeurMin == FACE6.getValeur() && FACE6.getRes() == Ressource.OR) return FACE6;
+            return FACE1;
+        } catch (NullPointerException e) {
+            return FACE1;
+        }
     }
 
+    /* remplace la Face minimale par la Face récupérée en parametre */
+    public void setFACE(Face Choix){
+        Face FaceMin = this.faceMin();
+        if (FaceMin == FACE1){
+            this.FACE1 = Choix;
+        }
+        if (FaceMin == FACE2){
+            this.FACE2 = Choix;
+        }
+        if (FaceMin == FACE3){
+            this.FACE3 = Choix;
+        }
+        if (FaceMin == FACE4){
+            this.FACE4 = Choix;
+        }
+        if (FaceMin == FACE5){
+            this.FACE5 = Choix;
+        }
+        if (FaceMin == FACE6){
+            this.FACE6 = Choix;
+        }
 
-    public void setFACE(Face Choix){/* remplace la Face minimale par la Face récupérée en parametre */
-        Face faceAchanger = faceMin() ;
-        faceAchanger.setValeur(Choix.getValeur());
-        faceAchanger.setRes(Choix.getRes());
+
 
     }
-
     /* prend en parametre 2 Faces et retourne la Face plus petite */
     public static Face compare2Face(Face Face1, Face Face2) {
         if (Face1.getRes() == Face2.getRes()) return Face1;
@@ -113,17 +146,16 @@ public class De {  /*   Dé comportant 6 attributs de type Face*/
 
     }
 
-
+    /* Affichage d'un Dé*/
     public String toString() {
         String vide;
-        vide =  FACE1.getRes() + " " + FACE1.getValeur() + '\n'+
-                FACE2.getRes() + " " + FACE2.getValeur() + '\n' +
-                FACE3.getRes() + " " + FACE3.getValeur() + '\n' +
-                FACE4.getRes() + " " + FACE4.getValeur() + '\n' +
-                FACE5.getRes() + " " + FACE5.getValeur() + '\n' +
-                FACE6.getRes() + " " + FACE6.getValeur();
+        vide =  FACE1.AfficheFace() + '\n'+
+                FACE2.AfficheFace() + '\n' +
+                FACE3.AfficheFace() + '\n' +
+                FACE4.AfficheFace() + '\n' +
+                FACE5.AfficheFace() + '\n' +
+                FACE6.AfficheFace();
         return vide;
     }
 
 }
-
