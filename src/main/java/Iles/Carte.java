@@ -22,7 +22,7 @@ public class Carte{
     public static Exploit MEDUSE  = new Exploit("La Meduse"                 ,IMMEDIAT , new Prix(0,4));
     public static Exploit MIRROIR = new Exploit("Le Mirroir abyssal"        ,IMMEDIAT , new Prix(0,5));
     public static Exploit ENIGME  = new Exploit("L'Enigme"                  ,IMMEDIAT , new Prix(0,6));
-    public static Exploit NULL    = new Exploit("NULL"                      ,IMMEDIAT , new Prix(0,0));
+    public static Exploit NULL    = new Exploit("mais il a changé d'avis "  ,IMMEDIAT , new Prix(0,0));
 
 
 

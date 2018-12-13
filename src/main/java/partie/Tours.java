@@ -53,27 +53,26 @@ public class Tours {
     }
 
     private void affichageJ2bis() {
-        System.out.println(PURPLE+"        Joueur 2  : " + '\t' + '\t' + '\t' + '\t'+RESET);
-        System.out.println(String.format("|%-20s %s  |%-20s %s    |%-25s %s" , joueur2.getD1().FACE1.AfficheFace(), "|", joueur2.getD2().FACE1.AfficheFace(), "|", PURPLE + "Inventaire J2 :","|"+RESET));
-        System.out.println(String.format("|%-20s %s  |%-20s %s    |%-25s %s" , joueur2.getD1().FACE2.AfficheFace(), "|", joueur2.getD2().FACE2.AfficheFace(), "|", YELLOW + "OR       : " + joueur2.getInventaireJoueur().getNbOR()      + RESET,"|"));
-        System.out.println(String.format("|%-20s %s  |%-20s %s    |%-25s %s" , joueur2.getD1().FACE3.AfficheFace(), "|", joueur2.getD2().FACE3.AfficheFace(), "|", RED    + "SOLAIRE  : " + joueur2.getInventaireJoueur().getNbSolaire() + RESET,"|"));
-        System.out.println(String.format("|%-20s %s  |%-20s %s    |%-25s %s" , joueur2.getD1().FACE4.AfficheFace(), "|", joueur2.getD2().FACE4.AfficheFace(), "|", BLUE   + "LUNAIRE  : " + joueur2.getInventaireJoueur().getNbLunaire() + RESET,"|"));
-        System.out.println(String.format("|%-20s %s  |%-20s %s    |%-25s %s" , joueur2.getD1().FACE5.AfficheFace(), "|", joueur2.getD2().FACE5.AfficheFace(), "|", GREEN  + "VICTOIRE : " + joueur2.getInventaireJoueur().getNbVictoire()+ RESET,"|"));
-        System.out.println(String.format("|%-20s %s  |%-20s %s"              , joueur2.getD1().FACE6.AfficheFace(), "|", joueur2.getD2().FACE6.AfficheFace(), "|"));
-
-
+        System.out.println(PURPLE + "        Joueur 2  : " + '\t' + '\t' + '\t' + '\t' + RESET);
+        System.out.println(String.format("|%-20s %s  |%-20s %s    |%-25s %s", joueur2.getD1().FACE1.AfficheFace(), "|", joueur2.getD2().FACE1.AfficheFace(), "|", PURPLE + "Inventaire J2 :", "|" + RESET));
+        System.out.println(String.format("|%-20s %s  |%-20s %s    |%-25s %s", joueur2.getD1().FACE2.AfficheFace(), "|", joueur2.getD2().FACE2.AfficheFace(), "|", YELLOW + "OR       : " + joueur2.getInventaireJoueur().getNbOR() + RESET, "|"));
+        System.out.println(String.format("|%-20s %s  |%-20s %s    |%-25s %s", joueur2.getD1().FACE3.AfficheFace(), "|", joueur2.getD2().FACE3.AfficheFace(), "|", RED + "SOLAIRE  : " + joueur2.getInventaireJoueur().getNbSolaire() + RESET, "|"));
+        System.out.println(String.format("|%-20s %s  |%-20s %s    |%-25s %s", joueur2.getD1().FACE4.AfficheFace(), "|", joueur2.getD2().FACE4.AfficheFace(), "|", BLUE + "LUNAIRE  : " + joueur2.getInventaireJoueur().getNbLunaire() + RESET, "|"));
+        System.out.println(String.format("|%-20s %s  |%-20s %s    |%-25s %s", joueur2.getD1().FACE5.AfficheFace(), "|", joueur2.getD2().FACE5.AfficheFace(), "|", GREEN + "VICTOIRE : " + joueur2.getInventaireJoueur().getNbVictoire() + RESET, "|"));
+        System.out.println(String.format("|%-20s %s  |%-20s %s", joueur2.getD1().FACE6.AfficheFace(), "|", joueur2.getD2().FACE6.AfficheFace(), "|"));
     }
+
     private  void affichage(){
+        try {
         System.out.println(PURPLE+"        Joueur 1  : " + '\t' + '\t'+ '\t' + '\t' +"  Joueur 2  :"+RESET);
         System.out.println(String.format("|%-20s %s  |%-20s %s     |%-20s %s  |%-20s %s    |%-15s %s|  "        , joueur1.getD1().FACE1.AfficheFace(), "|",joueur1.getD2().FACE1.AfficheFace(), "|", joueur2.getD1().FACE1.AfficheFace(), "|", joueur2.getD2().FACE1.AfficheFace(),"|", PURPLE + "Inventaire J1 :", "Inventaire J2 :"+RESET));
-        System.out.println(String.format("|%-20s %s  |%-20s %s     |%-20s %s  |%-20s %s    |%-20s %s  |%-20s %s", joueur1.getD1().FACE2.AfficheFace(), "|",joueur1.getD1().FACE2.AfficheFace(), "|", joueur2.getD1().FACE2.AfficheFace(), "|", joueur2.getD2().FACE2.AfficheFace(),"|", YELLOW + "OR       : "+ joueur1.getInventaireJoueur().getNbOR()       ,"|"   ,  YELLOW + "OR       : " + joueur2.getInventaireJoueur().getNbOR()      + RESET,"|"));
-        System.out.println(String.format("|%-20s %s  |%-20s %s     |%-20s %s  |%-20s %s    |%-20s %s  |%-20s %s", joueur1.getD1().FACE3.AfficheFace(), "|",joueur1.getD1().FACE3.AfficheFace(), "|", joueur2.getD1().FACE3.AfficheFace(), "|", joueur2.getD2().FACE3.AfficheFace(),"|", RED    + "SOLAIRE  : "+ joueur1.getInventaireJoueur().getNbSolaire()  ,"|"   ,  RED    + "SOLAIRE  : " + joueur2.getInventaireJoueur().getNbSolaire() + RESET,"|"));
-        System.out.println(String.format("|%-20s %s  |%-20s %s     |%-20s %s  |%-20s %s    |%-20s %s  |%-20s %s", joueur1.getD1().FACE4.AfficheFace(), "|",joueur1.getD1().FACE4.AfficheFace(), "|", joueur2.getD1().FACE4.AfficheFace(), "|", joueur2.getD2().FACE4.AfficheFace(),"|", BLUE   + "LUNAIRE  : "+ joueur1.getInventaireJoueur().getNbLunaire()  ,"|"   ,  BLUE   + "LUNAIRE  : " + joueur2.getInventaireJoueur().getNbLunaire() + RESET,"|"));
-        System.out.println(String.format("|%-20s %s  |%-20s %s     |%-20s %s  |%-20s %s    |%-20s %s  |%-20s %s", joueur1.getD1().FACE5.AfficheFace(), "|",joueur1.getD1().FACE5.AfficheFace(), "|", joueur2.getD1().FACE5.AfficheFace(), "|", joueur2.getD2().FACE5.AfficheFace(),"|", GREEN  + "VICTOIRE : "+ joueur1.getInventaireJoueur().getNbVictoire() ,"|"   ,  GREEN  + "VICTOIRE : " + joueur2.getInventaireJoueur().getNbVictoire()+ RESET,"|"));
+        System.out.println(String.format("|%-20s %s  |%-20s %s     |%-20s %s  |%-20s %s    |%-20s %s  |%-20s %s", joueur1.getD1().FACE2.AfficheFace(), "|",joueur1.getD2().FACE2.AfficheFace(), "|", joueur2.getD1().FACE2.AfficheFace(), "|", joueur2.getD2().FACE2.AfficheFace(),"|", YELLOW + "OR       : "+ joueur1.getInventaireJoueur().getNbOR()       ,"|"   ,  YELLOW + "OR       : " + joueur2.getInventaireJoueur().getNbOR()      + RESET,"|"));
+        System.out.println(String.format("|%-20s %s  |%-20s %s     |%-20s %s  |%-20s %s    |%-20s %s  |%-20s %s", joueur1.getD1().FACE3.AfficheFace(), "|",joueur1.getD2().FACE3.AfficheFace(), "|", joueur2.getD1().FACE3.AfficheFace(), "|", joueur2.getD2().FACE3.AfficheFace(),"|", RED    + "SOLAIRE  : "+ joueur1.getInventaireJoueur().getNbSolaire()  ,"|"   ,  RED    + "SOLAIRE  : " + joueur2.getInventaireJoueur().getNbSolaire() + RESET,"|"));
+        System.out.println(String.format("|%-20s %s  |%-20s %s     |%-20s %s  |%-20s %s    |%-20s %s  |%-20s %s", joueur1.getD1().FACE4.AfficheFace(), "|",joueur1.getD2().FACE4.AfficheFace(), "|", joueur2.getD1().FACE4.AfficheFace(), "|", joueur2.getD2().FACE4.AfficheFace(),"|", BLUE   + "LUNAIRE  : "+ joueur1.getInventaireJoueur().getNbLunaire()  ,"|"   ,  BLUE   + "LUNAIRE  : " + joueur2.getInventaireJoueur().getNbLunaire() + RESET,"|"));
+        System.out.println(String.format("|%-20s %s  |%-20s %s     |%-20s %s  |%-20s %s    |%-20s %s  |%-20s %s", joueur1.getD1().FACE5.AfficheFace(), "|",joueur1.getD2().FACE5.AfficheFace(), "|", joueur2.getD1().FACE5.AfficheFace(), "|", joueur2.getD2().FACE5.AfficheFace(),"|", GREEN  + "VICTOIRE : "+ joueur1.getInventaireJoueur().getNbVictoire() ,"|"   ,  GREEN  + "VICTOIRE : " + joueur2.getInventaireJoueur().getNbVictoire()+ RESET,"|"));
         System.out.println(String.format("|%-20s %s  |%-20s %s     |%-20s %s  |%-20s %s"                        , joueur1.getD1().FACE6.AfficheFace(), "|",joueur1.getD2().FACE6.AfficheFace(), "|", joueur2.getD1().FACE6.AfficheFace(), "|", joueur2.getD2().FACE6.AfficheFace(),"|"));
+        } catch (NullPointerException e){}}
 
-
-    }
 
     private int rand() {
         Random rand = new Random();
@@ -109,30 +108,29 @@ public class Tours {
 
             /* pour le Joueur1 */
             /* Si il veut une carte */
-            if (choix1 == 0){
+            if (choix1 == 1){
                 Exploit Choix = joueur1.acheterCarte();
                 joueur1.getInventaireJoueur().addCartes(Choix); /* on l'a rajoute dans son inventaire */
-                System.out.println(CYAN+"Joueur1 veut acheter la Carte " + Choix.getNom() +RESET);
+                System.out.println(CYAN+"Joueur1 veut acheter la Carte " + BLACK +Choix.getNom() +RESET);
             }
 
             /* Si il veut une face */
-            if (choix1 == 1){
+            if (choix1 == 2){
                 Face AchatJ1 = joueur1.acheterFace();
                 joueur1.changementFace(AchatJ1);               /* on l'implement sur son dÃ© */
                 System.out.println(CYAN+"Joueur1 veut acheter la Face " + AchatJ1.AfficheFace()+RESET);
             }
             /* pour le Jouer2 */
-            if (choix2 == 2){
+            if (choix2 == 1){
                 Exploit Choix2 = joueur2.acheterCarte();
                 joueur2.getInventaireJoueur().addCartes(Choix2);
-                System.out.println(CYAN+"Joueur2 veut acheter la Carte " + Choix2.getNom()+RESET);
+                System.out.println(CYAN+"Joueur2 veut acheter la Carte " + BLACK+ Choix2.getNom()+RESET);
             }
 
-            if (choix2 == 1){
-                Face AchatJ2 = joueur2.acheterFace();
-                joueur2.changementFace(AchatJ2);
+            if (choix2 == 2){
+                Face AchatJ2 = joueur1.acheterFace();
+                joueur1.changementFace(AchatJ2);               /* on l'implement sur son dÃ© */
                 System.out.println(CYAN+"Joueur2 veut acheter la Face " + AchatJ2.AfficheFace()+RESET);
-
             }
             if (((rand1 == 1) & (rand2 == 2) & (joueur1.getInventaireJoueur().getNbSolaire() > 1))
                     | (((rand1 == 1) & (rand2 == 1) & (joueur1.getInventaireJoueur().getNbSolaire() > 1) & (joueur2.getInventaireJoueur().getNbSolaire() < 2)))) {

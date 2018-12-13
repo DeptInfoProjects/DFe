@@ -106,7 +106,6 @@ public class Joueur {
     public Exploit acheterCarte() {
         int x1 = this.getInventaireJoueur().getNbLunaire(); /* ressources en lunaire */
         int x2 = this.getInventaireJoueur().getNbSolaire();/* ressources en solaire  */
-        int x3 = this.getInventaireJoueur().getNbVictoire();/* ressources en victoire  */
         int rand = rand();
         if ((rand == 0) & (x1 == 1)){
             Carte.MARTEAU.applyEffet(this);

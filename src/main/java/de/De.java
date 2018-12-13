@@ -93,9 +93,27 @@ public class De {
 
     /* remplace la Face minimale par la Face récupérée en parametre */
     public void setFACE(Face Choix){
-        Face Facemin = this.faceMin();
-        Facemin.setValeur(Choix.getValeur());
-        Facemin.setRes(Choix.getRes());
+        Face FaceMin = this.faceMin();
+        if (FaceMin == FACE1){
+            this.FACE1 = Choix;
+        }
+        if (FaceMin == FACE2){
+            this.FACE2 = Choix;
+        }
+        if (FaceMin == FACE3){
+            this.FACE3 = Choix;
+        }
+        if (FaceMin == FACE4){
+            this.FACE4 = Choix;
+        }
+        if (FaceMin == FACE5){
+            this.FACE5 = Choix;
+        }
+        if (FaceMin == FACE6){
+            this.FACE6 = Choix;
+        }
+
+
 
     }
     /* prend en parametre 2 Faces et retourne la Face plus petite */
