@@ -128,8 +128,8 @@ public class Tours {
             }
 
             if (choix2 == 2){
-                Face AchatJ2 = joueur1.acheterFace();
-                joueur1.changementFace(AchatJ2);               /* on l'implement sur son dÃ© */
+                Face AchatJ2 = joueur2.acheterFace();
+                joueur2.changementFace(AchatJ2);               /* on l'implement sur son dÃ© */
                 System.out.println(CYAN+"Joueur2 veut acheter la Face " + AchatJ2.AfficheFace()+RESET);
             }
             if (((rand1 == 1) & (rand2 == 2) & (joueur1.getInventaireJoueur().getNbSolaire() > 1))

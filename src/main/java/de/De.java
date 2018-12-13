@@ -18,22 +18,22 @@ public class De {
 
     /* Initialisation du 1er dé avec les 6 faces donées */
     public void initDe1(){
-        FACE1 = new Face(1, Ressource.OR,NORMAL);
-        FACE2 = new Face(1, Ressource.OR,NORMAL);
-        FACE3 = new Face(1, Ressource.OR,NORMAL);
-        FACE4 = new Face(1, Ressource.OR,NORMAL);
-        FACE5 = new Face(1, Ressource.OR,NORMAL);
-        FACE6 = new Face(1, Ressource.SOLAIRE,NORMAL);
+        FACE1 = new Face(NORMAL,1, Ressource.OR);
+        FACE2 = new Face(NORMAL,1, Ressource.OR);
+        FACE3 = new Face(NORMAL,1, Ressource.OR);
+        FACE4 = new Face(NORMAL,1, Ressource.OR);
+        FACE5 = new Face(NORMAL,1, Ressource.OR);
+        FACE6 = new Face(NORMAL,1, Ressource.SOLAIRE);
     }
 
     /* Initialisation du 2eme dé avec les 6 faces donées */
     public void initDe2(){
-        FACE1 = new Face(1, Ressource.OR,NORMAL);
-        FACE2 = new Face(1, Ressource.OR,NORMAL);
-        FACE3 = new Face(1, Ressource.OR,NORMAL);
-        FACE4 = new Face(1, Ressource.OR,NORMAL);
-        FACE5 = new Face(1, Ressource.LUNAIRE,NORMAL);
-        FACE6 = new Face(2, Ressource.VICTOIRE,NORMAL);
+        FACE1 = new Face(NORMAL,1, Ressource.OR);
+        FACE2 = new Face(NORMAL,1, Ressource.OR);
+        FACE3 = new Face(NORMAL,1, Ressource.OR);
+        FACE4 = new Face(NORMAL,1, Ressource.OR);
+        FACE5 = new Face(NORMAL,1, Ressource.LUNAIRE);
+        FACE6 = new Face(NORMAL,2, Ressource.VICTOIRE);
     }
     /* méthode retournant un chiffre aléatoire entre 1 et 6*/
     private  int rand(){

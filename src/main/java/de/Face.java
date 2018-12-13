@@ -20,87 +20,74 @@ public class Face {
     /* Face comportant un attribut valeur , un attribut ressource  et son Type */
     private Integer valeur;
     private Ressource res;
+    private Integer nbOR;
+    private Integer nbLUN;
+    private Integer nbSOL;
+    private Integer nbVICT;
     private Type type;
-    private Integer valeur2;
-    private Ressource res2;
-    private Integer valeur3;
-    private Ressource res3;
-    private Integer valeur4;
-    private Ressource res4;
 
 
-    public Face(Integer valeur, Ressource res, Integer valeur2 , Ressource res2 ,Type type){
+    // CONSTRUCTEUR D'UNE FACE SIMPLE//
+
+
+    public Face(Type type, Integer valeur, Ressource res){
         this.valeur = valeur;
         this.res = res;
-        this.valeur2 = valeur2;
-        this.res2 = res2;
         this.type = type;
     }
 
-    public Face(int i, Ressource lunaire, int i1, Ressource solaire, int i2, Ressource or, Type choix) {
-        this.valeur = i;
-        this.res = lunaire;
-        this.valeur2 = i1;
-        this.res2 = solaire;
-        this.valeur3 = i2;
-        this.res3 = or ;
-        this.type = choix;
-    }
+    // CONSTRUCTEUR FACE HYBRIDE //
 
-    public Face(int i, Ressource or, int i1, Ressource lunaire, int i2, Ressource solaire, int i3, Ressource victoire, Type plus) {
-        this.valeur = i;
-        this.res = or;
-        this.valeur2 = i1;
-        this.res2 = lunaire;
-        this.valeur3 = i2;
-        this.res3 = solaire ;
-        this.valeur4 = i3;
-        this.res4 = victoire;
-        this.type = plus;
-    }
-
-
-    // CONSTRUCTEUR D'UNE FACE //
-
-    public Face(Integer valeur, Ressource res,Type type){
-        this.valeur = valeur;
-        this.res = res;
+    public Face(Type type, Integer nbOR, Integer nbLUN, Integer nbSOL, Integer nbVICT){
+        this.nbOR = nbOR;
+        this.nbLUN = nbLUN;
+        this.nbSOL = nbSOL;
+        this.nbVICT = nbVICT;
         this.type = type;
     }
 
     //  GETTER & SETTER VALEUR  //
-    public Integer getValeur() {
-        return valeur;
+    public Integer getNbOR() {
+        return nbOR;
     }
 
-    public Integer getValeur2(){return valeur2;}
+    public void setNbOR(Integer nbOR) {
+        this.nbOR = nbOR;
+    }
 
-    public Integer getValeur3(){return valeur3;}
+    public Integer getNbLUN() {
+        return nbLUN;
+    }
 
-    public Integer getValeur4(){return valeur4;}
+    public void setNbLUN(Integer nbLUN) {
+        this.nbLUN = nbLUN;
+    }
 
-    public void setValeur(Integer valeur)  {
-        this.valeur = valeur;
+    public Integer getNbSOL() {
+        return nbSOL;
+    }
+
+    public void setNbSOL(Integer nbSOL) {
+        this.nbSOL = nbSOL;
+    }
+
+    public Integer getNbVICT() {
+        return nbVICT;
+    }
+
+    public void setNbVICT(Integer nbVICT) {
+        this.nbVICT = nbVICT;
     }
 
     //  GETTER & SETTER RESSOURCE //
-    public void setRes(Ressource res){
-        this.res = res;
+    public Integer getValeur() {
+        return valeur;
     }
 
     public Ressource getRes() {
         return res;
     }
 
-    public Ressource getRes2() {
-        return res2;
-    }
-    public Ressource getRes3() {
-        return res3;
-    }
-    public Ressource getRes4() {
-        return res4;
-    }
     //  GETTER & SETTER TYPE //
     public void setType(Type type){this.type = type;}
 
@@ -108,42 +95,45 @@ public class Face {
 
     public String AfficheFace() {
         Ressource res = this.res;
-        if (res == OR && this.type == NORMAL) {
+        if (this.type == NORMAL && res == OR) {
             return YELLOW + getValeur() + " " + getRes() + RESET;
         }
-        if (res == SOLAIRE && this.type == NORMAL) {
+        if (this.type == NORMAL && res == SOLAIRE) {
             return RED + getValeur() + " " + getRes() + RESET;
         }
-        if (res == LUNAIRE && this.type == NORMAL) {
+        if (this.type == NORMAL && res == LUNAIRE) {
             return BLUE + getValeur() + " " + getRes() + RESET;
         }
-        if (res == VICTOIRE && this.type == NORMAL) {
+        if (this.type == NORMAL && res == VICTOIRE) {
             return GREEN + getValeur() + " " + getRes() + RESET;
         }
         // multi1
-        if (this.type == PLUS &&   this.res == OR  && this.valeur == 2   &&   this.res2 == LUNAIRE   &&   this.valeur2 == 1){
-            return YELLOW + getValeur() + BLACK +  " + " +  BLUE + getValeur2() +"      "+ RESET ;
+        if (this == new Face(PLUS,2,1, 0 ,0)) {
+            return YELLOW + "2" + BLACK + " + " + BLUE + "1" + "      " + RESET;
         }
         // choix1
-        if (this.type == CHOIX   && this.res == LUNAIRE && this.res2 == OR      &&   this.res2 == SOLAIRE && this.valeur == 1 && this.valeur2 == 1 && this.valeur3 == 1){
-            return YELLOW + getValeur() + BLACK +  " ? " +  BLUE + getValeur2() + BLACK + " ? " + RED + getValeur3() + RESET ;
+        if (this == new Face(CHOIX, 1, 1, 1 , 0)) {
+            return YELLOW + "1"  + BLACK + " ? " + BLUE + "1" + BLACK + " ? " + RED + "1" + "   " + RESET;
         }
         // multi2
-        if (this.type == PLUS   && this.res == VICTOIRE  && this.valeur == 1 &&this.res2 == LUNAIRE && this.valeur2 == 1){
-            return GREEN + getValeur() + BLACK +  " + " +  BLUE + getValeur2() +"      "+ RESET ;
+        if (this == new Face(PLUS, 0, 0,1, 1)) {
+            return RED + "1" + BLACK + " + " + GREEN + "1" + "   " + RESET;
         }
         // choix2
-        if (this.type == CHOIX  && this.res == OR  && this.valeur == 3 && this.res2 == VICTOIRE && this.valeur2 == 2){
-            return YELLOW + getValeur() + BLACK +  " + " +  GREEN + getValeur2() +"      "+ RESET ;
+        if (this == new Face(CHOIX,3, 0, 0, 2)) {
+            return YELLOW + "3"  + BLACK + " ? " + GREEN + "2" + "   " + RESET;
         }
         // choix3
-        if (this.type == CHOIX  && this.res == OR && this.res2 == LUNAIRE  && this.res3 == SOLAIRE && this.valeur == 2 && this.valeur2 == 2 && this.valeur3 == 2){
-            return YELLOW + getValeur() + BLACK +  " ? " +  BLUE + getValeur2() + BLACK + " ? " + RED + getValeur3() + RESET ;
+        if (this == new Face(CHOIX, 2, 2, 2, 0)) {
+            return YELLOW + "2"  + BLACK + " ? " + BLUE + "2" + BLACK + " ? " + RED + "2" + "   " + RESET;
         }
         // multi4
-        if (this.type == PLUS   && this.res == VICTOIRE  && this.valeur == 2 && this.res2 == LUNAIRE && this.valeur2 == 2){
-            return GREEN + getValeur() + BLACK +  " + " +  BLUE + getValeur2() +"      "+ RESET ;
+        if (this == new Face(PLUS, 0, 2, 0, 2)) {
+            return BLUE + "2" + BLACK + " + " + GREEN + "2" + "   " + RESET;
         }
-        return YELLOW + getValeur() + BLACK + " + " + BLUE + getValeur2()+ BLACK +" + " + RED + getValeur3()+ BLACK + " + " + GREEN + getValeur4();
+
+        return YELLOW + "1"  + BLACK + "+ " + BLUE + "1" + BLACK + " + " + RED + "1" + BLACK + "+ " + GREEN + "1" + RESET;
+
+
     }
 }
