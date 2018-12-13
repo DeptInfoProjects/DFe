@@ -67,26 +67,26 @@ public class Sanctuaire {
         if ((n == 1)&(rand ==0 )){
             return lunaire1;
         }
-        else if ((n == 1) & (rand == 1)){
+        if ((n == 1) & (rand == 1)){
             return or3;
         }
 
         if ((n == 2 ) & (rand == 0)){
             return or4;
         }
-        else if ((n == 2) & (rand == 1)){
+        if ((n == 2) & (rand == 1)){
             return solaire1;
         }
         if ((n == 3)&(rand4 == 0)){
             return multi1;
         }
-        else if ((n == 3) & (rand4 == 1)) {
+        if ((n == 3) & (rand4 == 1)) {
             return choix1;
         }
-        else if ((n == 3) & (rand4 == 2)) {
+        if ((n == 3) & (rand4 == 2)) {
             return or6;
         }
-        else if ((n == 3) & (rand4 == 3)) {
+        if ((n == 3) & (rand4 == 3)) {
             return mutli2;
         }
         if ((n == 4)) {
@@ -99,23 +99,20 @@ public class Sanctuaire {
         if ((n == 6)&(rand == 0)) {
             return solaire2;
         }
-        else if ((n == 6 ) & (rand == 1)) {
+        if ((n == 6 ) & (rand == 1)) {
             return victoire3;
         }
         if ((n == 7) & (rand4 == 0)) {
             return victoire4;
         }
-        else if ((n == 7) & (rand4 == 1)){
+        if ((n == 7) & (rand4 == 1)){
             return choix3;
         }
-        else if ((n == 7) & (rand4 == 2)){
+        if ((n == 7) & (rand4 == 2)){
             return multi3;
         }
-        else if ((n == 7) & (rand4 == 3)){
             return multi4;
-        }
 
-        return null1;
     }
 
 
