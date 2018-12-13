@@ -27,7 +27,7 @@ class TourStat {
         joueur2.getInventaireJoueur().setInventaire(2, 0, 0, 0,null);
     }
 
-    int partie() {
+    int Partie() {
         for (int acc = 0; acc < 9; acc++) {
             Face memFd1J1 = joueur1.getD1().getFace();
             Face memFd2J1 = joueur1.getD2().getFace();
