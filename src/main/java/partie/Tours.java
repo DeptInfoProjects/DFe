@@ -8,6 +8,8 @@ import de.Face;
 import java.util.ArrayList;
 import java.util.Random;
 
+import static de.Ressource.OR;
+
 
 public class Tours {
     private static final String PURPLE = "\u001B[35m";
@@ -118,7 +120,7 @@ public class Tours {
             if (choix1 == 2){
                 Face AchatJ1 = joueur1.acheterFace();
                 joueur1.changementFace(AchatJ1);               /* on l'implement sur son dÃ© */
-                System.out.println(CYAN+"Joueur1 veut acheter la Face " + AchatJ1.AfficheFace()+RESET);
+                System.out.println(CYAN+"Joueur1 veut acheter la Face " + AchatJ1.AfficheFace()+CYAN + " qui remplacec la Face " + YELLOW + "1 OR" + RESET );
             }
             /* pour le Jouer2 */
             if (choix2 == 1){
@@ -128,9 +130,9 @@ public class Tours {
             }
 
             if (choix2 == 2){
-                Face AchatJ2 = joueur1.acheterFace();
-                joueur1.changementFace(AchatJ2);               /* on l'implement sur son dÃ© */
-                System.out.println(CYAN+"Joueur2 veut acheter la Face " + AchatJ2.AfficheFace()+RESET);
+                Face AchatJ2 = joueur2.acheterFace();
+                joueur2.changementFace(AchatJ2);               /* on l'implement sur son dÃ© */
+                System.out.println(CYAN+"Joueur2 veut acheter la Face " + AchatJ2.AfficheFace()+CYAN + " qui remplacec la Face " + YELLOW + "1 OR" + RESET );
             }
             if (((rand1 == 1) & (rand2 == 2) & (joueur1.getInventaireJoueur().getNbSolaire() > 1))
                     | (((rand1 == 1) & (rand2 == 1) & (joueur1.getInventaireJoueur().getNbSolaire() > 1) & (joueur2.getInventaireJoueur().getNbSolaire() < 2)))) {

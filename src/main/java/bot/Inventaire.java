@@ -5,6 +5,11 @@ import Iles.Carte;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
+
+import static de.Type.CHOIX;
+import static de.Type.NORMAL;
+import static de.Type.PLUS;
 
 
 public class Inventaire {
@@ -72,11 +77,38 @@ public class Inventaire {
     public void addCartes(Carte c){cartes.add(c);}
 
     public void adderFace(Face FaceDe) {
-        if (FaceDe.getRes() == Ressource.OR) this.setNbOR(this.getNbOR() + FaceDe.getValeur());
-        if (FaceDe.getRes() == Ressource.SOLAIRE) this.setNbSolaire(this.getNbSolaire() + FaceDe.getValeur());
-        if (FaceDe.getRes() == Ressource.LUNAIRE) this.setNbLunaire(this.getNbLunaire() + FaceDe.getValeur());
-        if (FaceDe.getRes() == Ressource.VICTOIRE) this.setNbVictoire(this.getNbVictoire() + FaceDe.getValeur());
-    }
+        Random choix = new Random();
+        int rand  = choix.nextInt(3);
+        int rand2 = choix.nextInt(2);
+        if(FaceDe.getType() == NORMAL){
+            if (FaceDe.getRes() == Ressource.OR) this.setNbOR(this.getNbOR() + FaceDe.getValeur());
+            if (FaceDe.getRes() == Ressource.SOLAIRE) this.setNbSolaire(this.getNbSolaire() + FaceDe.getValeur());
+            if (FaceDe.getRes() == Ressource.LUNAIRE) this.setNbLunaire(this.getNbLunaire() + FaceDe.getValeur());
+            if (FaceDe.getRes() == Ressource.VICTOIRE) this.setNbVictoire(this.getNbVictoire() + FaceDe.getValeur());
+        }
+        else if(FaceDe.getType() == PLUS){
+            this.setNbSolaire(this.getNbSolaire() + FaceDe.getNbSOL());
+            this.setNbLunaire(this.getNbLunaire() + FaceDe.getNbLUN());
+            this.setNbVictoire(this.getNbVictoire() + FaceDe.getNbVICT());
+            this.setNbOR(this.getNbOR() + FaceDe.getNbOR());
+        }
+        else if(FaceDe.getType() == CHOIX && FaceDe.getNbSOL()>0){
+            if (rand == 0){
+            this.setNbOR(this.getNbOR() + FaceDe.getNbOR());}
+            if (rand == 1){
+                this.setNbSolaire(this.getNbSolaire() + FaceDe.getNbSOL());
+            }
+            if (rand == 2){
+                this.setNbLunaire(this.getNbLunaire() + FaceDe.getNbLUN());
+        }
+        else if(FaceDe.getType() == CHOIX && FaceDe.getNbSOL()>0){
+            if (rand2 == 0){
+                this.setNbOR(this.getNbOR() + FaceDe.getNbOR());}
+            }
+            else{ this.setNbVictoire(this.getNbVictoire() + FaceDe.getNbVICT());}
+            }
+
+        }
 }
 
 
