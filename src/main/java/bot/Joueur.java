@@ -104,111 +104,98 @@ public class Joueur {
 
     /* Achat d'une carte dans limite des moyens du joueur */
     public Exploit acheterCarte() {
-        int x1 = this.getInventaireJoueur().getNbLunaire(); /* ressources en lunaire */
-        int x2 = this.getInventaireJoueur().getNbSolaire();/* ressources en solaire  */
+        int invLun = this.getInventaireJoueur().getNbLunaire(); /* ressources en lunaire */
+        int invSol = this.getInventaireJoueur().getNbSolaire();/* ressources en solaire  */
+        int invVic = this.getInventaireJoueur().getNbSolaire();/* ressources en Victoire  */
         int rand = rand();
-        if ((rand == 0) & (x1 == 1)){
+        if ((rand == 0) & (invLun == 1)){
             Carte.MARTEAU.applyEffet(this);
             MARTEAU.modStock();
             this.getInventaireJoueur().addCartes(Carte.MARTEAU);
-            this.getInventaireJoueur().setNbLunaire(x1 - MARTEAU.prix.getPrix());
+            this.getInventaireJoueur().setNbLunaire(invLun - MARTEAU.prix.getPrix());
             return MARTEAU;
         }
-        else if (( rand == 1) & x1 == 1){
+        else if (( rand == 1) & invLun == 1){
             Carte.COFFRE.applyEffet(this);
             COFFRE.modStock();
             this.getInventaireJoueur().addCartes(Carte.COFFRE);
-            this.getInventaireJoueur().setNbLunaire(x1 - COFFRE.prix.getPrix());
+            this.getInventaireJoueur().setNbLunaire(invLun - COFFRE.prix.getPrix());
             return COFFRE;
         }
-        if (x1 == 2){
+        if (invLun == 2){
             Carte.SABOTS.applyEffet(this);
             SABOTS.modStock();
             this.getInventaireJoueur().addCartes(Carte.SABOTS);
-            this.getInventaireJoueur().setNbLunaire(x1 - SABOTS.prix.getPrix());
+            this.getInventaireJoueur().setNbLunaire(invLun - SABOTS.prix.getPrix());
             return SABOTS;
         }
 
-        if (x1 == 3){
+        if (invLun == 3){
             Carte.SATYRES.applyEffet(this);
             SATYRES.modStock();
             this.getInventaireJoueur().addCartes(Carte.SATYRES);
-            this.getInventaireJoueur().setNbLunaire(x1 - SATYRES.prix.getPrix());
+            this.getInventaireJoueur().setNbLunaire(invLun - SATYRES.prix.getPrix());
             return SATYRES;
         }
 
-        if (( rand == 0 ) & (x2 == 1)){
+        if (( rand == 0 ) & (invSol == 1)){
             Carte.ANCIEN.applyEffet(this);
             ANCIEN.modStock();
             this.getInventaireJoueur().addCartes(Carte.ANCIEN);
-            this.getInventaireJoueur().setNbSolaire(x2 - ANCIEN.prix.getPrix());
+            this.getInventaireJoueur().setNbSolaire(invSol - ANCIEN.prix.getPrix());
             return ANCIEN;
         }
-        else if ((rand == 1)&(x2 ==1)){
+        else if ((rand == 1)&(invSol ==1)){
             Carte.HERBES.applyEffet(this);
             HERBES.modStock();
             this.getInventaireJoueur().addCartes(Carte.HERBES);
-            this.getInventaireJoueur().setNbSolaire(x2 - HERBES.prix.getPrix());
+            this.getInventaireJoueur().setNbSolaire(invSol - HERBES.prix.getPrix());
             return HERBES;
         }
-        if (x2 == 2){
+        if (invSol == 2){
             Carte.AILES.applyEffet(this);
             this.getInventaireJoueur().addCartes(Carte.AILES);
-            this.getInventaireJoueur().setNbSolaire(x2 - AILES.prix.getPrix());
+            this.getInventaireJoueur().setNbSolaire(invSol - AILES.prix.getPrix());
             return AILES;
         }
-        if (x2 == 3){
+        if (invSol == 3){
             Carte.MINOTAURE.applyEffet(this);
             this.getInventaireJoueur().addCartes(Carte.MINOTAURE);
-            this.getInventaireJoueur().setNbSolaire(x2 - MINOTAURE.prix.getPrix());
+            this.getInventaireJoueur().setNbSolaire(invSol - MINOTAURE.prix.getPrix());
             return MINOTAURE;
         }
-        if (x1 == 4){
+        if (invLun == 4){
             Carte.PASSEUR.applyEffet(this);
-            this.getInventaireJoueur().addCartes(Carte.PASSEUR);
-            this.getInventaireJoueur().setNbLunaire(x1 - PASSEUR.prix.getPrix());
+            this.getInventaireJoueur().setNbVictoire(invVic + 12);
+            this.getInventaireJoueur().setNbLunaire(invLun - PASSEUR.prix.getPrix());
             return PASSEUR;
         }
-        if (x1 == 5){
+        if (invLun == 5){
             Carte.CASQUE.applyEffet(this);
             this.getInventaireJoueur().addCartes(Carte.CASQUE);
-            this.getInventaireJoueur().setNbLunaire(x1 - CASQUE.prix.getPrix());
+            this.getInventaireJoueur().setNbLunaire(invLun - CASQUE.prix.getPrix());
             return CASQUE;
         }
 
-        if (x1 == 6){
+        if (invLun == 6){
             Carte.PINCE.applyEffet(this);
             this.getInventaireJoueur().addCartes(Carte.PINCE);
-            this.getInventaireJoueur().setNbLunaire(x1 - PINCE.prix.getPrix());
+            this.getInventaireJoueur().setNbLunaire(invLun - PINCE.prix.getPrix());
             return PINCE;
         }
 
-        if ((x1 > 4)&(x2 > 4)){
-            Carte.HYDRE.applyEffet(this);
-            this.getInventaireJoueur().addCartes(Carte.HYDRE);
-            this.getInventaireJoueur().setNbLunaire(x1 - 5);
-            this.getInventaireJoueur().setNbSolaire(x2 - 5);
-            return HYDRE;
-        }
 
-        if (x2 == 4){
-            Carte.MEDUSE.applyEffet(this);
-            this.getInventaireJoueur().addCartes(Carte.MEDUSE);
-            this.getInventaireJoueur().setNbSolaire(x2 - MEDUSE.prix.getPrix());
-            return MEDUSE;
-        }
-
-        if (x2 == 5){
+        if (invSol == 5){
             Carte.MIRROIR.applyEffet(this);
             this.getInventaireJoueur().addCartes(Carte.MIRROIR);
-            this.getInventaireJoueur().setNbSolaire(x2 - MIRROIR.prix.getPrix());
+            this.getInventaireJoueur().setNbSolaire(invSol - MIRROIR.prix.getPrix());
             return MIRROIR;
         }
 
-        if (x2 == 6){
+        if (invSol == 6){
             Carte.ENIGME.applyEffet(this);
             this.getInventaireJoueur().addCartes(Carte.ENIGME);
-            this.getInventaireJoueur().setNbSolaire(x2 - ENIGME.prix.getPrix());
+            this.getInventaireJoueur().setNbSolaire(invSol - ENIGME.prix.getPrix());
             return ENIGME;
         }
         return NULL;
