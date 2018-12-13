@@ -108,33 +108,34 @@ public class Face {
             return GREEN + getValeur() + " " + getRes() + RESET;
         }
         // multi1
-        if (this == new Face(PLUS,2,1, 0 ,0)) {
-            return YELLOW + "2" + BLACK + " + " + BLUE + "1" + "      " + RESET;
+        if ( this.nbOR==2 &&this.nbLUN == 1 && this.nbSOL==0&&this.nbVICT==0  ) {
+            return YELLOW + "2" + BLACK + "+" + BLUE + "1" + "" + RESET;
         }
         // choix1
-        if (this == new Face(CHOIX, 1, 1, 1 , 0)) {
-            return YELLOW + "1"  + BLACK + " ? " + BLUE + "1" + BLACK + " ? " + RED + "1" + "   " + RESET;
+        if (this.nbOR==1 &&this.nbLUN == 1 && this.nbSOL==1&&this.nbVICT==0  ) {
+            return YELLOW + "1"  + BLACK + "?" + BLUE + "1" + BLACK + "?" + RED + "1" + RESET;
         }
         // multi2
-        if (this == new Face(PLUS, 0, 0,1, 1)) {
-            return RED + "1" + BLACK + " + " + GREEN + "1" + "   " + RESET;
+        if (this.nbOR==0 &&this.nbLUN == 0 && this.nbSOL==1&&this.nbVICT==1  )  {
+            return RED + "1" + BLACK + " + " + GREEN + "1"  + RESET;
         }
         // choix2
-        if (this == new Face(CHOIX,3, 0, 0, 2)) {
-            return YELLOW + "3"  + BLACK + " ? " + GREEN + "2" + "   " + RESET;
+        if (this.nbOR==3 &&this.nbLUN == 0 && this.nbSOL==0&&this.nbVICT==2  ){
+            return YELLOW + "3"  + BLACK + "?" + GREEN + "2"  + RESET;
         }
         // choix3
-        if (this == new Face(CHOIX, 2, 2, 2, 0)) {
-            return YELLOW + "2"  + BLACK + " ? " + BLUE + "2" + BLACK + " ? " + RED + "2" + "   " + RESET;
+        if (this.nbOR==2 && this.nbLUN == 2 && this.nbSOL==2 &&this.nbVICT==0  )
+        {
+            return YELLOW + "2"  + BLACK + " ? " + BLUE + "2" + BLACK + "?" + RED + "2"  + RESET;
         }
         // multi4
-        if (this == new Face(PLUS, 0, 2, 0, 2)) {
-            return BLUE + "2" + BLACK + " + " + GREEN + "2" + "   " + RESET;
+        if (this.nbOR==0 &&this.nbLUN == 2 && this.nbSOL==0&&this.nbVICT==2  )  {
+            return BLUE + "2" + BLACK + "+" + GREEN + "2" + RESET;
         }
+        if (this.nbOR==1 &&this.nbLUN == 1 && this.nbSOL==1&&this.nbVICT==1  ){
+            return YELLOW + "1"  + BLACK + "+" + BLUE + "1" + BLACK + "+" + RED + "1" + BLACK + "+" + GREEN + "1" + RESET;}
 
-        return YELLOW + "1"  + BLACK + "+ " + BLUE + "1" + BLACK + " + " + RED + "1" + BLACK + "+ " + GREEN + "1" + RESET;
-
-
+            return "echec";
     }
 }
 

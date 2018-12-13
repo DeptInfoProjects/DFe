@@ -8,7 +8,7 @@ public enum Ressource {
     OR,
     SOLAIRE,
     LUNAIRE,
-    VICTOIRE
-
+    VICTOIRE,
+    M
 
 }

@@ -66,38 +66,37 @@ public class Joueur {
         int rand = rand();
         if (x == 2) {
             this.getInventaireJoueur().setNbOR(x - 2);
-            if (rand == 0) return Jardin.getSanctuaire(2);
-            else {
-                return Jardin.getSanctuaire(1);
+            return Jardin.getSanctuaire(1);
             }
-        }
+
 
         if (x == 3) {
             this.getInventaireJoueur().setNbOR(x - 3);
-            if (rand == 0) return Jardin.getSanctuaire(3);
-            else return Jardin.getSanctuaire(4);
+            return Jardin.getSanctuaire(2);
 
         }
 
-        if (x == 4 | x == 5) {
+        if (x == 4) {
             this.getInventaireJoueur().setNbOR(x - 4);
-            return Jardin.getSanctuaire(5);
+            return Jardin.getSanctuaire(3);
+        }
+        if (x == 5) {this.getInventaireJoueur().setNbOR(x - 5);
+            return Jardin.getSanctuaire(4);
         }
 
         if (x == 6 | x == 7) {
             this.getInventaireJoueur().setNbOR(x - 6);
-            return Jardin.getSanctuaire(6);
+            return Jardin.getSanctuaire(5);
         }
 
         if (x == 8 | x == 9 | x == 10 | x == 11) {
             this.getInventaireJoueur().setNbOR(x - 8);
-            if (rand == 0) return Jardin.getSanctuaire(7);
-            else return Jardin.getSanctuaire(8);
+            return Jardin.getSanctuaire(6);
 
         }
         if ( x >= 12 ){
             this.getInventaireJoueur().setNbOR(x - 12);
-            return Jardin.getSanctuaire(9);}
+            return Jardin.getSanctuaire(7);}
         return De.compare2Face(d1.faceMin(), d2.faceMin());
     }
 
@@ -106,7 +105,7 @@ public class Joueur {
     public Exploit acheterCarte() {
         int invLun = this.getInventaireJoueur().getNbLunaire(); /* ressources en lunaire */
         int invSol = this.getInventaireJoueur().getNbSolaire();/* ressources en solaire  */
-        int invVic = this.getInventaireJoueur().getNbSolaire();/* ressources en Victoire  */
+        int invVic = this.getInventaireJoueur().getNbVictoire();/* ressources en Victoire  */
         int rand = rand();
         if ((rand == 0) & (invLun == 1)){
             Carte.MARTEAU.applyEffet(this);
