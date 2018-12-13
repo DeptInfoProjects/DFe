@@ -1,4 +1,4 @@
-package Iles;
+package iles;
 
 public class Prix {
     private int nbLunaire;

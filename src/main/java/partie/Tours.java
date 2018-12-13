@@ -1,7 +1,7 @@
 package partie;
 
 
-import Iles.Exploit;
+import iles.Exploit;
 import bot.Joueur;
 import de.Face;
 
