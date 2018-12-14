@@ -50,7 +50,7 @@ public class Inventaire {
         return nbSolaire;
     }
 
-    public void setNbSolaire(int nbSolaire) {
+    void setNbSolaire(int nbSolaire) {
         this.nbSolaire = nbSolaire;
     }
 
@@ -58,7 +58,7 @@ public class Inventaire {
         return nbLunaire;
     }
 
-    public void setNbLunaire(int nbLunaire) {
+    void setNbLunaire(int nbLunaire) {
         this.nbLunaire = nbLunaire;
     }
 
@@ -71,8 +71,6 @@ public class Inventaire {
     }
 
     public List<Carte> getCartes() {return cartes;}
-
-    public int getSizeCarte(){return cartes.size();}
 
     public void addCartes(Carte c){cartes.add(c);}
 

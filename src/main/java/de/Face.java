@@ -2,9 +2,7 @@ package de;
 
 
 import static de.Ressource.*;
-import static de.Type.CHOIX;
 import static de.Type.NORMAL;
-import static de.Type.PLUS;
 
 public class Face {
     private static final String RESET = "\u001B[0m";
@@ -13,9 +11,6 @@ public class Face {
     private static final String GREEN = "\u001B[32m";
     private static final String YELLOW = "\u001B[33m";
     private static final String BLUE = "\u001B[34m";
-    private static final String PURPLE = "\u001B[35m";
-    private static final String CYAN = "\u001B[36m";
-    private static final String WHITE = "\u001B[37m";
 
     /* Face comportant un attribut valeur , un attribut ressource  et son Type */
     private Integer valeur;
@@ -46,40 +41,30 @@ public class Face {
         this.type = type;
     }
 
-    //  GETTER & SETTER VALEUR  //
+    //  GETTER VALEUR  //
     public Integer getNbOR() {
         return nbOR;
     }
 
-    public void setNbOR(Integer nbOR) {
-        this.nbOR = nbOR;
-    }
 
     public Integer getNbLUN() {
         return nbLUN;
     }
 
-    public void setNbLUN(Integer nbLUN) {
-        this.nbLUN = nbLUN;
-    }
+
 
     public Integer getNbSOL() {
         return nbSOL;
     }
 
-    public void setNbSOL(Integer nbSOL) {
-        this.nbSOL = nbSOL;
-    }
 
     public Integer getNbVICT() {
         return nbVICT;
     }
 
-    public void setNbVICT(Integer nbVICT) {
-        this.nbVICT = nbVICT;
-    }
 
-    //  GETTER & SETTER RESSOURCE //
+
+    //  GETTER RESSOURCE //
     public Integer getValeur() {
         return valeur;
     }
@@ -88,8 +73,7 @@ public class Face {
         return res;
     }
 
-    //  GETTER & SETTER TYPE //
-    public void setType(Type type){this.type = type;}
+    //  GETTER  TYPE //
 
     public Type getType(){return type;}
 
@@ -109,19 +93,19 @@ public class Face {
         }
         // multi1
         if ( this.nbOR==2 &&this.nbLUN == 1 && this.nbSOL==0&&this.nbVICT==0  ) {
-            return YELLOW + "2" + BLACK + "+" + BLUE + "1" + "" + RESET;
+            return YELLOW + "2" + BLACK + " + " + BLUE + "1" + "      " + RESET;
         }
         // choix1
         if (this.nbOR==1 &&this.nbLUN == 1 && this.nbSOL==1&&this.nbVICT==0  ) {
-            return YELLOW + "1"  + BLACK + "?" + BLUE + "1" + BLACK + "?" + RED + "1" + RESET;
+            return YELLOW + "1"  + BLACK + " ? " + BLUE + "1" + BLACK + " ? " + RED +  "1  " + RESET;
         }
         // multi2
         if (this.nbOR==0 &&this.nbLUN == 0 && this.nbSOL==1&&this.nbVICT==1  )  {
-            return RED + "1" + BLACK + " + " + GREEN + "1"  + RESET;
+            return RED + "1" + BLACK + " + " + GREEN + "1      "  + RESET;
         }
         // choix2
         if (this.nbOR==3 &&this.nbLUN == 0 && this.nbSOL==0&&this.nbVICT==2  ){
-            return YELLOW + "3"  + BLACK + "?" + GREEN + "2"  + RESET;
+            return YELLOW + "3"  + BLACK + " ? " + GREEN + "2      "  + RESET;
         }
         // choix3
         if (this.nbOR==2 && this.nbLUN == 2 && this.nbSOL==2 &&this.nbVICT==0  )
@@ -130,13 +114,12 @@ public class Face {
         }
         // multi4
         if (this.nbOR==0 &&this.nbLUN == 2 && this.nbSOL==0&&this.nbVICT==2  )  {
-            return BLUE + "2" + BLACK + "+" + GREEN + "2" + RESET;
+            return BLUE + "2" + BLACK + " + " + GREEN + "2      " + RESET;
         }
         if (this.nbOR==1 &&this.nbLUN == 1 && this.nbSOL==1&&this.nbVICT==1  ){
-            return YELLOW + "1"  + BLACK + "+" + BLUE + "1" + BLACK + "+" + RED + "1" + BLACK + "+" + GREEN + "1" + RESET;}
+            return YELLOW + "1"  + BLACK + "+" + BLUE + "1" + BLACK + "+" + RED + "1" + BLACK + "+" + GREEN + "1    " + RESET;}
 
-            return "echec";
+        return "echec";
     }
 }
-
 

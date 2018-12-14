@@ -4,7 +4,7 @@ public class Prix {
     private int nbLunaire;
     private int nbSolaire;
 
-    public Prix(int nbLunaire,int nbSolaire){
+    Prix(int nbLunaire, int nbSolaire){
         this.nbLunaire = nbLunaire;
         this.nbSolaire = nbSolaire;
     }

@@ -63,7 +63,6 @@ public class Joueur {
     public Face acheterFace() {
         Sanctuaire Jardin = new Sanctuaire();
         int x = this.getInventaireJoueur().getNbOR();// x : le nombre d'Or possedant le joueur
-        int rand = rand();
         if (x == 2) {
             this.getInventaireJoueur().setNbOR(x - 2);
             return Jardin.getSanctuaire(1);
