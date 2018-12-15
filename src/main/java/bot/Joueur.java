@@ -105,7 +105,9 @@ public class Joueur {
         int invLun = this.getInventaireJoueur().getNbLunaire(); /* ressources en lunaire */
         int invSol = this.getInventaireJoueur().getNbSolaire();/* ressources en solaire  */
         int invVic = this.getInventaireJoueur().getNbVictoire();/* ressources en Victoire  */
-        int rand = rand();
+        Choix Courant = new Choix();
+        Courant.addChoixList();
+        int rand = Courant.getChoixList(2);
         if ((rand == 0) & (invLun == 1)){
             Carte.MARTEAU.applyEffet(this);
             MARTEAU.modStock();
@@ -113,12 +115,20 @@ public class Joueur {
             this.getInventaireJoueur().setNbLunaire(invLun - MARTEAU.prix.getPrix());
             return MARTEAU;
         }
-        else if (( rand == 1) & invLun == 1){
+        else if (( rand == 1) & invLun == 1) {
             Carte.COFFRE.applyEffet(this);
             COFFRE.modStock();
             this.getInventaireJoueur().addCartes(Carte.COFFRE);
             this.getInventaireJoueur().setNbLunaire(invLun - COFFRE.prix.getPrix());
             return COFFRE;
+        }
+        if ((invLun >= 5)&(invSol >= 5)){
+            Carte.HYDRE.applyEffet(this);
+            HYDRE.modStock();
+            this.getInventaireJoueur().addCartes(Carte.HYDRE);
+            this.getInventaireJoueur().setNbSolaire(invLun - 5);
+            return HYDRE;
+
         }
         if (invLun == 2){
             Carte.SABOTS.applyEffet(this);
@@ -175,7 +185,7 @@ public class Joueur {
             return CASQUE;
         }
 
-        if (invLun == 6){
+        if (invLun >= 6){
             Carte.PINCE.applyEffet(this);
             this.getInventaireJoueur().addCartes(Carte.PINCE);
             this.getInventaireJoueur().setNbLunaire(invLun - PINCE.prix.getPrix());
@@ -190,7 +200,7 @@ public class Joueur {
             return MIRROIR;
         }
 
-        if (invSol == 6){
+        if (invSol >= 6){
             Carte.ENIGME.applyEffet(this);
             this.getInventaireJoueur().addCartes(Carte.ENIGME);
             this.getInventaireJoueur().setNbSolaire(invSol - ENIGME.prix.getPrix());

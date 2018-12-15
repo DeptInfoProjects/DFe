@@ -2,6 +2,7 @@
 
 package Iles;
 
+import bot.Choix;
 import de.*;
 
 import java.util.Random;
@@ -62,8 +63,10 @@ public class Sanctuaire {
         return rand4.nextInt(4);
     }
     public Face getSanctuaire(int n){
-        int rand = rand2();
-        int rand4 = rand4();
+        Choix Courant = new Choix();
+        Courant.addChoixList();
+        int rand = Courant.getChoixList(4);
+        int rand4 = Courant.getChoixList(3);
         if ((n == 1)&(rand ==0 )){
             return lunaire1;
         }

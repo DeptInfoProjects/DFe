@@ -2,7 +2,7 @@ package bot;
 
 import de.*;
 import Iles.Carte;
-
+import bot.Choix.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -75,9 +75,10 @@ public class Inventaire {
     public void addCartes(Carte c){cartes.add(c);}
 
     public void adderFace(Face FaceDe) {
-        Random choix = new Random();
-        int rand  = choix.nextInt(3);
-        int rand2 = choix.nextInt(2);
+        Choix Courant = new Choix();
+        Courant.addChoixList();
+        int rand  = Courant.getChoixList(0);
+        int rand2 = Courant.getChoixList(1);
         if(FaceDe.getType() == NORMAL){
             if (FaceDe.getRes() == Ressource.OR) this.setNbOR(this.getNbOR() + FaceDe.getValeur());
             if (FaceDe.getRes() == Ressource.SOLAIRE) this.setNbSolaire(this.getNbSolaire() + FaceDe.getValeur());
