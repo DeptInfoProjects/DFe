@@ -1,13 +1,13 @@
 package bot;
 import de.*;
-import Iles.*;
+import iles.*;
 
 
 import java.util.Random;
 
-import static Iles.Carte.*;
-import static Iles.Carte.ENIGME;
-import static Iles.Carte.NULL;
+import static iles.Carte.*;
+import static iles.Carte.ENIGME;
+import static iles.Carte.NULL;
 
 /* Un joueur possède (est caractérisé par) 2 Dés (d1 et d2) et d'un sac (son inventaire) */
 public class Joueur {

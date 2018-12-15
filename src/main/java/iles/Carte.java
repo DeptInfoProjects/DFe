@@ -1,10 +1,10 @@
-package Iles;
+package iles;
 
 
 
 
 
-import static Iles.TypeEffet.*;
+import static iles.TypeEffet.*;
 
 public class Carte{
     public static Exploit MARTEAU = new Exploit("Le Marteau du forgeron"    ,IMMEDIAT  ,new Prix(1,0));

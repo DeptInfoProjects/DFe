@@ -1,6 +1,6 @@
 
 
-package Iles;
+package iles;
 
 import org.evosuite.runtime.annotation.EvoSuiteClassExclude;
 import org.junit.BeforeClass;
@@ -10,7 +10,7 @@ import org.junit.AfterClass;
 import org.evosuite.runtime.sandbox.Sandbox;
 
 @EvoSuiteClassExclude
-public class TestSanctuaire2 {
+public class TestPrix2 {
 
   @org.junit.Rule 
   public org.evosuite.runtime.vnet.NonFunctionalRequirementRule nfr = new org.evosuite.runtime.vnet.NonFunctionalRequirementRule();
@@ -22,7 +22,7 @@ public class TestSanctuaire2 {
 
   @BeforeClass 
   public static void initEvoSuiteFramework() { 
-    org.evosuite.runtime.RuntimeSettings.className = "Iles.Sanctuaire"; 
+    org.evosuite.runtime.RuntimeSettings.className = "iles.Prix";
     org.evosuite.runtime.GuiSupport.initialize(); 
     org.evosuite.runtime.RuntimeSettings.maxNumberOfThreads = 100; 
     org.evosuite.runtime.RuntimeSettings.maxNumberOfIterationsPerLoop = 10000; 
@@ -64,6 +64,7 @@ public class TestSanctuaire2 {
     org.evosuite.runtime.GuiSupport.restoreHeadlessMode(); 
   } 
 
+
   private static void setSystemProperties() {
  
     java.lang.System.setProperties((java.util.Properties) defaultProperties.clone()); 
@@ -79,25 +80,16 @@ public class TestSanctuaire2 {
   }
 
   private static void initializeClasses() {
-    org.evosuite.runtime.classhandling.ClassStateSupport.initializeClasses(TestSanctuaire2.class.getClassLoader() ,
-      "de.Type$2",
-      "de.Type$1",
-      "de.Type$3",
-      "de.Face",
-      "Iles.Sanctuaire",
-      "de.Ressource",
-      "de.Type"
+    org.evosuite.runtime.classhandling.ClassStateSupport.initializeClasses(TestPrix2.class.getClassLoader() ,
+      "iles.Prix"
     );
   } 
 
   private static void resetClasses() {
-    org.evosuite.runtime.classhandling.ClassResetter.getInstance().setClassLoader(TestSanctuaire2.class.getClassLoader());
+    org.evosuite.runtime.classhandling.ClassResetter.getInstance().setClassLoader(TestPrix2.class.getClassLoader());
 
     org.evosuite.runtime.classhandling.ClassStateSupport.resetClasses(
-      "Iles.Sanctuaire",
-      "de.Type",
-      "de.Ressource",
-      "de.Face"
+      "iles.Prix"
     );
   }
 }

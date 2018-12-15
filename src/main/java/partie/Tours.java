@@ -1,7 +1,7 @@
 package partie;
 
 
-import Iles.Exploit;
+import iles.Exploit;
 import bot.Choix;
 import bot.Joueur;
 import de.Face;
@@ -9,7 +9,7 @@ import de.Face;
 import java.util.ArrayList;
 import java.util.Random;
 
-import static Iles.Carte.NULL;
+import static iles.Carte.NULL;
 
 
 public class Tours {

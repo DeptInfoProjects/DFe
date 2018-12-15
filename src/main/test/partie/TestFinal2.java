@@ -81,17 +81,17 @@ public class TestFinal2 {
   private static void initializeClasses() {
     org.evosuite.runtime.classhandling.ClassStateSupport.initializeClasses(TestFinal2.class.getClassLoader() ,
       "de.De",
-      "Iles.TypeEffet",
+      "iles.TypeEffet",
       "partie.Final",
       "partie.Tours",
-      "Iles.Prix",
-      "Iles.Exploit",
+      "iles.Prix",
+      "iles.Exploit",
       "bot.Joueur",
       "de.Type$2",
       "bot.Inventaire",
       "de.Type$1",
       "de.Type$3",
-      "Iles.Carte",
+      "iles.Carte",
       "de.Face",
       "de.Ressource",
       "de.Type"
@@ -110,10 +110,10 @@ public class TestFinal2 {
       "de.Ressource",
       "bot.Inventaire",
       "partie.Tours",
-      "Iles.Exploit",
-      "Iles.TypeEffet",
-      "Iles.Prix",
-      "Iles.Carte"
+      "iles.Exploit",
+      "iles.TypeEffet",
+      "iles.Prix",
+      "iles.Carte"
     );
   }
 }

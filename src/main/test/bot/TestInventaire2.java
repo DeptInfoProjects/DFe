@@ -85,18 +85,18 @@ public class TestInventaire2 {
       "bot.Inventaire",
       "de.Type$2",
       "de.Type$1",
-      "Iles.TypeEffet",
+      "iles.TypeEffet",
       "de.Type$3",
       "de.Face",
-      "Iles.Carte",
-      "Iles.Prix",
+      "iles.Carte",
+      "iles.Prix",
       "de.Ressource",
       "de.Type",
-      "Iles.Exploit"
+      "iles.Exploit"
     );
   } 
   private static void initMocksToAvoidTimeoutsInTheTests() throws ClassNotFoundException { 
-    mock(Class.forName("Iles.Carte", false, TestInventaire2.class.getClassLoader()));
+    mock(Class.forName("iles.Carte", false, TestInventaire2.class.getClassLoader()));
     mock(Class.forName("de.Face", false, TestInventaire2.class.getClassLoader()));
   }
 
@@ -108,10 +108,10 @@ public class TestInventaire2 {
       "de.Type",
       "de.Ressource",
       "de.Face",
-      "Iles.Exploit",
-      "Iles.TypeEffet",
-      "Iles.Prix",
-      "Iles.Carte"
+      "iles.Exploit",
+      "iles.TypeEffet",
+      "iles.Prix",
+      "iles.Carte"
     );
   }
 }

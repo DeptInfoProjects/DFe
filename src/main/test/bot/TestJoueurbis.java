@@ -81,16 +81,16 @@ public class TestJoueurbis {
   private static void initializeClasses() {
     org.evosuite.runtime.classhandling.ClassStateSupport.initializeClasses(TestJoueurbis.class.getClassLoader() ,
       "de.De",
-      "Iles.TypeEffet",
-      "Iles.Sanctuaire",
-      "Iles.Prix",
-      "Iles.Exploit",
+      "iles.TypeEffet",
+      "iles.Sanctuaire",
+      "iles.Prix",
+      "iles.Exploit",
       "bot.Joueur",
       "bot.Inventaire",
       "de.Type$2",
       "de.Type$1",
       "de.Type$3",
-      "Iles.Carte",
+      "iles.Carte",
       "de.Face",
       "de.Ressource",
       "de.Type"
@@ -103,15 +103,15 @@ public class TestJoueurbis {
     org.evosuite.runtime.classhandling.ClassStateSupport.resetClasses(
       "bot.Joueur",
       "de.Ressource",
-      "Iles.TypeEffet",
-      "Iles.Exploit",
-      "Iles.Prix",
-      "Iles.Carte",
+      "iles.TypeEffet",
+      "iles.Exploit",
+      "iles.Prix",
+      "iles.Carte",
       "de.De",
       "de.Face",
       "de.Type",
       "bot.Inventaire",
-      "Iles.Sanctuaire"
+      "iles.Sanctuaire"
     );
   }
 }

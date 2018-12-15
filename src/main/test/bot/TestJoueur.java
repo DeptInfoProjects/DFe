@@ -3,8 +3,8 @@ package bot;
 
 import static org.junit.Assert.*;
 import static org.evosuite.runtime.EvoAssertions.*;
-import Iles.Carte;
-import Iles.Exploit;
+import iles.Carte;
+import iles.Exploit;
 import de.De;
 import de.Face;
 import de.Ressource;

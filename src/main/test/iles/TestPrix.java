@@ -1,6 +1,6 @@
 
 
-package Iles;
+package iles;
 
 import org.junit.Test;
 import static org.junit.Assert.*;

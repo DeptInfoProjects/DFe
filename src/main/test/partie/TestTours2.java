@@ -81,17 +81,17 @@ public class TestTours2 {
   private static void initializeClasses() {
     org.evosuite.runtime.classhandling.ClassStateSupport.initializeClasses(TestTours2.class.getClassLoader() ,
       "de.De",
-      "Iles.TypeEffet",
+      "iles.TypeEffet",
       "partie.Tours",
-      "Iles.Sanctuaire",
-      "Iles.Prix",
-      "Iles.Exploit",
+      "iles.Sanctuaire",
+      "iles.Prix",
+      "iles.Exploit",
       "bot.Joueur",
       "de.Type$2",
       "bot.Inventaire",
       "de.Type$1",
       "de.Type$3",
-      "Iles.Carte",
+      "iles.Carte",
       "de.Face",
       "de.Ressource",
       "de.Type"
@@ -109,11 +109,11 @@ public class TestTours2 {
       "de.Ressource",
       "bot.Inventaire",
       "partie.Tours",
-      "Iles.Sanctuaire",
-      "Iles.Exploit",
-      "Iles.TypeEffet",
-      "Iles.Prix",
-      "Iles.Carte"
+      "iles.Sanctuaire",
+      "iles.Exploit",
+      "iles.TypeEffet",
+      "iles.Prix",
+      "iles.Carte"
     );
   }
 }

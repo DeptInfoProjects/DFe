@@ -1,6 +1,6 @@
 
 
-package Iles;
+package iles;
 
 import bot.Choix;
 import de.*;

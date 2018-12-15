@@ -1,11 +1,10 @@
 package bot;
 
 import de.*;
-import Iles.Carte;
-import bot.Choix.*;
+import iles.Carte;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 import static de.Type.CHOIX;
 import static de.Type.NORMAL;

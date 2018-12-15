@@ -2,7 +2,7 @@
 
 package bot;
 
-import Iles.Carte;
+import iles.Carte;
 import de.Face;
 import de.Ressource;
 import de.Type;
