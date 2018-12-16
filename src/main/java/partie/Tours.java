@@ -90,7 +90,7 @@ public class Tours {
         List<Exploit> listCarteJ1 = joueur1.getInventaireJoueur().getCartes();
         for(Exploit carte : listCarteJ1){
             if (carte.getType() == TypeEffet.PERMANENT) {
-                System.out.println(PURPLE +"Joueur1 active la carte " + carte.getNom() + RESET );
+                System.out.println(CYAN  +"Joueur1 active la carte " + carte.getNom() + RESET );
                 if (carte == ANCIEN) {
                     Exploit.effetAncien(joueur1);
                 } else if (carte == AILES) {
@@ -104,7 +104,7 @@ public class Tours {
         List<Exploit> listCarteJ2 = joueur2.getInventaireJoueur().getCartes();
         for(Exploit carte : listCarteJ2) {
             if (carte.getType() == TypeEffet.PERMANENT) {
-                System.out.println(PURPLE+"Joueur2 active la carte " + carte.getNom() + RESET );
+                System.out.println(CYAN +"Joueur2 active la carte " + carte.getNom() + RESET );
                 if (carte == ANCIEN) {
                     Exploit.effetAncien(joueur2);
                 } else if (carte == AILES) {
@@ -295,7 +295,8 @@ public class Tours {
 
 
 
-
+            System.out.println("______________________________________________________________________________________________________");
+            System.out.println("||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||");
             System.out.println("______________________________________________________________________________________________________");
             System.out.println(PURPLE + " Tour " + (acc + 1) + ":" + RESET);
             System.out.println("______________________________________________________________________________________________________");

@@ -39,6 +39,12 @@ public class Joueur {
 
     private static final String CYAN = "\u001B[36m";
     private static final String BLACK = "\u001B[30m";
+    private static final String GREEN = "\u001B[32m";
+    private static final String RESET = "\u001B[0m";
+    private static final String YELLOW = "\u001B[33m";
+    private static final String BLUE = "\u001B[34m";
+
+
 
     /*public Face ancienneFace(){
         Face FaceMinD1 = this.d1.FACEMIN();
@@ -123,8 +129,7 @@ public class Joueur {
 
         String joueurActif = getJoueur();
         if ((rand == 0) && (invLun == 1) && MARTEAU.stock>0){
-            System.out.println(CYAN+ joueurActif+ "veut acheter la Carte " + BLACK+ MARTEAU.getNom());
-
+            System.out.println(CYAN+ joueurActif+ "achète la Carte " + BLACK+ MARTEAU.getNom() + RESET);
             this.Sac.setNbLunaire(invLun - MARTEAU.prix.getPrix());
             MARTEAU.modStock();
             this.Sac.addCartes(Carte.MARTEAU);
@@ -132,7 +137,7 @@ public class Joueur {
             return MARTEAU;
         }
         if (( rand == 1) && invLun == 1 && COFFRE.stock>0 ) {
-            System.out.println(CYAN+joueurActif+ "veut acheter la Carte " + BLACK+ COFFRE.getNom());
+            System.out.println(CYAN+joueurActif+ "achète la Carte " + BLACK+ COFFRE.getNom() + CYAN + " et obtient " + GREEN + "2 points de Victoire" + RESET);
             this.Sac.setNbLunaire(invLun - COFFRE.prix.getPrix());
             COFFRE.modStock();
             this.Sac.addCartes(Carte.COFFRE);
@@ -140,7 +145,7 @@ public class Joueur {
             return COFFRE;
         }
         if ((invLun >= 5)&&(invSol >= 5) && HYDRE.stock>0){
-            System.out.println(CYAN+joueurActif+  "veut acheter la Carte " + BLACK+ HYDRE.getNom());
+            System.out.println(CYAN+joueurActif+  "achète la Carte " + BLACK+ HYDRE.getNom() + CYAN + " et obtient " + GREEN + "26 points de Victoire" + RESET);
             Carte.HYDRE.applyEffet(this);
             HYDRE.modStock();
             this.Sac.addCartes(Carte.HYDRE);
@@ -151,7 +156,7 @@ public class Joueur {
 
         }
         if (invLun == 2 && SABOTS.stock>0){
-            System.out.println(CYAN+ joueurActif+ "veut acheter la Carte " + BLACK+ SABOTS.getNom());
+            System.out.println(CYAN+ joueurActif+ "achète la Carte " + BLACK+ SABOTS.getNom() + CYAN + " et obtient " + GREEN + "2 points de Victoire" + RESET);
             Carte.SABOTS.applyEffet(this);
             SABOTS.modStock();
             this.Sac.addCartes(Carte.SABOTS);
@@ -160,7 +165,7 @@ public class Joueur {
         }
 
         if (invLun == 3 && SATYRES.stock>0){
-            System.out.println(CYAN+ joueurActif+ "veut acheter la Carte " + BLACK+ SATYRES.getNom());
+            System.out.println(CYAN+ joueurActif+ "achète la Carte " + BLACK+ SATYRES.getNom() + CYAN + " et obtient " + GREEN + "6 points de Victoire" + RESET);
             Carte.SATYRES.applyEffet(this);
             SATYRES.modStock();
             this.Sac.addCartes(Carte.SATYRES);
@@ -169,7 +174,7 @@ public class Joueur {
         }
 
         if (( rand == 0 ) && (invSol == 1) && ANCIEN.stock>0){
-            System.out.println(CYAN+ joueurActif+ "veut acheter la Carte " + BLACK+ ANCIEN.getNom());
+            System.out.println(CYAN+ joueurActif+ "achète la Carte " + BLACK+ ANCIEN.getNom() + RESET);
             Carte.ANCIEN.applyEffet(this);
             ANCIEN.modStock();
             this.Sac.addCartes(Carte.ANCIEN);
@@ -177,36 +182,38 @@ public class Joueur {
             return ANCIEN;
         }
         else if ((rand == 1)&&(invSol ==1) && HERBES.stock>0){
-            System.out.println(CYAN+ joueurActif+ "veut acheter la Carte " + BLACK+ HERBES.getNom());
+            System.out.println(CYAN+ joueurActif+ "achète la Carte " + BLACK+ HERBES.getNom() + CYAN + " et obtient " + GREEN + "2 points de Victoire" + RESET);
             Carte.HERBES.applyEffet(this);
             HERBES.modStock();
             this.Sac.addCartes(Carte.HERBES);
             this.Sac.setNbSolaire(invSol - HERBES.prix.getPrix());
+            System.out.println(CYAN+"Il gagne grace a elle " + YELLOW + "3 fragments d'Or" + CYAN + " et " + BLUE + " 3 fragments Lunaire"+ RESET);
+
             return HERBES;
         }
         if (invSol == 2 && AILES.stock>0){
-            System.out.println(CYAN+ joueurActif+ "veut acheter la Carte " + BLACK+ AILES.getNom());
+            System.out.println(CYAN+ joueurActif+ "achète la Carte " + BLACK+ AILES.getNom() + CYAN + " et obtient " + GREEN + "4 points de Victoire" + RESET);
             Carte.AILES.applyEffet(this);
             this.Sac.addCartes(Carte.AILES);
             this.Sac.setNbSolaire(invSol - AILES.prix.getPrix());
             return AILES;
         }
         if (invSol == 3 && MINOTAURE.stock>0){
-            System.out.println(CYAN+ joueurActif+ "veut acheter la Carte " + BLACK+ MINOTAURE.getNom());
+            System.out.println(CYAN+ joueurActif+ "achète la Carte " + BLACK+ MINOTAURE.getNom() + CYAN + " et obtient " + GREEN + "8 points de Victoire" + RESET);
             Carte.MINOTAURE.applyEffet(this);
             this.Sac.addCartes(Carte.MINOTAURE);
             this.Sac.setNbSolaire(invSol - MINOTAURE.prix.getPrix());
             return MINOTAURE;
         }
         if (invLun == 4 && PASSEUR.stock>0){
-            System.out.println(CYAN+ joueurActif+ "veut acheter la Carte " + BLACK+ PASSEUR.getNom());
+            System.out.println(CYAN+ joueurActif+ "achète la Carte " + BLACK+ PASSEUR.getNom() + CYAN + " et obtient " + GREEN + "12 points de Victoire" + RESET);
             Carte.PASSEUR.applyEffet(this);
             this.Sac.setNbVictoire(invVic + 12);
             this.Sac.setNbLunaire(invLun - PASSEUR.prix.getPrix());
             return PASSEUR;
         }
         if (invLun == 5 && CASQUE.stock>0){
-            System.out.println(CYAN+ joueurActif+ "veut acheter la Carte " + BLACK+ CASQUE.getNom());
+            System.out.println(CYAN+ joueurActif+ "achète la Carte " + BLACK+ CASQUE.getNom() + CYAN + " et obtient " + GREEN + "4 points de Victoire" + RESET);
             Carte.CASQUE.applyEffet(this);
             this.Sac.addCartes(Carte.CASQUE);
             this.Sac.setNbLunaire(invLun - CASQUE.prix.getPrix());
@@ -214,7 +221,7 @@ public class Joueur {
         }
 
         if (invLun >= 6 && PINCE.stock>0){
-            System.out.println(CYAN+ joueurActif+ "veut acheter la Carte " + BLACK+ PINCE.getNom());
+            System.out.println(CYAN+ joueurActif+ "achète la Carte " + BLACK+ PINCE.getNom() + CYAN + " et obtient " + GREEN + "8 points de Victoire" + RESET);
             Carte.PINCE.applyEffet(this);
             this.Sac.addCartes(Carte.PINCE);
             this.Sac.setNbLunaire(invLun - PINCE.prix.getPrix());
@@ -222,7 +229,7 @@ public class Joueur {
         }
 
         if (invSol == 4 && MEDUSE.stock>0){
-            System.out.println(CYAN+ joueurActif+ "veut acheter la Carte " + BLACK+ MEDUSE.getNom());
+            System.out.println(CYAN+ joueurActif+ "achète la Carte " + BLACK+ MEDUSE.getNom() + CYAN + " et obtient " + GREEN + "14 points de Victoire" + RESET);
             Carte.MEDUSE.applyEffet(this);
             this.Sac.addCartes(Carte.MEDUSE);
             this.Sac.setNbSolaire(invSol - MEDUSE.prix.getPrix());
@@ -231,7 +238,7 @@ public class Joueur {
         }
 
         if (invSol == 5 && MIRROIR.stock>0){
-            System.out.println(CYAN+ joueurActif+ "veut acheter la Carte " + BLACK+ MIRROIR.getNom());
+            System.out.println(CYAN+ joueurActif+ "achète la Carte " + BLACK+ MIRROIR.getNom()  + CYAN + " et obtient " + GREEN + "10 points de Victoire" + RESET);
             Carte.MIRROIR.applyEffet(this);
             this.Sac.addCartes(Carte.MIRROIR);
             this.Sac.setNbSolaire(invSol - MIRROIR.prix.getPrix());
@@ -239,7 +246,7 @@ public class Joueur {
         }
 
         if (invSol >= 6 && ENIGME.stock>0){
-            System.out.println(CYAN+ joueurActif+ "veut acheter la Carte " + BLACK+ ENIGME.getNom());
+            System.out.println(CYAN+ joueurActif+ "achète la Carte " + BLACK+ ENIGME.getNom()  + CYAN + " et obtient " + GREEN + "10 points de Victoire" + RESET);
             Carte.ENIGME.applyEffet(this);
             this.Sac.addCartes(Carte.ENIGME);
             this.Sac.setNbSolaire(invSol - ENIGME.prix.getPrix());
