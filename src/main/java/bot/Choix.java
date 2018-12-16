@@ -42,23 +42,23 @@ public class Choix {
 
     public void addChoixList() {
         if (choix.nextInt(2)==0){
-        this.choixList.add(1);
-        this.choixList.add(1);
-        this.choixList.add(1);
-        this.choixList.add(1);
         this.choixList.add(0);
-        this.choixList.add(1);
+        this.choixList.add(0);
+        this.choixList.add(0);
+        this.choixList.add(0);
+        this.choixList.add(0);
+        this.choixList.add(0);
         this.choixList.add(0);
         this.choixList.add(0);
         this.choixList.add(0);}
         else {
-            this.choixList.add(1);
-            this.choixList.add(1);
-            this.choixList.add(1);
             this.choixList.add(0);
             this.choixList.add(0);
             this.choixList.add(0);
-            this.choixList.add(1);
+            this.choixList.add(0);
+            this.choixList.add(0);
+            this.choixList.add(0);
+            this.choixList.add(0);
             this.choixList.add(0);
             this.choixList.add(0);
         }

@@ -31,8 +31,8 @@ public class Tours {
     static {new Joueur(); }
 
     public Tours(Joueur joueur1, Joueur joueur2){
-        this.joueur1 = joueur1;
-        this.joueur2 = joueur2;
+        Tours.joueur1 = joueur1;
+        Tours.joueur2 = joueur2;
         initInvent();
     }
     private void initInvent() {
@@ -249,24 +249,129 @@ public class Tours {
 
     }
     public int partieStat() {
-        for (int acc = 0; acc < 9; acc++) {
+        for(int acc = 0 ; acc < 9; acc++) {
             Face memFd1J1 = joueur1.getD1().getFace();
             Face memFd2J1 = joueur1.getD2().getFace();
             Face memFd1J2 = joueur2.getD1().getFace();
             Face memFd2J2 = joueur2.getD2().getFace();
-
+            // On ajoute les ressources obtenues aux ressources de l'inventaire
             joueur1.getInventaireJoueur().adderFace(memFd1J1);
             joueur1.getInventaireJoueur().adderFace(memFd2J1);
             joueur2.getInventaireJoueur().adderFace(memFd1J2);
             joueur2.getInventaireJoueur().adderFace(memFd2J2);
+            Choix Courant = new Choix();
+            Courant.addChoixList();
+            int rand1 = Courant.getChoixList(5);
+            int rand2 = Courant.getChoixList(6);
+            int choix1 = Courant.getChoixList(7); /* 0 il acheter une carte 1 il achete une face */
+            int choix2 = Courant.getChoixList(8);/* 0 il acheter une carte 1 il achete une face */
 
+            /* pour le Joueur1 */
+            /* Si il veut une carte */
+            if (choix1 == 0){
+                Exploit Choix = joueur1.acheterCarte();
+                if (Choix == NULL)
+                    choix1=1;
+            }
 
-            Face AchatJ1 = joueur1.acheterFace();
-            Face AchatJ2 = joueur2.acheterFace();
+            /* Si il veut une face */
+            if (choix1 == 1){
+                Face AchatJ1 = joueur1.acheterFace();
+                joueur1.changementFace(AchatJ1);               /* on l'implement sur son dÃ© */
+            }
+            /* pour le Jouer2 */
+            if (choix2 == 0){
+                Exploit Choix2 = joueur2.acheterCarte();
+                if (Choix2 == NULL)
+                    choix2=1;
+            }
 
-            joueur1.changementFace(AchatJ1);
-            joueur2.changementFace(AchatJ2);
+            if (choix2 == 1){
+                Face AchatJ2 = joueur2.acheterFace();
+                joueur2.changementFace(AchatJ2);               /* on l'implement sur son dÃ© */
+            }
+            if (((rand1 == 0) & (rand2 == 1) & (joueur1.getInventaireJoueur().getNbSolaire() > 1))
+                    | (((rand1 == 0) & (rand2 == 0) & (joueur1.getInventaireJoueur().getNbSolaire() > 1) & (joueur2.getInventaireJoueur().getNbSolaire() < 2)))) {
+                joueur1.getInventaireJoueur().setInventaire(joueur1.getInventaireJoueur().getNbOR(), joueur1.getInventaireJoueur().getNbSolaire() - 2, joueur1.getInventaireJoueur().getNbLunaire(), joueur1.getInventaireJoueur().getNbVictoire(),joueur1.getInventaireJoueur().getCartes());
+                Face memFd1J1bis = joueur1.getD1().getFace();
+                Face memFd2J1bis = joueur1.getD2().getFace();
+                // On ajoute les ressources obtenues aux ressources de l'inventaire
+                joueur1.getInventaireJoueur().adderFace(memFd1J1bis);
+                joueur1.getInventaireJoueur().adderFace(memFd2J1bis);
 
+                /* pour le Joueur1 */
+                /* Si il veut une carte */
+                if (choix1 == 1){
+                    Exploit Choix = joueur1.acheterCarte();
+                    if (Choix == NULL)
+                        choix1=0;
+                }
+
+                /* Si il veut une face */
+                if (choix1 == 0){
+                    Face AchatJ1 = joueur1.acheterFace();
+                    joueur1.changementFace(AchatJ1);               /* on l'implement sur son dÃ© */
+                }
+            }
+            if (((rand1 == 1) & (rand2 == 0) & (joueur2.getInventaireJoueur().getNbSolaire() > 1))
+                    |
+                    (((rand1 == 0) & (rand2 == 0) & (joueur2.getInventaireJoueur().getNbSolaire() > 1) & (joueur1.getInventaireJoueur().getNbSolaire() < 2)))) {
+                joueur2.getInventaireJoueur().setInventaire(joueur2.getInventaireJoueur().getNbOR(), joueur2.getInventaireJoueur().getNbSolaire() - 2, joueur2.getInventaireJoueur().getNbLunaire(), joueur2.getInventaireJoueur().getNbVictoire(),joueur2.getInventaireJoueur().getCartes());
+                Face memFd1J2bis = joueur2.getD1().getFace();
+                Face memFd2J2bis = joueur2.getD2().getFace();
+                // On ajoute les ressources obtenues aux ressources de l'inventaire
+                joueur2.getInventaireJoueur().adderFace(memFd1J2bis);
+                joueur2.getInventaireJoueur().adderFace(memFd2J2bis);
+                /* pour le Jouer2 */
+                if (choix2 == 0){
+                    Exploit Choix2 = joueur2.acheterCarte();
+                    if (Choix2 == NULL)
+                        choix2=1;
+                }
+                if (choix2 == 0){
+                    Face AchatJ2 = joueur2.acheterFace();
+                    joueur2.changementFace(AchatJ2);
+
+                }
+            }
+            if ((rand1 == 0) & (rand2 == 0) & (joueur1.getInventaireJoueur().getNbSolaire() > 1) & (joueur2.getInventaireJoueur().getNbSolaire() > 1)) {
+                joueur2.getInventaireJoueur().setInventaire(joueur2.getInventaireJoueur().getNbOR(), joueur2.getInventaireJoueur().getNbSolaire() - 2, joueur2.getInventaireJoueur().getNbLunaire(), joueur2.getInventaireJoueur().getNbVictoire(),joueur2.getInventaireJoueur().getCartes());
+                joueur1.getInventaireJoueur().setInventaire(joueur1.getInventaireJoueur().getNbOR(), joueur1.getInventaireJoueur().getNbSolaire() - 2, joueur1.getInventaireJoueur().getNbLunaire(), joueur1.getInventaireJoueur().getNbVictoire(),joueur1.getInventaireJoueur().getCartes());
+                Face MemFd1J1 = joueur1.getD1().getFace();
+                Face MemFd2J1 = joueur1.getD2().getFace();
+                Face MemFd1J2 = joueur2.getD1().getFace();
+                Face MemFd2J2 = joueur2.getD2().getFace();
+                // On ajoute les ressources obtenues aux ressources de l'inventaire
+                joueur1.getInventaireJoueur().adderFace(MemFd1J1);
+                joueur1.getInventaireJoueur().adderFace(MemFd2J1);
+                joueur2.getInventaireJoueur().adderFace(MemFd1J2);
+                joueur2.getInventaireJoueur().adderFace(MemFd2J2);
+
+                /* pour le Joueur1 */
+                /* Si il veut une carte */
+                if (choix1 == 0){
+                    Exploit Choix = joueur1.acheterCarte();
+                    if (Choix ==NULL)
+                        choix1=1;
+                }
+
+                /* Si il veut une face */
+                if (choix1 == 0){
+                    Face AchatJ1 = joueur1.acheterFace();
+                    joueur1.changementFace(AchatJ1);               /* on l'implement sur son dÃ© */
+                }
+                /* pour le Jouer2 */
+                if (choix2 == 0){
+                    Exploit Choix2 = joueur2.acheterCarte();
+                    if (Choix2 == NULL)
+                        choix2=1;
+                }
+                if (choix2 == 0){
+                    Face AchatJ2 = joueur2.acheterFace();
+                    joueur2.changementFace(AchatJ2);
+
+                }
+            }
 
         }
         if (joueur1.getInventaireJoueur().getNbVictoire() < joueur2.getInventaireJoueur().getNbVictoire()) {
