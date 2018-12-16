@@ -10440,54 +10440,7 @@ public class TestDe extends TestDe2 {
 
   }
 
-  @Test(timeout = 4000)
-  public void test36() {
-      De de0 = new De();
-      assertNotNull(de0);
-      
-      Face face0 = de0.getFace();
-      assertNull(face0);
-      
-      de0.FACE3 = null;
-      Face face1 = de0.getFace();
-      assertNull(face1);
-      
-      // Undeclared exception!
-      try {
-        fail("Expecting exception: NullPointerException");
-      
-      } catch(NullPointerException e) {
-         //
-         // no message in exception (getMessage() returned null)
-         //
-         verifyException("de.De", e);
-      }
-  }
 
-  @Test(timeout = 4000)
-  public void test37() {
-      De de0 = new De();
-      assertNotNull(de0);
-      
-      Face face0 = de0.FACE1;
-      assertNull(face0);
-      
-      de0.FACE1 = null;
-      Face face1 = de0.FACE1;
-      assertNull(face1);
-      
-      de0.FACE5 = null;
-      // Undeclared exception!
-      try {
-        fail("Expecting exception: NullPointerException");
-      
-      } catch(NullPointerException e) {
-         //
-         // no message in exception (getMessage() returned null)
-         //
-         verifyException("de.De", e);
-      }
-  }
 
   @Test(timeout = 4000)
   public void test38() {
@@ -10692,22 +10645,6 @@ public class TestDe extends TestDe2 {
       assertNull(face1.getNbVICT());
   }
 
-  @Test(timeout = 4000)
-  public void test42() {
-      De de0 = new De();
-      assertNotNull(de0);
-      
-      // Undeclared exception!
-      try {
-        fail("Expecting exception: NullPointerException");
-      
-      } catch(NullPointerException e) {
-         //
-         // no message in exception (getMessage() returned null)
-         //
-         verifyException("de.De", e);
-      }
-  }
 
   @Test(timeout = 4000)
   public void test43() {

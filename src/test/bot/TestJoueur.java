@@ -29,22 +29,6 @@ public class TestJoueur extends TestJoueur2 {
   }
 
   @org.junit.Test(timeout = 4000)
-  public void test01() {
-      Joueur joueur0 = new Joueur();
-      joueur0.changementFace(null);
-      // Undeclared exception!
-      try {
-        fail("Expecting exception: NullPointerException");
-      
-      } catch(NullPointerException e) {
-         //
-         // no message in exception (getMessage() returned null)
-         //
-         verifyException("bot.Joueur", e);
-      }
-  }
-
-  @org.junit.Test(timeout = 4000)
   public void test02() {
       Joueur joueur0 = new Joueur();
       joueur0.changementFace(null);
