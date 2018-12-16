@@ -4,8 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class
-Choix {
+public class Choix {
     public ArrayList<ArrayList<Integer>> permutation(int[] num) {
         ArrayList<ArrayList<Integer>> result = new ArrayList<>();
 
@@ -64,6 +63,8 @@ Choix {
             this.choixList.add(0);
         }
     }
+
+
     public void addChoixListRandom() {
         this.choixList.add(rand);
         this.choixList.add(rand2);

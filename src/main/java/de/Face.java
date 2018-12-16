@@ -108,8 +108,7 @@ public class Face {
             return YELLOW + "3"  + BLACK + " ? " + GREEN + "2      "  + RESET;
         }
         // choix3
-        if (this.nbOR==2 && this.nbLUN == 2 && this.nbSOL==2 &&this.nbVICT==0  )
-        {
+        if (this.nbOR==2 && this.nbLUN == 2 && this.nbSOL==2 &&this.nbVICT==0  ) {
             return YELLOW + "2"  + BLACK + " ? " + BLUE + "2" + BLACK + "?" + RED + "2"  + RESET;
         }
         // multi4
