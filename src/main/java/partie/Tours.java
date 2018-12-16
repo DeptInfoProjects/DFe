@@ -90,7 +90,7 @@ public class Tours {
         List<Exploit> listCarteJ1 = joueur1.getInventaireJoueur().getCartes();
         for(Exploit carte : listCarteJ1){
             if (carte.getType() == TypeEffet.PERMANENT) {
-                System.out.println(PURPLE +"Joueur1 active la carte " + carte.getNom());
+                System.out.println(PURPLE +"Joueur1 active la carte " + carte.getNom() + RESET );
                 if (carte == ANCIEN) {
                     Exploit.effetAncien(joueur1);
                 } else if (carte == AILES) {
@@ -104,7 +104,7 @@ public class Tours {
         List<Exploit> listCarteJ2 = joueur2.getInventaireJoueur().getCartes();
         for(Exploit carte : listCarteJ2) {
             if (carte.getType() == TypeEffet.PERMANENT) {
-                System.out.println(PURPLE+"Joueur2 active la carte " + carte.getNom());
+                System.out.println(PURPLE+"Joueur2 active la carte " + carte.getNom() + RESET );
                 if (carte == ANCIEN) {
                     Exploit.effetAncien(joueur2);
                 } else if (carte == AILES) {
@@ -304,7 +304,7 @@ public class Tours {
             System.out.println(String.format("     |%-20s %s                        |%-20s %s     "   ,memFd1J1.AfficheFace(), "|",memFd1J2.AfficheFace(),"|"));
             System.out.println(String.format("     |%-20s %s                        |%-20s %s      \n",memFd2J1.AfficheFace(), "|",memFd2J2.AfficheFace(),"|"));
             System.out.println("______________________________________________________________________________________________________");
-            System.out.println(PURPLE+"Activation des cartes a effet Renfort :");
+            System.out.println(PURPLE+"Activation des cartes a effet Renfort :" + RESET );
             applyEffetPermanents();
             System.out.println("______________________________________________________________________________________________________");
             affichage();
@@ -329,7 +329,7 @@ public class Tours {
             if (choix1 == 1){
                 Face AchatJ1 = joueur1.acheterFace();
                 joueur1.changementFace(AchatJ1);               /* on l'implement sur son dÃ© */
-                System.out.println(CYAN+"Joueur1 veut acheter la Face " + AchatJ1.AfficheFace()+CYAN + " qui remplacec la Face " + YELLOW + "1 OR" + RESET );
+                System.out.println(CYAN+"Joueur1 veut acheter la Face " + AchatJ1.AfficheFace()+CYAN + " qui remplace la Face " + YELLOW + "1 OR" + RESET );
             }
             /* pour le Jouer2 */
             if (choix2 == 0){
@@ -341,7 +341,7 @@ public class Tours {
             if (choix2 == 1){
                 Face AchatJ2 = joueur2.acheterFace();
                 joueur2.changementFace(AchatJ2);               /* on l'implement sur son dÃ© */
-                System.out.println(CYAN+"Joueur2 veut acheter la Face " + AchatJ2.AfficheFace()+CYAN + " qui remplacec la Face " + YELLOW + "1 OR" + RESET );
+                System.out.println(CYAN+"Joueur2 veut acheter la Face " + AchatJ2.AfficheFace()+CYAN + " qui remplace la Face " + YELLOW + "1 OR" + RESET );
             }
 
 
