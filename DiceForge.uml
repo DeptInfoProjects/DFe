@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="190.0" y="617.0">de.De</node>
+    <node x="217.0" y="0.0">iles.Sanctuaire</node>
+    <node x="149.0" y="890.0">partie.Final</node>
+    <node x="818.0" y="0.0">partie.Tours</node>
+    <node x="0.0" y="890.0">iles.TypeEffet</node>
+    <node x="266.0" y="890.0">stat.Stat</node>
+    <node x="0.0" y="617.0">bot.Joueur</node>
+    <node x="362.0" y="617.0">bot.Inventaire</node>
+    <node x="589.0" y="0.0">bot.Choix</node>
+    <node x="0.0" y="0.0">iles.Carte</node>
+    <node x="15.0" y="432.0">iles.Exploit</node>
+    <node x="399.0" y="0.0">de.Face</node>
+    <node x="575.0" y="617.0">de.Ressource</node>
+    <node x="851.0" y="617.0">iles.Prix</node>
+    <node x="721.0" y="617.0">de.Type</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="iles.Exploit" target="iles.Carte">
+      <point x="0.0" y="-70.0" />
+      <point x="0.0" y="191.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.5000000000000001" x="-22.5" y="1620.0" />
+  <SelectedNodes>
+    <node>bot.Inventaire</node>
+    <node>bot.Choix</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
