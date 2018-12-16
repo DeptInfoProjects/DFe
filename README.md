@@ -41,7 +41,7 @@ Date prevu : *16/11/18*
 
 ### Livraison 4
 
-Date prevu : *23/11/18*
+Date prevu : *30/11/18*
 
 * Fonction permettant d'acheter des cartes héros permettant d'obtenir des points de victoire en contre-partis d'une quantité de pierre lunaire ou de pierre solaire.
 * Ajout du catalogue des cartes héros (point victoire,carte à effet immédiat) .
@@ -50,7 +50,7 @@ Date prevu : *23/11/18*
 
 ### Livraison 5
 
-Date prevu : *30/11/18*
+Date prevu : *07/12/18*
 
 * Possibilité d'occuper la dernière quête réalisée (gestion de la postion des joueurs).
 * Extention du catalogue des face de dés achetable aux sanctuaires.
@@ -59,19 +59,14 @@ Date prevu : *30/11/18*
 
 ### Livraison 6
 
-Date prevu : *7/12/18*
+Date prevu : *16/12/18*
 
 * Création de la fonction qui permets d'obtenir des cartes héros (quête à accomplir) qui modifie la face de dés avec des face uniquement accessible via la quête.
 * Possibilité de choisir des quêtes alternatives.
-* Mode Multijoueur à 3-4 personnes.
 *  Test avec Junit sur les tâches realisées.
 
 
 ## Diagramme UML :
 
-* Livraison 1 : DiceForgeV1.uml 
-* Livraison 2 : DiceForgeV2.uml
-* Livraison 3 :
-* Livraison 4 :
-* Livraison 5 :
-* Livraison 6 :
+* DiceForge.uml 
+
