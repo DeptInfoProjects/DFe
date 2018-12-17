@@ -41,7 +41,8 @@ public class Choix {
     private int rand9 = choix.nextInt(2);
 
     public void addChoixList() {
-        if (choix.nextInt(2)==0){
+        int mem = choix.nextInt(4);
+        if (mem == 0){
         this.choixList.add(0);
         this.choixList.add(0);
         this.choixList.add(0);
@@ -51,8 +52,28 @@ public class Choix {
         this.choixList.add(0);
         this.choixList.add(0);
         this.choixList.add(0);}
-        else {
+        if (mem == 1){
             this.choixList.add(0);
+            this.choixList.add(1);
+            this.choixList.add(0);
+            this.choixList.add(0);
+            this.choixList.add(0);
+            this.choixList.add(0);
+            this.choixList.add(0);
+            this.choixList.add(0);
+            this.choixList.add(0);}
+        if (mem == 2){
+            this.choixList.add(0);
+            this.choixList.add(0);
+            this.choixList.add(0);
+            this.choixList.add(1);
+            this.choixList.add(0);
+            this.choixList.add(0);
+            this.choixList.add(0);
+            this.choixList.add(0);
+            this.choixList.add(0);}
+        else {
+            this.choixList.add(1);
             this.choixList.add(0);
             this.choixList.add(0);
             this.choixList.add(0);
